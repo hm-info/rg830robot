@@ -1,2 +1,6 @@
-# rg830robot
-RG830 Robot Manual
+# RG830 Robot Manual
+
+## 📖 Documentation
+
+<https://hm-info.github.io/rg830robot/>
+
