@@ -3,40 +3,40 @@
 ## Emergency Stop
 When the robot is energized, the emergency buttons on the robot and any other external emergency conditions must be cleared, and then the Motor On button must be pressed.
 
-![KT803](_media/AcilDurdurma.png)
+![Emergency Stop Button](_media/AcilDurdurma.png)
 
 ## Operating Modes
 - **Automatic Mode:** Production Mode
 - **Manual Mode:** Movement and controls can be performed in jog mode.
 
-![RG830](_media/ModSecim.png)
+![Operating Mode Selection](_media/ModSecim.png)
 
 ## Robot Axis Control with Jog Movement
 - While the robot is in manual mode, the **Motor On** button located on the right side of the FlexPendant must be pressed to activate the motion units.
 
-![RG830](_media/MotorOnButon.png)
+![Motor On Button](_media/MotorOnButon.png)
 
 - You can access the Jogging page from the upper-left menu bar to see axis-related statuses.
 - Axes 1–6 can be moved one by one. On the first press, the direction controls for axes 1–3 are shown; on the second press, axes 4–6 are shown below the corresponding axis numbers.
 
-![RG830](_media/1_6EksenSecim.png)
+![Axis 1-6 Selection](_media/1_6EksenSecim.png)
 
 - The robot can be moved linearly along the X, Y, and Z axes. These movements are performed relative to the Work Object (Wobj) selected in the interface, and the direction of movement is determined by the orientation of the relevant Wobj.
 
-![RG830](_media/LineerHareketSecim.png)
+![Linear Movement Selection](_media/LineerHareketSecim.png)
 
 - Orientation movement based on tool selection.
 
-![RG830](_media/OrientationHareketSecim.png)
+![Orientation Movement Selection](_media/OrientationHareketSecim.png)
 
 ## Robot Axis Calibration
 - During the initial setup of the robot, calibration must be performed separately for each axis. During calibration, the zero-point marks (notches) of each axis must be aligned with high precision so that they face each other exactly.
 
-![RG830](_media/EksenCentikleri.png)
+![Axis Calibration Notches](_media/EksenCentikleri.png)
 
 - After all axes on the robot are physically aligned with the calibration notches, you can follow the visual steps below to save the relevant values via the FlexPendant. This process should be applied during the initial installation of the robot or whenever a **"Robot calibration lost"** warning is received from the system.
 
-![RG830](_media/RobotEksenKalibrasyonu.png)
+![Robot Axis Calibration Steps](_media/RobotEksenKalibrasyonu.png)
 
 ## TCP (Tool Center Point) Definition
 
@@ -80,4 +80,4 @@ The plane formed by these three taught points is mathematically calculated by th
 
 - You can follow the steps for the Wobj definition process in the images below.
 
-![RG830](_media/WobjTanıtım.png)
+![Wobj Definition Steps](_media/WobjTanıtım.png)
