@@ -1,9 +1,7 @@
-# RG830 Robot Servis Manual
+# RG830 Robot Manual
 
 ## [English](english)
 
 ## [Türkçe](turkish)
 
-# RG830 Robot Yazılım Manual
 
-## [Developer]
