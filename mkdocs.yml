@@ -18,11 +18,8 @@ theme:
 
 nav:
   - Ana Sayfa / Home: index.md
-  - Yazılım Manuel:
-      - 🇹🇷 Türkçe: yazilim/developer.md
-  - Servis Manuel:    
-      - 🇹🇷 Türkçe: turkish.md
-      - 🇬🇧 English: english.md
+  - 🇹🇷 Türkçe: turkish.md
+  - 🇬🇧 English: english.md
 
 use_directory_urls: false
 
