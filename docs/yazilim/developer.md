@@ -118,5 +118,5 @@ Alma-bırakma noktalarında olduğu gibi, aksesuar kontrol noktaları da her aks
 - Kayıt İşlemi:
 Hassas konumlandırma tamamlandıktan sonra, nokta kayıt adımları aşağıdaki görsel yönergeler takip edilerek gerçekleştirilmelidir.
 
-![RG830](../_media/AksesuarKontrolL.png)  ![RG830](../_media/AksesuarKontrolR.png)
+![RG830](../_media/AksesuarKontrolL.png)  ![RG830](../_media/AksesuarKontrolR.png) 
 
