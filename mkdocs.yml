@@ -18,10 +18,14 @@ theme:
 
 nav:
   - Ana Sayfa / Home: index.md
-  - 🇹🇷 Türkçe: turkish.md
-  - 🇬🇧 English: english.md
-  - 👨‍💻 Developer Notes: Developer.md
-  - Operating Instructions: operationGuide.md
+  - 🇹🇷 Türkçe:
+    - Kılavuz: turkish.md
+    - Hata Çözümleri: operationGuide.md
+    - Yazılım Notları: Developer.md
+  - 🇬🇧 English:
+    - Manual: english.md
+    - Troubleshooting: operationGuide.md
+    - Software Notes: Developer.md
 
 use_directory_urls: false
 
