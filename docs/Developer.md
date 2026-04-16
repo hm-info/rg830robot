@@ -21,7 +21,7 @@ Macrolar Robot tarafında HOME klasöründe profilin derinlik ölçüsüne göre
 
 **B:** Profil isminin altına sıralanan her aksesuarın kendine ait makrolarını göstermektedir.
 
-## <span style="color: #d32f2f">Yeni Nokta Tanıtma ve İsim Verme</span>
+## Yeni Nokta Tanıtma ve İsim Verme
 
 - 1.YÖNTEM
 
