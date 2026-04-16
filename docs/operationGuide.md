@@ -72,7 +72,7 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
  - *Sistemi Yeniden Başlatma :* Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
 
-# <span style="color: #000000; font-weight: bold;">Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı</span>
+# <span style="color: #000000; font-weight: bold;">Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?</span>
 
 Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası oluşturma süreci şu kriterlere göre ilerler:
 
@@ -80,13 +80,11 @@ Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası ol
 
 *İş Dosyası Oluşturma:* Robotun işlemine başlayabilmesi için (Z) sehpasındaki çerçevenin iş dosyasının oluşturulmuş ve sisteme tanımlanmış olması gerekir.
 
-*Hattaki çerçeve ile gelen çerçeve Kontrolü:* z mevcut çerçeve ile plc yazılımından gelen iş dosyasındaki çerçeve ID birbiriyle eşleşmelidir. Eşleşme varsa robot işlemi başlatır, Eşleşme yoksa yanlış iş dosyası alarmı verir
+*Hattaki çerçeve ile gelen çerçeve Kontrolü:* (Z) sehpasındaki mevcut çerçeve ile plc yazılımından gelen iş dosyasındaki çerçeve ID leri birbiriyle eşleşmelidir. Eşleşme varsa robot işlemi başlatır, Eşleşme yoksa yanlış iş dosyası alarmı verir
 
 # <span style="color: #000000; font-weight: bold;">Çerçeve Sıkıştırmada Alarm Durumları</span>
 
-Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi sıkıştırmak için Eksen yaklaştığında yeteri kadar sıkamadığında hata verir tekrar sıkması için start butonuna basıp tekrar sıkıştırma işlemi yapılır.
-
-
+Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi sıkıştırmak için Eksen yaklaştığında yeteri kadar sıkamadığında **FrameCatchPos** hatası verir tekrar sıkması için **(F) Start Buton**'una basıp tekrar sıkıştırma işlemi yapılır.
 
 # <span style="color: #000000; font-weight: bold;">Drilling Tool Not Ok Alarm Durumu</span>
 
