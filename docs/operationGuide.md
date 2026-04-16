@@ -1,4 +1,4 @@
-## Makine İlk Açılışta Robot Gripper Kalıp Durumu
+# Makine İlk Açılışta Robot Gripper Kalıp Durumu
 
 - Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.
 
@@ -12,13 +12,13 @@
 - Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.
 - Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.
 
-## Robot Pasif Konuma Alonması Hatıın Devem Etmesi
+# Robot Pasif Konuma Alonması Hatıın Devem Etmesi
 
-## Kapıların açılma İzin Prosedürü
+# Kapıların açılma İzin Prosedürü
 
 - Giriş bölümünde bulunan emniyet izin butonuna basıldığında, sistem mevcut çalışma döngüsünü (cycle) güvenli bir noktada tamamlar. Döngü bitiminin ardından sistem otomatik olarak kapı açma onayını verir.
 
-## Acil Stop - Stop senaryoları.
+# Acil Stop - Stop senaryoları.
 
 **Acil Stop Durumu:** 
 
@@ -48,9 +48,9 @@ Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "b
 
  - **Sistemi Yeniden Başlatma :** Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
 
-## Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı
+# Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı
 
-## Çerçeve sıkıştırma da alarm durumları
+# Çerçeve sıkıştırma da alarm durumları
 
 - Frame Handling Axis Error
 - Frame Handling Axis could not calibrate !
@@ -60,7 +60,7 @@ Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "b
 - Frame Handling Axis Lag Error !
 
 
-## Drilling Tool Not Ok Alarm Durumu
+# Drilling Tool Not Ok Alarm Durumu
 
 **Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:**
 
@@ -76,7 +76,7 @@ Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "b
 
 - **Sistemi Tekrar Devreye Alma:** Gerekli fiziksel düzeltmeler yapıldıktan ve arıza kaynağı giderildikten sonra, operatör paneli üzerinden **Start Butonuna (F)** basılarak işlem döngüsü kaldığı yerden devam ettirilir.
 
-## Accessory Not Ok Alarm Durumu
+# Accessory Not Ok Alarm Durumu
 
 Aksesuar montaj sürecinin sağlıklı ilerleyebilmesi için parçanın magazinden başarıyla alınması ve kalıp içerisinde hassas şekilde konumlanması kritik önem taşımaktadır. Bu doğrultuda, montaj aşamasına geçilmeden önce parçanın varlığı ve konumu sensörler aracılığıyla denetlenir.
 
@@ -100,7 +100,7 @@ Hattan çıktıktan ve emniyet kilidini devreye aldıktan sonra panel üzerindek
 
 Hata giderildikten sonra panel üzerinden *B (Reset Butonu)*'na basılarak aksesuar alma işlemi yeniden başlatılır.
 
-## Çeneye Vida Çekilememe Durumu
+# Çeneye Vida Çekilememe Durumu
 
 Robot, vidalama işlemi öncesinde sistemden vida besleme talebinde bulunur. Vida beslemesinin başarısız olması durumunda operatör aşağıdaki adımları izlemelidir:
 
@@ -120,7 +120,7 @@ Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlen
 
 Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir. Ardından panel üzerindeki *B (Reset Butonu)*'na basılarak vida çekme işlemi yeniden tetiklenmelidir.
 
-## Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
+# Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
 
 ![RG830](_media/o_PassNextAccessory.png)
 
@@ -141,7 +141,7 @@ Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir soru
 
 *Kritik Uyarı:* **H** seçeneği tercih edildiğinde robot kendisini güvenli bir şekilde kurtardıktan sonra Gripper da kalıp varsa bırakma noktasına gidecektir. Bırakma işlemi sırasında kalıpta aksesuar bulunmadığından emin olunmalıdır.
 
-## Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
+# Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
 
 Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesajlarıdır.
 
@@ -164,7 +164,7 @@ Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesaj
 - Right Magazine Hinge1 Right Bottom Clamp could not go backward ! / Right Magazine Hinge1 Right Bottom Clamp could not go forward !
 - Right Magazine Hinge1 Right Top Clamp could not go backward ! / Right Magazine Hinge1 Right Top Clamp could not go forward !
 
-## Eksen Hareket halindeyken Sıkışması Durumu
+# Eksen Hareket halindeyken Sıkışması Durumu
 
 Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya matematiksel olarak ulaşamaz veya eklem limitlerine takılır. Bu durumlarda operatörün kurtarması için izleyeceği adımlar şunlardır:
 
@@ -214,7 +214,7 @@ Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam ed
 
 **Hız Kontrolü:** Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki **M-N** kısımlarına tıklayarak **O** hız sayfasını açabilirsiniz.
 
-## Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
+# Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
 
 
-## Hat ile genel çalışma prensibi
+# Hat ile genel çalışma prensibi

@@ -1,4 +1,4 @@
-## Machine Initial Startup Robot Gripper Mold Status
+# Machine Initial Startup Robot Gripper Mold Status
 
 - When the system is first turned on, after reset, it asks for confirmation if there is a mold in the gripper.
 
