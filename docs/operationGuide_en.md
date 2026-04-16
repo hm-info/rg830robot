@@ -1,7 +1,5 @@
 ## Machine Initial Startup Robot Gripper Mold Status
 
-## <span style="color: #d32f2f">Machine Initial Startup Robot Gripper Mold Status</span>
-
 - When the system is first turned on, after reset, it asks for confirmation if there is a mold in the gripper.
 
 ![RG830](_media/o_GripperFree.png)
