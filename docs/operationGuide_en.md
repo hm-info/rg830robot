@@ -1,56 +1,56 @@
-## Makine İlk Açılışta Robot Gripper Kalıp Durumu
+## Machine Initial Startup Robot Gripper Mold Status
 
-- Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.
+- When the system is first turned on, after reset, it asks for confirmation if there is a mold in the gripper.
 
 ![RG830](_media/o_GripperFree.png)
 
-**YES:** Elinde olan kalıbı kendi numarasındaki yere bırakarak tekrar home pozisyonuna döner ve iş dosyası ile haberleşmeyi bekler.
+**YES:** It places the mold it has in its designated spot, returns to the home position, and waits for communication with the job file.
 
-**NO:**  Home pozisyonunda iş dosyası ile haberleşmeyi bekler.
+**NO:** It waits for communication with the job file in the home position.
 
-- İş dosyasının okunabilmesi için exe dosyası açılmalıdır.
-- Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.
-- Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.
+- The exe file must be opened to read the job file.
+- The prepared job file should be placed in the Robot File folder.
+- When the Start button is pressed, the job file in the Robot File folder is read, data transfer from PLC to robot occurs, and after the information transfer is complete, the robot starts running the job file.
 
-## Robot Pasif Konuma Alonması Hatıın Devem Etmesi
+## Robot Passive Positioning Error Handling
 
-## Kapıların açılma İzin Prosedürü
+## Door Opening Permission Procedure
 
-- Giriş bölümünde bulunan emniyet izin butonuna basıldığında, sistem mevcut çalışma döngüsünü (cycle) güvenli bir noktada tamamlar. Döngü bitiminin ardından sistem otomatik olarak kapı açma onayını verir.
+- When the safety permission button in the entrance section is pressed, the system completes the current work cycle at a safe point. After the cycle ends, the system automatically gives approval to open the doors.
 
-## Acil Stop - Stop senaryoları.
+## Emergency Stop - Stop Scenarios.
 
-**Acil Stop Durumu:** 
+**Emergency Stop Condition:**
 
-Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş çevrimi (cycle) iptal edilir ve sistem güvenli duruş moduna geçer. Bu işlemden sonra sistem verileri sıfırlandığı için iş dosyasının en baştan başlatılması zorunludur.
+When the Emergency Stop button is pressed, the active work cycle is canceled due to safety protocols, and the system enters safe standby mode. After this process, since the system data is reset, restarting the job file from the beginning is mandatory.
 
-**Sistemi Tekrar Aktif Hale Getirme Adımları:**
+**Steps to Reactivate the System:**
 
 ![RG830](_media/o_AlarmRstButon.png)
 
-- Basılı olan Acil Stop butonu serbest bırakılır.
-- **A:** Operatör panelinden Alarmlar (Reset) temizlenir.
-- **B:** Reset e basılır . Robot Po to Main yapar arkasından **C** soru paneli açılır
-- **C:** Gripper üzerinde kalıp var,yok sorgusu yapılır. Daha sonrasında **D** soru paneli açılır
-- **D:** Acilden sonra aynı iş dosyası ile mi yoksa farklı bir iş dosyası ile mi çalışacağına dair soru paneli açılır.
+- The pressed Emergency Stop button is released.
+- **A:** Alarms (Reset) are cleared from the operator panel.
+- **B:** Press Reset. The robot does "Po to Main", then **C** question panel opens.
+- **C:** Inquiry is made whether there is a mold on the gripper or not. Subsequently, **D** question panel opens.
+- **D:** Question panel opens regarding whether to continue with the same job file or a different job file after the emergency.
 
-  **YES:** Hafızadaki iş dosyası ile devam eder.
+  **YES:** Continues with the job file in memory.
 
-  **NO:**  Farklı iş dosyasının yüklenmesini bekler. Belli bir süre iş dosyasını okuyamazsa, dosya okuyamadığına dair hata mesajı verir.
+  **NO:** Waits for a different job file to be loaded. If it cannot read the job file for a certain period, it gives an error message that it could not read the file.
 
-  **Stop Durumu:**
+  **Stop Condition:**
 
-Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "bekleme moduna" geçer. Bu sürecin teknik işleyişi şu şekildedir:
+When **E (Stop Button)** is pressed in the system, PLC and robot enter a coordinated "waiting mode". The technical operation of this process is as follows:
 
- - **PLC**, stop sinyali alındığında, mevcut çalışma adımını (state) dondurarak sistemi "Stop State" moduna alır.
+ - **PLC**, when the stop signal is received, freezes the current work step (state) and puts the system into "Stop State" mode.
 
- - **Robot**, stop sinyali geldiği anda hareketi kesmek yerine, işlem bütünlüğünü korumak adına bir sonraki beklemeli sinyal adımına (checkpoint) kadar çalışmaya devam eder.Robot ilgili adıma ulaştığında durur ve PLC’den gelecek olan "durum bitini" beklemeye başlar.
+ - **Robot**, instead of stopping movement immediately when the stop signal comes, continues to work until the next waiting signal step (checkpoint) to maintain process integrity. When the robot reaches that step, it stops and waits for the "status bit" from the PLC.
 
- - **Sistemi Yeniden Başlatma :** Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
+ - **Restarting the System:** When the operator presses **F (Start Button)**, the PLC activates the relevant status bit and directs the system back to the normal work cycle from the step it left off.
 
-## Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı
+## When working with the line, when will the frame come from the line, is the frame coming from the line the same as the frame?
 
-## Çerçeve sıkıştırma da alarm durumları
+## Alarm conditions during frame clamping
 
 - Frame Handling Axis Error
 - Frame Handling Axis could not calibrate !
@@ -60,96 +60,96 @@ Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "b
 - Frame Handling Axis Lag Error !
 
 
-## Drilling Tool Not Ok Alarm Durumu
+## Drilling Tool Not Ok Alarm Condition
 
-**Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:**
+**The system performs automatic tool control once at the beginning of each job to ensure operational safety. The process and what to do in case of error are specified below:**
 
-- Robot, delme takımının (tool) fiziksel bütünlüğünü doğrulamak amacıyla takım ucunu önceden tanımlanmış bir kontrol siviçine (switch) temas ettirir.
+- The robot touches the tool tip to a predefined control switch to verify the physical integrity of the drilling tool.
 
-- Takım kontrol noktasına ulaştığı halde siviçten doğrulama sinyali alınamazsa, robot otomatik olarak hareketi durdurur. Güvenli bir bekleme pozisyonuna (kontrol noktasının üst kısmı) geçerek operatör panelinde durum alarmını aktif hale getirir.
+- If the verification signal is not received from the switch despite reaching the tool control point, the robot automatically stops movement. It moves to a safe waiting position (above the control point) and activates the status alarm on the operator panel.
 
-**Müdahale ve Arıza Giderme:**
+**Intervention and Troubleshooting:**
 
-- **Takım Hasarı:** Eğer delme ucu fiziksel olarak zarar görmüş veya kırılmışsa, yeni bir takım ucu ile değiştirilmelidir.
+- **Tool Damage:** If the drill bit is physically damaged or broken, it should be replaced with a new tool tip.
 
-- **Sensör Kontrolü:** Takım ucunda bir sorun gözlemlenmiyorsa, ilgili kontrol sensörünün (switch) işlevselliği ve kablo bağlantıları kontrol edilmelidir.
+- **Sensor Check:** If no problem is observed on the tool tip, the functionality and cable connections of the relevant control sensor (switch) should be checked.
 
-- **Sistemi Tekrar Devreye Alma:** Gerekli fiziksel düzeltmeler yapıldıktan ve arıza kaynağı giderildikten sonra, operatör paneli üzerinden **Start Butonuna (F)** basılarak işlem döngüsü kaldığı yerden devam ettirilir.
+- **Reactivating the System:** After necessary physical corrections are made and the fault source is eliminated, press the **Start Button (F)** on the panel to continue the process from where it left off.
 
-## Accessory Not Ok Alarm Durumu
+## Accessory Not Ok Alarm Condition
 
-Aksesuar montaj sürecinin sağlıklı ilerleyebilmesi için parçanın magazinden başarıyla alınması ve kalıp içerisinde hassas şekilde konumlanması kritik önem taşımaktadır. Bu doğrultuda, montaj aşamasına geçilmeden önce parçanın varlığı ve konumu sensörler aracılığıyla denetlenir.
+For the accessory mounting process to proceed healthily, it is critical that the part is successfully taken from the magazine and positioned precisely within the mold. Therefore, the presence and position of the part are checked via sensors before proceeding to the mounting stage.
 
-Robot tarafından kontrol noktasına getirilen aksesuarın sensör tarafından algılanmaması durumunda sistem "AccessoryNotOk" alarmı üretir; robot, operatör müdahalesine imkan tanımak için kontrol noktasından bir miktar yükselerek bekleme moduna geçer. Bu durumda izlenmesi gereken çözüm yolları aşağıda belirtilmiştir:
+If the accessory brought to the control point by the robot is not detected by the sensor, the system generates an "AccessoryNotOk" alarm; the robot moves to waiting mode by rising slightly from the control point to allow operator intervention. The solution paths to be followed in this case are specified below:
 
-**Manuel Müdahale ile Devam Etme**
+**Continuing with Manual Intervention**
 
-- Eğer aksesuar magazinden çıkmış fakat kalıp tarafından tam alınamadığı için magazin üzerinde kalmışsa:
+- If the accessory has come out of the magazine but remained on the magazine because it was not fully taken by the mold:
 
-Operatör, emniyet kapısını açarak (sistem Acil Stop moduna geçecektir) hattın içerisine girer. Magazindeki aksesuarı alarak, geliş yönüne dikkat ederek el ile manuel olarak kalıba yerleştirir.Hattan çıkıp emniyet kapısını kapattıktan sonra sistemi resetleyip panel üzerinden *F (Start Buton)*'una basarak süreci kaldığı yerden devam ettirir.
+The operator opens the safety door (the system will go into Emergency Stop mode) and enters the line. Takes the accessory from the magazine and manually places it into the mold, paying attention to the direction of arrival. After exiting the line and closing the safety door, reset the system and press *F (Start Button)* on the panel to continue the process from where it left off.
 
-**Alma İşleminin Tekrarlanması (Aksesuar Magazindeyse)**
+**Retrying the Picking Operation (If Accessory is in Magazine)**
 
-- Eğer aksesuar magazinde kalmışsa ve operatör bu parçanın robot tarafından tekrar alınmasını istiyorsa:
+- If the accessory has remained in the magazine and the operator wants the robot to pick the same accessory again:
 
-Hattan çıktıktan ve emniyet kilidini devreye aldıktan sonra panel üzerindeki *B (Reset Butonu)*'na basılır. Bu işlemle birlikte robot, aynı aksesuarı alma döngüsünü en baştan tekrarlayacaktır.
+After exiting the line and activating the safety lock, press *B (Reset Button)* on the panel. With this operation, the robot will repeat the accessory picking cycle from the beginning.
 
-**Magazinden Aksesuar Çıkmaması Durumu**
+**Condition Where No Accessory Comes Out of Magazine**
 
-- Eğer magazinden hiç aksesuar çıkmadığı için robot boş dönmüş ve bekleme noktasına gelmişse:
+- If the robot has returned empty because no accessory came out of the magazine and has come to the waiting point:
 
-Hata giderildikten sonra panel üzerinden *B (Reset Butonu)*'na basılarak aksesuar alma işlemi yeniden başlatılır.
+After the error is fixed, press *B (Reset Button)* on the panel to restart the accessory picking operation.
 
-## Çeneye Vida Çekilememe Durumu
+## Condition Where Screw Cannot Be Pulled to Jaw
 
-Robot, vidalama işlemi öncesinde sistemden vida besleme talebinde bulunur. Vida beslemesinin başarısız olması durumunda operatör aşağıdaki adımları izlemelidir:
+The robot requests screw feeding from the system before the screwing operation. If the screw feeding fails, the operator should follow the steps below:
 
-**Ön Kontrol:**
+**Preliminary Check:**
 
-- Operatör, öncelikle vidalama ucunu gözle kontrol ederek vidanın gönderilip gönderilmediğini teyit etmelidir.
+- The operator should first visually check the screwing tip to confirm whether the screw has been sent or not.
 
-**Vida Gönderimi Başarılı İse (Görsel Onay):**
+**If Screw Feeding is Successful (Visual Confirmation):**
 
-- Eğer vida uca ulaşmışsa ve herhangi bir sorun gözlemlenmiyorsa:
+- If the screw has reached the tip and no problem is observed:
 
-Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir.Ardından panel üzerindeki *F (Start Butonu)*'na basılarak işlem kaldığı yerden devam ettirilmelidir.
+Since the line has been entered, the system safety circuits must be reset first. Then press *F (Start Button)* on the panel to continue the process from where it left off.
 
-**Vida Beslenemedi İse (Hata Onayı):**
+**If Screw Feeding Failed (Error Confirmation):**
 
-- Eğer görsel kontrolde vidanın uca ulaşmadığı teyit edilirse:
+- If it is confirmed in the visual check that the screw has not reached the tip:
 
-Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir. Ardından panel üzerindeki *B (Reset Butonu)*'na basılarak vida çekme işlemi yeniden tetiklenmelidir.
+Since the line has been entered, the system safety circuits must be reset first. Then press *B (Reset Button)* on the panel to retrigger the screw pulling operation.
 
-## Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
+## PassNextAccessory to Skip Current Accessory Mounting
 
 ![RG830](_media/o_PassNextAccessory.png)
 
-Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir sorunla karşılaşılması durumunda, mevcut iş akışını bozmadan sürece müdahale etmek için aşağıdaki adımlar izlenmelidir:
+If any problem is encountered during the robot's drilling, screwing, or other operations, the following steps should be followed to intervene in the process without disrupting the current workflow:
 
-**İşlemin Durdurulması:**
-- Panel üzerinden E (Stop Butonu)'na basılmalıdır. Bu işlem robotu bekleme moduna alır.
+**Stopping the Operation:**
+- Press E (Stop Button) on the panel. This puts the robot into waiting mode.
 
-**Dikkat:** Bu aşamada B (Reset Butonu)'na basılırsa, tüm işlem durumu (state) sıfırlanır ve süreç en başa döner.
+**Caution:** If B (Reset Button) is pressed at this stage, the entire process state is reset and the process returns to the beginning.
 
-**İşlemin Yeniden Başlatılması ve Seçenekler:**
+**Restarting the Operation and Options:**
 
-- Durdurma işleminden sonra F (Start Butonu)'na basıldığında, ekranda bir karar sayfası açılır. Operatör bu aşamada şu iki seçenekten birini tercih etmelidir:
+- After stopping, when F (Start Button) is pressed, a decision page opens on the screen. The operator should choose one of the following two options at this stage:
 
-**G:** Robotun, kaldığı yerden işlemlerine devam etmesini sağlar.
+**G:** Allows the robot to continue its operations from where it left off.
 
-**H:** Robotun, mevcut işlemini iptal ederek bir sonraki aksesuar döngüsüne geçmesini sağlar.
+**H:** Allows the robot to cancel its current operation and proceed to the next accessory cycle.
 
-*Kritik Uyarı:* **H** seçeneği tercih edildiğinde robot kendisini güvenli bir şekilde kurtardıktan sonra Gripper da kalıp varsa bırakma noktasına gidecektir. Bırakma işlemi sırasında kalıpta aksesuar bulunmadığından emin olunmalıdır.
+*Critical Warning:* When option **H** is chosen, after the robot safely rescues itself, if there is a mold in the gripper, it will go to the drop point. Make sure that there is no accessory in the mold during the drop operation.
 
-## Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
+## Accessory Mounting Alarm Definitions and Solution Steps
 
-Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesajlarıdır.
+The alarms listed below are alarm messages that may occur during mounting.
 
 - Left/Right Magazine Accessory 1 could not go backward ! / Left/Right Magazine Accessory 1 could not go forward !
 - Vertical Clamp could not go backward ! / Vertical Clamp could not go forward !
 - Horizontal Clamp could not go backward ! / Horizontal Clamp could not go forward !
 - Gripper Move could not go backward !
-- Screw Type Valve could not go backward ! / Screw Type Valve could not go forward ! 
+- Screw Type Valve could not go backward ! / Screw Type Valve could not go forward !
 - Left/Right Screw Drop could not go backward ! / Left/Right Screw Drop could not go forward !
 - Screwing Axis Error !
 - Screwing Axis Speed Error !
@@ -164,57 +164,56 @@ Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesaj
 - Right Magazine Hinge1 Right Bottom Clamp could not go backward ! / Right Magazine Hinge1 Right Bottom Clamp could not go forward !
 - Right Magazine Hinge1 Right Top Clamp could not go backward ! / Right Magazine Hinge1 Right Top Clamp could not go forward !
 
-## Eksen Hareket halindeyken Sıkışması Durumu
+## Condition Where Axis Gets Stuck During Movement
 
-Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya matematiksel olarak ulaşamaz veya eklem limitlerine takılır. Bu durumlarda operatörün kurtarması için izleyeceği adımlar şunlardır:
+Sometimes the robot cannot reach the point it wants to go mathematically or gets stuck in joint limits, even if it does not hit a physical obstacle. In these cases, the steps the operator should follow to rescue are as follows:
 
-**1. Sorunu Teşhis Etme (Hata Mesajı Okuma)**
+**1. Diagnosing the Problem (Reading Error Message)**
 
-- Ekranda aşağıdaki mesajlardan birini görüyorsanız robot "geometrik" bir çıkmaza girmiştir:
+- If you see one of the following messages on the screen, the robot has entered a "geometric" deadlock:
 
-**"Axis Limit":* *Robot bir ekleminin dönebileceği son noktaya gelmiştir.
+**"Axis Limit":** The robot has reached the last point one of its joints can rotate.
 
-**"Singularity"** (Tekillik): Robotun bilek eksenleri (4 ve 6) aynı hizaya gelmiş, robot yönünü şaşırmıştır.
+**"Singularity"** (Singularity): The robot's wrist axes (4 and 6) have aligned, the robot has lost its direction.
 
-**"Out of Reach":** Robotun kolu o noktaya yetişemiyor veya o rotayı takip edemiyordur.
+**"Out of Reach":** The robot's arm cannot reach that point or follow that path.
 
-**2. Robotu Manuel Modda Kurtarma (Jogging)**
+**2. Rescuing the Robot in Manual Mode (Jogging)**
 
 ![RG830](_media/ModSecim.png)
 
-Kontrol ünitesinden anahtarı saga çevirerek *B (Manuel Mod)*'a alın
+Turn the key to the right from the control unit to put it in *B (Manual Mode)*
 
 ![RG830](_media/1_6EksenSecim.png)
 
-- Robot bu hataları verdiğinde genellikle "Linear" (Doğrusal) modda hareket etmeyi reddeder. Robotu rahatlatmak için:
+- When the robot gives these errors, it usually refuses to move in "Linear" (Linear) mode. To relieve the robot:
 
-**Hareket Modunu Değiştirin:** FlexPendant üzerinden hareket modunu "Axis" (Eksen) moduna getirin. **A** tuşuna basıldığında **B** kısmının 1-3 ve 4-6 arasında eksen olarak değiştiğini göreceksiniz. 
+**Change Movement Mode:** Change the movement mode to "Axis" (Axis) mode via FlexPendant. When **A** is pressed, you will see that **B** part changes between axes 1-3 and 4-6.
 
-**Eksenleri Manuel Döndürün:** Limit hatası varsa: Sınıra dayanan ekseni ters yöne doğru joystick ile çevirin.Hangi eksen arasında çalışılacaksa o alanda **B** kalınmalı ve Jogging sayfasındaki joystick yönlerinin nasıl çalıştığını gösteren görsele bakarak hareket ettirilmelidir.
+**Manually Rotate Axes:** If there is a limit error: Rotate the axis hitting the limit in the opposite direction with the joystick. The area where the axis to be worked on should be kept in **B**, and moved by looking at the image showing how the joystick directions work on the Jogging page.
 
-**Tekillik (Singularity) varsa:** 5. ekseni (bilek bükme) hafifçe yukarı veya aşağı hareket ettirerek eksenlerin aynı hizadan çıkmasını sağlayın.
+**If there is Singularity:** Slightly move the 5th axis (wrist bending) up or down to make the axes come out of alignment.
 
-**Güvenli Bir Noktaya Çekin:** Robotu, sorun yaşadığı noktadan yaklaşık 5-10 cm uzaklaştırıp boşluğa (güvenli alana) alın.
+**Pull to a Safe Point:** Move the robot away from the problematic point by about 5-10 cm and take it to empty space (safe area).
 
-**3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)**
+**3. "Bypassing" the Operation and Continuing (Moving Program Pointer)**
 
 ![RG830](_media/o_PointerTaşıma.png)
 
-- Operatörün asıl yapması gereken, robotu o "hatalı noktadan" kurtarıp bir sonraki güvenli işlem adımına manuel olarak yönlendirmektir.şu adımları izleyin:
+- What the operator should actually do is to rescue the robot from that "faulty point" and manually direct it to the next safe operation step. Follow these steps:
 
-**Program Editor Sayfasını Açın:** FlexPendant'ta  kısmına girin **A**'dan menü çubuğuna ve **B**'ye basarak Program Editör sayfasını açın.
+**Open Program Editor Page:** Enter the section on FlexPendant, press **A** from the menu bar and **B** to open the Program Editor page.
 
-**Bir Sonraki Adımı Seçin:** Kod içerisinde robotun takıldığı satırın bir altındaki veya bir sonraki işlem başlangıcı olan (Örn: MoveL veya MoveJ) satıra dokunarak seçili hale getirin. Görsel **C**. Arada komut satırları varsa komut satırlarını atlamayın. Plc tarafında state lerde takılma yaşamamak için. 
+**Select the Next Step:** Touch and select the line below the line where the robot got stuck or the next operation start (e.g.: MoveL or MoveJ) in the code. Visual **C**. Do not skip command lines if there are command lines in between. To avoid getting stuck in states on the PLC side.
 
-**İmleci Taşıyın (PP to Cursor):** **D** "Debug" menüsünden **E** "PP to Cursor" (Program İmlecini Seçili Satıra Taşı) seçeneğine basın.
+**Move the Cursor (PP to Cursor):** Press **D** "Debug" menu **E** "PP to Cursor" (Move Program Pointer to Selected Line) option.
 
-Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam edilebilir olduğu izlemek sağlıklı olacaktır. Manuel olarak adım adım ilerlemek için Flexpendant üzerinden görseldeki **F** Motor On butonunu *basılı tutun* Görsel **H** da olduğu gibi siz basılı tutarken Motor On yazısının olduğunu görün manuel de işlemleri bu şekilde ilerletebilirsiniz. Sonrasında Görsel **G** adım adım her satırı işletmek için kullanılır her basışta kendi içinde bir satır okuyarak ilerler. Görsel **G** de adım adım gitmek istemiyorsanız Görsel **I** ya bastığınız da tüm satırları adım adım taramaya başlar. Robot çalışırken durdurmak istediğiniz zaman Görsel **J** Stop butonu na basabilir yada Görsel **F** Motor On butonundan elinizi çekebilirsiniz. Robotu çalıştırdıktan sonra robot sonraki adıma kendisi gidebildiyse bu aşamadan sonra Robotu Otomatik Moda alarak tekrar çalıştırabilirsiniz.
+After these operations, it would be healthy to first run manually to observe that the operation can continue. To proceed step by step manually, hold down the **F** Motor On button on the FlexPendant as shown in the visual. As shown in Visual **H**, while you hold it down, you see the Motor On text, you can proceed with operations manually in this way. Then, Visual **G** is used to execute each line step by step, advancing one line at a time with each press. If you do not want to go step by step in Visual **G**, when you press Visual **I**, it starts scanning all lines step by step. When you want to stop while the robot is running, you can press the Visual **J** Stop button or release your hand from the Visual **F** Motor On button. After running the robot, if the robot can go to the next step by itself, after this stage, you can switch the Robot to Automatic Mode and run it again.
 
-**Otomatik Mod ve Start:** Görseldeki **K** yönüne anahtarı çevirin Flexpendant ekranına gelen soruları onaylayın ve Sistemi "Auto" moduna alın, görseldeki **L** kısmına basarak motorları aktif hale getirin ve sistemdeki alarmları kaldırdıktan sonra Start vererek işlemlerinize devam edin
+**Automatic Mode and Start:** Turn the key to the **K** direction shown in the visual, confirm the questions coming to the FlexPendant screen, put the system in "Auto" mode, activate the motors by pressing the **L** part shown in the visual, and after clearing the alarms in the system, give Start to continue your operations.
 
-**Hız Kontrolü:** Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki **M-N** kısımlarına tıklayarak **O** hız sayfasını açabilirsiniz.
+**Speed Control:** Keep the speed at 10%-25% level while the robot makes its first movement and monitor its path. If no problem is observed, you can set the speed back to 100%. For the speed setting page, click on the **M-N** parts shown in the visual in sequence to open the **O** speed page.
 
-## Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
+## Detailed information about parameters on the screen, screwing axis speeds
 
-
-## Hat ile genel çalışma prensibi
+## General working principle with the line
