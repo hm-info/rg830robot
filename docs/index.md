@@ -6,10 +6,10 @@
 
 # RG830 Yazılım Manuel
 
-## [Developer]
+## [Developer](turkish)
 
 # RG830 Operasyon Manuel
 
-## [operationGuide]
+## [operationGuide](turkish)
 
 
