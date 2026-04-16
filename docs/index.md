@@ -2,10 +2,10 @@
 
 ## English
 - [Manual](english.md)
-- [Operation Guide](operationGuide_en.md)
-- [Developer Notes](Developer_en.md)
+- [Troubleshooting](operationGuide_en.md)
+- [Software Notes](Developer_en.md)
 
 ## Türkçe
 - [Kılavuz](turkish.md)
-- [Operation Guide](operationGuide.md)
-- [Developer Notes](Developer.md)
+- [Hata Çözümleri](operationGuide.md)
+- [Yazılım Notları](Developer.md)
