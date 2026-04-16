@@ -1,10 +1,11 @@
 # RG830 Robot Manual
 
-## [Manual](english.md)
+## English
+- [Manual](english.md)
+- [Operation Guide](operationGuide.md)
+- [Developer Notes](Developer.md)
 
-## [Kılavuz](turkish.md)
-
-## [Operation Guide](operationGuide.md)
-
-## [Developer Notes](Developer.md)
-
+## Türkçe
+- [Kılavuz](turkish.md)
+- [Operation Guide](operationGuide.md)
+- [Developer Notes](Developer.md)
