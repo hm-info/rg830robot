@@ -52,6 +52,14 @@ Sistemde **E (Stop Butonu)**'na basıldığında, PLC ve robot koordineli bir "b
 
 ## Çerçeve sıkıştırma da alarm durumları
 
+- Frame Handling Axis Error
+- Frame Handling Axis could not calibrate !
+- Frame Handling Axis Speed Error !
+- Frame Handling Axis Minimum Limit Error !
+- Frame Handling Axis Maximum Limit Error !
+- Frame Handling Axis Lag Error !
+
+
 ## Drilling Tool Not Ok Alarm Durumu
 
 **Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:**
@@ -180,13 +188,9 @@ Kontrol ünitesinden anahtarı saga çevirerek *B (Manuel Mod)*'a alın
 
 - Robot bu hataları verdiğinde genellikle "Linear" (Doğrusal) modda hareket etmeyi reddeder. Robotu rahatlatmak için:
 
-**Hareket Modunu Değiştirin:** FlexPendant üzerinden hareket modunu "Axis" (Eksen) moduna getirin.
+**Hareket Modunu Değiştirin:** FlexPendant üzerinden hareket modunu "Axis" (Eksen) moduna getirin. **A** tuşuna basıldığında **B** kısmının 1-3 ve 4-6 arasında eksen olarak değiştiğini göreceksiniz. 
 
-*A* tuşuna basıldığında **B** kısmının 1-3 ve 4-6 arasında eksen olarak değiştiğini göreceksiniz. 
-
-**Eksenleri Manuel Döndürün:** Limit hatası varsa: Sınıra dayanan ekseni ters yöne doğru joystick ile çevirin.
-
-Hangi eksen arasında çalışılacaksa o alanda *B* kalınmalı ve Jogging sayfasındaki joystick yönlerinin nasıl çalıştığını gösteren görsele bakarak hareket ettirebilirsiniz.
+**Eksenleri Manuel Döndürün:** Limit hatası varsa: Sınıra dayanan ekseni ters yöne doğru joystick ile çevirin.Hangi eksen arasında çalışılacaksa o alanda **B** kalınmalı ve Jogging sayfasındaki joystick yönlerinin nasıl çalıştığını gösteren görsele bakarak hareket ettirilmelidir.
 
 **Tekillik (Singularity) varsa:** 5. ekseni (bilek bükme) hafifçe yukarı veya aşağı hareket ettirerek eksenlerin aynı hizadan çıkmasını sağlayın.
 
@@ -198,18 +202,19 @@ Hangi eksen arasında çalışılacaksa o alanda *B* kalınmalı ve Jogging sayf
 
 - Operatörün asıl yapması gereken, robotu o "hatalı noktadan" kurtarıp bir sonraki güvenli işlem adımına manuel olarak yönlendirmektir.şu adımları izleyin:
 
-**Program Editor Sayfasını Açın:** FlexPendant'ta  kısmına girin.
+**Program Editor Sayfasını Açın:** FlexPendant'ta  kısmına girin **A**'dan menü çubuğuna ve **B**'ye basarak Program Editör sayfasını açın.
 
-**Bir Sonraki Adımı Seçin:** Kod içerisinde robotun takıldığı satırın bir altındaki veya bir sonraki işlem başlangıcı olan (Örn: MoveL veya MoveJ) satıra dokunarak seçili hale getirin.
+**Bir Sonraki Adımı Seçin:** Kod içerisinde robotun takıldığı satırın bir altındaki veya bir sonraki işlem başlangıcı olan (Örn: MoveL veya MoveJ) satıra dokunarak seçili hale getirin. Görsel **C**. Arada komut satırları varsa komut satırlarını atlamayın. Plc tarafında state lerde takılma yaşamamak için. 
 
-**İmleci Taşıyın (PP to Cursor):** "Debug" menüsünden "PP to Cursor" (Program İmlecini Seçili Satıra Taşı) seçeneğine basın.
+**İmleci Taşıyın (PP to Cursor):** **D** "Debug" menüsünden **E** "PP to Cursor" (Program İmlecini Seçili Satıra Taşı) seçeneğine basın.
 
-**UYARI !:** Robot şimdi bir sonraki adımdan başlayacaktır, aradaki mesafeye dikkat edin!
+Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam edilebilir olduğu izlemek sağlıklı olacaktır. Manuel olarak adım adım ilerlemek için Flexpendant üzerinden görseldeki **F** Motor On butonunu *basılı tutun* Görsel **H** da olduğu gibi siz basılı tutarken Motor On yazısının olduğunu görün manuel de işlemleri bu şekilde ilerletebilirsiniz. Sonrasında Görsel **G** adım adım her satırı işletmek için kullanılır her basışta kendi içinde bir satır okuyarak ilerler. Görsel **G** de adım adım gitmek istemiyorsanız Görsel **I** ya bastığınız da tüm satırları adım adım taramaya başlar. Robot çalışırken durdurmak istediğiniz zaman Görsel **J** Stop butonu na basabilir yada Görsel **F** Motor On butonundan elinizi çekebilirsiniz. Robotu çalıştırdıktan sonra robot sonraki adıma kendisi gidebildiyse bu aşamadan sonra Robotu Otomatik Moda alarak tekrar çalıştırabilirsiniz.
 
-**Otomatik Mod ve Start:** Sistemi "Auto" moduna alın, motorları açın ve Start butonuna basın.
+**Otomatik Mod ve Start:** Görseldeki **K** yönüne anahtarı çevirin Flexpendant ekranına gelen soruları onaylayın ve Sistemi "Auto" moduna alın, görseldeki **L** kısmına basarak motorları aktif hale getirin ve sistemdeki alarmları kaldırdıktan sonra Start vererek işlemlerinize devam edin
 
-**Hız Kontrolü:** Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin.
+**Hız Kontrolü:** Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki **M-N** kısımlarına tıklayarak **O** hız sayfasını açabilirsiniz.
 
-**4. Operatör İçin Kritik İpuçları**
+## Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
 
-**Linear vs Axis:** Eğer joystick'i ittiğinde robot "Limit" diyorsa, hemen hareket modunu "Axis" (Eksen) yap. Eksen modunda robot her zaman hareket eder.
+
+## Hat ile genel çalışma prensibi
