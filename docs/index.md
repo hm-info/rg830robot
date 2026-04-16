@@ -2,8 +2,8 @@
 
 ## English
 - [Manual](english.md)
-- [Operation Guide](operationGuide.md)
-- [Developer Notes](Developer.md)
+- [Operation Guide](operationGuide_en.md)
+- [Developer Notes](Developer_en.md)
 
 ## Türkçe
 - [Kılavuz](turkish.md)
