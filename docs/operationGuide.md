@@ -1,4 +1,4 @@
-# Makine İlk Açılışta Robot Gripper Kalıp Durumu
+# <span style="color: #000000; font-weight: bold;">Makine İlk Açılışta Robot Gripper Kalıp Durumu</span>
 
 - Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.
 
@@ -12,19 +12,21 @@
 - Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.
 - Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.
 
-# Robot Pasif Konuma Alınması Hatıın Devem Etmesi
+# <span style="color: #000000; font-weight: bold;">Robot Pasif Konuma Alınması Hatıın Devem Etmesi</span>
 
 # Kapıların açılma İzin Prosedürü
+# <span style="color: #000000; font-weight: bold;">Kapıların açılma İzin Prosedürü</span>
 
 - Giriş bölümünde bulunan emniyet izin butonuna basıldığında, sistem mevcut çalışma döngüsünü (cycle) güvenli bir noktada tamamlar. Döngü bitiminin ardından sistem otomatik olarak kapı açma onayını verir.
 
-# Acil Stop - Stop senaryoları.
+# Acil Stop - Stop senaryoları
+# <span style="color: #000000; font-weight: bold;">Acil Stop - Stop senaryoları</span>
 
 *Acil Stop Durumu:*
 
 Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş çevrimi (cycle) iptal edilir ve sistem güvenli duruş moduna geçer. Bu işlemden sonra sistem verileri sıfırlandığı için iş dosyasının en baştan başlatılması zorunludur.
 
-**Sistemi Tekrar Aktif Hale Getirme Adımları:**
+*Sistemi Tekrar Aktif Hale Getirme Adımları:*
 
 ![RG830](_media/o_AlarmRstButon.png)
 
@@ -48,9 +50,9 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
  - *Sistemi Yeniden Başlatma :* Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
 
-# Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı
+# <span style="color: #000000; font-weight: bold;">Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı</span>
 
-# Çerçeve sıkıştırma da alarm durumları
+# <span style="color: #000000; font-weight: bold;">Çerçeve sıkıştırma da alarm durumları</span>
 
 - Frame Handling Axis Error
 - Frame Handling Axis could not calibrate !
@@ -59,10 +61,9 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 - Frame Handling Axis Maximum Limit Error !
 - Frame Handling Axis Lag Error !
 
+# <span style="color: #000000; font-weight: bold;">Drilling Tool Not Ok Alarm Durumu</span>
 
-# Drilling Tool Not Ok Alarm Durumu
-
-**Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:**
+*Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:*
 
 - Robot, delme takımının (tool) fiziksel bütünlüğünü doğrulamak amacıyla takım ucunu önceden tanımlanmış bir kontrol siviçine (switch) temas ettirir.
 
@@ -72,11 +73,11 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
 - *Takım Hasarı:* Eğer delme ucu fiziksel olarak zarar görmüş veya kırılmışsa, yeni bir takım ucu ile değiştirilmelidir.
 
-- **Sensör Kontrolü:** Takım ucunda bir sorun gözlemlenmiyorsa, ilgili kontrol sensörünün (switch) işlevselliği ve kablo bağlantıları kontrol edilmelidir.
+- *Sensör Kontrolü:* Takım ucunda bir sorun gözlemlenmiyorsa, ilgili kontrol sensörünün (switch) işlevselliği ve kablo bağlantıları kontrol edilmelidir.
 
 - *Sistemi Tekrar Devreye Alma:* Gerekli fiziksel düzeltmeler yapıldıktan ve arıza kaynağı giderildikten sonra, operatör paneli üzerinden **Start Butonuna (F)** basılarak işlem döngüsü kaldığı yerden devam ettirilir.
 
-# Accessory Not Ok Alarm Durumu
+# <span style="color: #000000; font-weight: bold;">Accessory Not Ok Alarm Durumu</span>
 
 Aksesuar montaj sürecinin sağlıklı ilerleyebilmesi için parçanın magazinden başarıyla alınması ve kalıp içerisinde hassas şekilde konumlanması kritik önem taşımaktadır. Bu doğrultuda, montaj aşamasına geçilmeden önce parçanın varlığı ve konumu sensörler aracılığıyla denetlenir.
 
@@ -100,7 +101,7 @@ Hattan çıktıktan ve emniyet kilidini devreye aldıktan sonra panel üzerindek
 
 Hata giderildikten sonra panel üzerinden **B (Reset Butonu)***'na basılarak aksesuar alma işlemi yeniden başlatılır.
 
-# Çeneye Vida Çekilememe Durumu
+# <span style="color: #000000; font-weight: bold;">Çeneye Vida Çekilememe Durumu</span>
 
 Robot, vidalama işlemi öncesinde sistemden vida besleme talebinde bulunur. Vida beslemesinin başarısız olması durumunda operatör aşağıdaki adımları izlemelidir:
 
@@ -120,7 +121,7 @@ Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlen
 
 Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir. Ardından panel üzerindeki **B (Reset Butonu)**'na basılarak vida çekme işlemi yeniden tetiklenmelidir.
 
-# Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
+# <span style="color: #000000; font-weight: bold;">Aktüel Aksesuar Montajını Geçmek için PassNextAccessory</span>
 
 ![RG830](_media/o_PassNextAccessory.png)
 
@@ -131,7 +132,7 @@ Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir soru
 
 *Dikkat:* Bu aşamada B (Reset Butonu)'na basılırsa, tüm işlem durumu (state) sıfırlanır ve süreç en başa döner.
 
-**İşlemin Yeniden Başlatılması ve Seçenekler:**
+# <span style="color: #000000; font-weight: bold;">İşlemin Yeniden Başlatılması ve Seçenekler</span>
 
 - Durdurma işleminden sonra F (Start Butonu)'na basıldığında, ekranda bir karar sayfası açılır. Operatör bu aşamada şu iki seçenekten birini tercih etmelidir:
 
@@ -141,7 +142,7 @@ Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir soru
 
 *Kritik Uyarı:* **H** seçeneği tercih edildiğinde robot kendisini güvenli bir şekilde kurtardıktan sonra Gripper da kalıp varsa bırakma noktasına gidecektir. Bırakma işlemi sırasında kalıpta aksesuar bulunmadığından emin olunmalıdır.
 
-# Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
+# <span style="color: #000000; font-weight: bold;">Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları</span>
 
 Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesajlarıdır.
 
@@ -164,11 +165,11 @@ Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesaj
 - Right Magazine Hinge1 Right Bottom Clamp could not go backward ! / Right Magazine Hinge1 Right Bottom Clamp could not go forward !
 - Right Magazine Hinge1 Right Top Clamp could not go backward ! / Right Magazine Hinge1 Right Top Clamp could not go forward !
 
-# Eksen Hareket halindeyken Sıkışması Durumu
+# <span style="color: #000000; font-weight: bold;">Eksen Hareket halindeyken Sıkışması Durumu</span>
 
 Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya matematiksel olarak ulaşamaz veya eklem limitlerine takılır. Bu durumlarda operatörün kurtarması için izleyeceği adımlar şunlardır:
 
-## 1. Sorunu Teşhis Etme (Hata Mesajı Okuma)
+# <span style="color: #000000; font-weight: bold;">1. Sorunu Teşhis Etme (Hata Mesajı Okuma)</span>
 
 - Ekranda aşağıdaki mesajlardan birini görüyorsanız robot "geometrik" bir çıkmaza girmiştir:
 
@@ -178,7 +179,7 @@ Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya m
 
 *"Out of Reach":* Robotun kolu o noktaya yetişemiyor veya o rotayı takip edemiyordur.
 
-##2. Robotu Manuel Modda Kurtarma (Jogging)
+# <span style="color: #000000; font-weight: bold;">2. Robotu Manuel Modda Kurtarma (Jogging)</span>
 
 ![RG830](_media/ModSecim.png)
 
@@ -196,7 +197,7 @@ Kontrol ünitesinden anahtarı saga çevirerek **B (Manuel Mod)**'a alın
 
 *Güvenli Bir Noktaya Çekin:* Robotu, sorun yaşadığı noktadan yaklaşık 5-10 cm uzaklaştırıp boşluğa (güvenli alana) alın.
 
-## 3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)
+# <span style="color: #000000; font-weight: bold;">3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)</span>
 
 ![RG830](_media/o_PointerTaşıma.png)
 
@@ -214,7 +215,7 @@ Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam ed
 
 *Hız Kontrolü:* Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki **M-N** kısımlarına tıklayarak **O** hız sayfasını açabilirsiniz.
 
-# Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
+# <span style="color: #000000; font-weight: bold;">Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi</#span>
 
 
-# Hat ile genel çalışma prensibi
+# <span style="color: #000000; font-weight: bold;">Hat ile genel çalışma prensibi</#span>
