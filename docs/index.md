@@ -1,15 +1,17 @@
 # RG830 Robot Manual
 
-## [English](english)
+## Servis Manuel
 
-## [Türkçe](turkish)
+* [English](english.md)
 
-# RG830 Yazılım Manuel
+* [Türkçe](turkish.md)
 
-## [Developer](turkish)
+## Yazılım Manuel
 
-# RG830 Operasyon Manuel
+* [Türkçe](Developer.md)
 
-## [operationGuide](turkish)
+## Operasyon Manuel
+
+* [Türkçe](operationGuide.md)
 
 
