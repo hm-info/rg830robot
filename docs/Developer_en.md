@@ -15,7 +15,7 @@ The macro for the surface to be assembled is created according to the surface nu
 
 Macros on the robot side are written in the HOME folder and separated according to the profile depth.
 
-![RG830](_media/macro.png)
+![RG830](_media/Macro.png)
 
 **A:** Number 1 is a 70mm profile, number 2 is a 76mm profile, number 3 is an 88mm profile.
 

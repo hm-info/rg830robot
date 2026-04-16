@@ -15,7 +15,7 @@ RG830 da proje alt yapısı macro mantığına göre yazıldı.Her aksesuar ın 
 
 Macrolar Robot tarafında HOME klasöründe profilin derinlik ölçüsüne göre ayrılarak yazılmıştır.
 
-![RG830](_media/macro.png)
+![RG830](_media/Macro.png)
 
 **A:** 1 numara 70mm lik profil, 2 numara 76mm lik profil, 3 numara 88mm lik profil
 
