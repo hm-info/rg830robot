@@ -1,4 +1,4 @@
-## RG830 Robot Yazılım Manuel
+## <span style="color: #d32f2f">RG830 Robot Yazılım Manuel</span>
 
 RG830 da proje alt yapısı macro mantığına göre yazıldı.Her aksesuar ın kendine ait macrosu bulunmakta.Aksesuarların yüzeye veya kanala atacağı duruma göre makrolar şekillenmektedir.Çerçeveyi karşımıza aldığımızda Üst ön  yüzeyden başlayarak saat yönünde
 
@@ -21,7 +21,7 @@ Macrolar Robot tarafında HOME klasöründe profilin derinlik ölçüsüne göre
 
 **B:** Profil isminin altına sıralanan her aksesuarın kendine ait makrolarını göstermektedir.
 
-## Yeni nokta tanıtma ve isim verme
+## <span style="color: #d32f2f">Yeni Nokta Tanıtma ve İsim Verme</span>
 
 - 1.YÖNTEM
 
@@ -69,7 +69,7 @@ Artık program içinde EgitimNok değişkeni isim olarak çağırılıp kullanı
  
  OK dedikten sonra seçtiğimiz modülün içerisine konum tanımlamasını öncesinde seçilen tool ve wobj ye göre kaydeder. Bu değişkeni **1.YÖNTEM** de görülen 3.kırmızı çerçeve deki yazılış tarzıyla kullanabiliriz.
 
- ## Nokta üzerinden Offsetleme Hız ve Zone verilmesi
+ ## <span style="color: #d32f2f">Nokta üzerinden Offsetleme Hız ve Zone verilmesi</span>
 
 ![RG830](_media/D_Offsetleme.png)
 
@@ -83,7 +83,7 @@ Artık program içinde EgitimNok değişkeni isim olarak çağırılıp kullanı
 
 **E:** Robotun hedef noktaya ne kadar yaklaşacağını veya noktayı ne kadar "yumuşatarak" geçeceğini belirleyen köşe (path) parametresidir:
 
-## Magazinlere Yeni Yol Eklenmesi Durumu
+ ## <span style="color: #d32f2f">Magazinlere Yeni Yol Eklenmesi Durumu</span>
 
 Sistemdeki aksesuar alma ve bırakma koordinatları, kat ve aksesuar numaralarına göre yapılandırılmış bir Array  mimarisi içerisinde saklanmaktadır.Sisteme yeni bir aksesuar eklenmesi durumunda, mevcut hiyerarşinin korunması için bu dizilere sıralı ekleme yapılması gerekmektedir.
 
