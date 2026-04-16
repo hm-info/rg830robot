@@ -8,18 +8,40 @@
 
 *NO:*  Home pozisyonunda iş dosyası ile haberleşmeyi bekler.
 
+**NOT:** İş dosyası manuel olarak eklenirse aşağıdaki üç maddelik anlatım ile yapılacaktır. Otomatik sistem çalışırken kendisi sistemden çekeceğinden bu işlemleri yapmaya gerek kalmayacak.
+
 - İş dosyasının okunabilmesi için exe dosyası açılmalıdır.
 - Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.
 - Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.
 
-# <span style="color: #000000; font-weight: bold;">Robot Pasif Konuma Alınması Hatıın Devem Etmesi</span>
+# <span style="color: #000000; font-weight: bold;">Robot Bypass ve Hattın Bağımsız Çalışma Modu</span>
 
-# Kapıların açılma İzin Prosedürü
+Robotun operasyona dahil edilmeyeceği durumlarda, hattın kesintisiz çalışmaya devam edebilmesi için aşağıdaki yapılandırma uygulanmalıdır:
+
+*Parametre Ayarı:* Robot kontrol ekranı üzerinden "RobotActive" parametresi "0" olarak ayarlanmalıdır. Bu ayar yapıldığında robot operasyonu otomatik olarak Bypass edilir. Robot devre dışı kalarak hattın tek başına çalışmasına olanak tanır.
+
+*İş Akışı (Çerçeve Transferi):* işlenen çerçeveler doğrudan hat üzerinden ilerleyerek robot çıkışında bulunan aktarma sehpasına yönlendirilir.
+
 # <span style="color: #000000; font-weight: bold;">Kapıların açılma İzin Prosedürü</span>
 
-- Giriş bölümünde bulunan emniyet izin butonuna basıldığında, sistem mevcut çalışma döngüsünü (cycle) güvenli bir noktada tamamlar. Döngü bitiminin ardından sistem otomatik olarak kapı açma onayını verir.
+Operatör tarafından **"Kapı Açma İzin Butonu"**na basıldığında; robot, mekanik güvenliği ve parça bütünlüğünü korumak adına aktif işlemini tamamladıktan sonra duruşa geçer.
 
-# Acil Stop - Stop senaryoları
+*İşlem Tamamlama Senaryoları:*
+
+Sistem aşağıdaki işlemlerden biri yürüyor ise süreci kesmez, işlemin bitmesini bekler:
+
+- Vidalama: Aktif vidalama işlemi tork değerine ulaşana kadar devam eder.
+
+- Vida Besleme: Vida çekme veya transfer işlemi tamamlanır.
+
+- Delme: Delme ucu iş parçasından güvenli şekilde geri çekilir.
+
+- ..........
+
+- ...........
+
+Aktif döngü (cycle) güvenli noktada tamamlandığında, sistem otomatik olarak kapı kilitlerini açar ve operatöre giriş onayı verir.
+
 # <span style="color: #000000; font-weight: bold;">Acil Stop - Stop senaryoları</span>
 
 *Acil Stop Durumu:*
@@ -52,14 +74,19 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
 # <span style="color: #000000; font-weight: bold;">Hat ile çalışacağı zaman, hattan çerçeve ne zaman gelecek, Hattaki çerçeve ile gelen çerçeve aynı mı</span>
 
-# <span style="color: #000000; font-weight: bold;">Çerçeve sıkıştırma da alarm durumları</span>
+Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası oluşturma süreci şu kriterlere göre ilerler:
 
-- Frame Handling Axis Error
-- Frame Handling Axis could not calibrate !
-- Frame Handling Axis Speed Error !
-- Frame Handling Axis Minimum Limit Error !
-- Frame Handling Axis Maximum Limit Error !
-- Frame Handling Axis Lag Error !
+*Çerçeve Geliş Koşulu:* Hat sonundaki çıkış sehpasında (Z) hazır bir çerçeve bulunması durumunda robot plc sinden yeni çerçeve isteğini bekler.
+
+*İş Dosyası Oluşturma:* Robotun işlemine başlayabilmesi için (Z) sehpasındaki çerçevenin iş dosyasının oluşturulmuş ve sisteme tanımlanmış olması gerekir.
+
+*Hattaki çerçeve ile gelen çerçeve Kontrolü:* z mevcut çerçeve ile plc yazılımından gelen iş dosyasındaki çerçeve ID birbiriyle eşleşmelidir. Eşleşme varsa robot işlemi başlatır, Eşleşme yoksa yanlış iş dosyası alarmı verir
+
+# <span style="color: #000000; font-weight: bold;">Çerçeve Sıkıştırmada Alarm Durumları</span>
+
+Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi sıkıştırmak için Eksen yaklaştığında yeteri kadar sıkamadığında hata verir tekrar sıkması için start butonuna basıp tekrar sıkıştırma işlemi yapılır.
+
+
 
 # <span style="color: #000000; font-weight: bold;">Drilling Tool Not Ok Alarm Durumu</span>
 
