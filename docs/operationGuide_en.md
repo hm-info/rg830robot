@@ -150,7 +150,7 @@ The alarms listed below are alarm messages that may occur during mounting.
 - Horizontal Clamp could not go backward ! / Horizontal Clamp could not go forward !
 - Gripper Move could not go backward !
 - Screw Type Valve could not go backward ! / Screw Type Valve could not go forward !
-- Left/Right Screw Drop could not go backward ! / Left/Right Screw Drop could not go forward !
+- Left/Right Screw Drop could not go backward! / Left/Right Screw Drop could not go forward!
 - Screwing Axis Error !
 - Screwing Axis Speed Error !
 - Screwing Axis Minimum Limit Error ! / Screwing Axis Maximum Limit Error !
