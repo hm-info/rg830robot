@@ -1,39 +1,40 @@
 # RG830 Robot Manual
 
-## Emergency Stop
-When the robot is energized, the emergency buttons on the robot and any other external emergency conditions must be cleared, and then the Motor On button must be pressed.
+## <span style="color: #000000; font-weight: bold;">1. Emergency Stop</span>
+
+When the robot is powered on, the emergency buttons on the robot and other external emergency situations must be cleared, and then the Motor On button should be pressed.
 
 ![KT803](_media/AcilDurdurma.png)
 
-**A:** Emergency Stop Button
+**A:** Emergency Button
 
-**B:** Motor On Button
+**B:** Motor On Buttton
 
-## Operating Modes
+## <span style="color: #000000; font-weight: bold;">2. Working Modes</span>
 
 ![RG830](_media/ModSecim.png)
 
 - **A - Automatic Mode:** Production Mode
-- **B - Manual Mode:** Movement and controls can be performed in jog mode.
+- **B - Manual Mode:** Movement and controls can be performed in Jog modeog mode.
 
-## Robot Axis Control with Jog Movement
+## <span style="color: #000000; font-weight: bold;">3. Robot Axis Control with Jog Movement</span>
 
-- While the robot is in manual mode, the **Motor On** button located on the right side of the FlexPendant must be pressed to activate the motion units.
+- When the robot is in manual mode, the 'Motor On' button on the right side of the FlexPendant must be pressed to activate the movement units.
 
 ![RG830](_media/MotorOnButon.png)
 
 **A:** Motor On Button
 
-- You can access the Jogging page from the upper-left menu bar to see axis-related statuses.
-- Axes 1–6 can be moved one by one. On the first press, the direction controls for axes 1–3 are shown; on the second press, axes 4–6 are shown below the corresponding axis numbers.
+- From the menu bar at the top left, you can enter the Jogging page and see the status of the axes.
+- We can move axes 1-6 individually. On the first press, you can see the directions of axis controls between 1-3, and on the second press between 4-6 under the relevant axis number.
 
 ![RG830](_media/1_6EksenSecim.png)
 
-**A:** Axis 1–6 selection control
+**A:** Axis control selection between 1-6
 
 **B:** Currently selected axis range
 
-- The robot can be moved linearly along the X, Y, and Z axes. These movements are performed relative to the Work Object (Wobj) selected in the interface, and the direction of movement is determined by the orientation of the relevant Wobj.
+- The robot can be moved linearly in X, Y, and Z axes. These movements are performed by referencing the Work Object (Wobj) selected in the interface, and the direction of movement is determined by the orientation of the relevant Wobj.
 
 ![RG830](_media/LineerHareketSecim.png)
 
@@ -41,7 +42,7 @@ When the robot is energized, the emergency buttons on the robot and any other ex
 
 **B:** Linear Movement Display Icon
 
-- Orientation movement based on tool selection.
+- Orientation movement according to Tool selection.
 
 ![RG830](_media/OrientationHareketSecim.png)
 
@@ -49,132 +50,130 @@ When the robot is energized, the emergency buttons on the robot and any other ex
 
 **B:** Orientation Movement Display Icon
 
-## Robot Axis Calibration
+## <span style="color: #000000; font-weight: bold;">4. Robot Axis Calibration</span>
 
-- During the initial setup of the robot, calibration must be performed separately for each axis. During calibration, the zero-point marks (notches) of each axis must be aligned with high precision so that they face each other exactly. Each axis has its own dedicated notch.
+- During the initial setup of the robot, a separate calibration process must be performed for each axis. During calibration, the zero reference marks (notches) for each axis should be aligned with high precision so that they match exactly. Each axis has its own notch.
 
 ![RG830](_media/EksenCentikleri.png)
 
-- After all axes on the robot are physically aligned with the calibration notches, you can follow the visual steps below to save the relevant values via the FlexPendant. This process should be applied during the initial installation of the robot or whenever a **"Robot calibration lost"** warning is received from the system.
+- After all axes on the robot are physically aligned with the calibration notches, you can follow the visual steps below to record the relevant values via FlexPendant. This process should be applied during the robot's initial setup or when a 'Robot calibration lost' warning is received from the system
 
 ![RG830](_media/RobotEksenKalibrasyonu.png)
 
-## TCP (Tool Center Point) Definition
+## <span style="color: #000000; font-weight: bold;">5. TCP (Tool Center Point) Introduction</span>
 
-The TCP (Tool Center Point) definition is performed by approaching a fixed, sharp-tipped reference point from different angles. The following steps must be followed to correctly define both the center point and the Z-axis direction:
+TCP (Tool Center Point) definition is performed by approaching a fixed, sharp-pointed reference point from different angles. The following steps must be followed to correctly define both the center point and the Z-axis direction:
 
-- TCP&Z Approach Method
+- TCP & Z Approach Method
 
-For this process, a total of 5 approach points must be defined to ensure high precision:
+In this operation, a total of 5 approach points must be defined to provide high precision:
 
-Approach 1, 2, and 3 (TCP Determination): The reference point is contacted from three different directions with approximately 120° angles between them.
+Approach 1, 2, and 3 (TCP Determination): The reference point is touched from three different directions with approximately 120° angles between them.
 
-Approach 4 (Perpendicular View): The tool is contacted with the reference point while positioned exactly perpendicular (90°). This is the primary reference point for orientation calculation.
+Approach 4 (Perpendicular View): The tool is brought into contact when positioned exactly perpendicular (90°) to the reference point. This is the basic reference point for orientation calculation.
 
-Approach 5 (Z-Direction Definition): The tool is raised upward from the reference point along the Z-axis direction. This final point ensures the robot correctly identifies the positive Z direction in the tool coordinate system.
+Approach 5 (Z-direction Definition): The tool is introduced by lifting it upward from the reference point in the Z-axis direction. This final point ensures that the robot correctly perceives the positive Z-direction in the tool coordinate system.
 
 - Critical Application Notes
 
-Precision: All approaches must contact the tip of the fixed reference point with the same millimeter-level accuracy. Deviations at contact points directly reduce the robot's operational precision.
+Precision: All approaches must contact the apex (end point) of the fixed reference point with the same millimetric precision. Deviations in contact points directly reduce the robot's working precision.
 
-Verification: After the definition is complete, move the robot in manual mode (Orientation) to verify that the tool tip remains stationary at the reference point.
+Verification: After the definition is complete, the robot should be moved in manual mode (Orientation) to verify that the tool tip remains fixed at the reference point.
 
 - Approach Visuals
 
 ![RG830](_media/TCPyaklasim.png)
 
-- Tool Definition Calibration Steps
+- Tool Introduction Calibration Steps
 
-Follow the visual sequence above to approach each reference point with precision. Once access to each point is complete, press the **Modify Position** button indicated in step 5 of the image below to save the relevant coordinate to the system. After all required points have been taught in this manner, press **OK** to finalize the calibration process.
+Follow the visual sequence above to provide precise approach to each reference point. When access to each point is completed, press the 'Modify Position' button specified in step 5 of the image below to record the relevant coordinate to the system. After all points to be defined are taught in this way, press the 'OK' button to complete the calibration process.
 
-**NOTE:** The robot must be in Manual Mode for this operation.
+**NOTE:** The robot must be in Manual Mode for this operationoperation.
 
 ![RG830](_media/TCP_TanıtmaAdimları.png)
 
-## Wobj (Work Object) Definition
+## <span style="color: #000000; font-weight: bold;">6. Wobj (Work Object) Introduction</span>
 
-**Wobj (Work Object):** A user-defined coordinate system used to describe parts or fixtures within the robot's working area. In ABB robot systems, the Wobj definition is performed using the **3-Point Method** on the relevant surface.
+**Wobj (Work Object):** A user-defined coordinate system used to define parts or fixtures in the robot's work area. In ABB robot systems, the Wobj definition process is performed using the 3-Point Method on the relevant surface.
 
-- **Definition with the 3-Point Method**
+- Definition with 3-Point Method
+To create the coordinate system, the operator sequentially teaches these three reference points:
 
-To create the coordinate system, the operator teaches the following three reference points in order:
+X1 (Origin Point): The starting (zero) point of the surface to be defined. The center of the coordinate system is considered to be this point.
 
-**X1 (Origin Point):** The starting (zero) point of the surface to be defined. The center of the coordinate system is set at this point.
+X2 (X-axis Direction): The second point that determines the direction of the X-axis. The line between X1 and X2 creates the positive X-direction of the system.
 
-**X2 (X-Axis Direction):** The second point that determines the direction of the X-axis. The line between X1 and X2 forms the positive X direction of the system.
+Y1 (Y-axis Direction): The third point that determines the direction of the Y-axis. This point describes the positive Y-direction perpendicular to the X-axis.
 
-**Y1 (Y-Axis Direction):** The third point that determines the direction of the Y-axis. This point describes the positive Y direction perpendicular to the X-axis.
+You can teach the robot to each introduction point (X1, X2, Y1) separately and by clicking Modify Position as shown in figure 5, you can teach the coordinates of that point. After all teaching is complete, you can click Ok as shown in figure 5 to complete the operation.
 
-By moving the robot to each definition point (X1, X2, Y1) separately and clicking **Modify Position** as shown in image 5, you can teach the coordinates of that point. After all teaching steps are completed, click **OK** as shown in image 5 to finalize the process.
+Automatic Z-axis and Planarity
 
-**Automatic Z-Axis and Planarity**
+The plane created by these three points is mathematically calculated by the system to automatically determine the Z-axis.
 
-The plane formed by these three taught points is mathematically calculated by the system, which automatically determines the Z-axis.
+Movement on Inclined Surfaces: Even if the defined surface is inclined, when the robot moves with the Wobj reference of this surface, it performs a perfect linear movement based on the surface's inclination.
 
-**Movement on Inclined Surfaces:** Even if the defined surface is inclined, when the robot moves using the Wobj reference of that surface, it performs perfectly linear movement based on the surface inclination.
-
-**Precision:** The farther apart X and Y points are and the more precisely they are selected, the higher the accuracy of the created Wobj.
+Precision: The farther apart the X and Y points are and the more precisely they are selected, the higher the accuracy of the created Wobj.
 
 **NOTE-1:** The accuracy of the TCP values of the Tool used during the Wobj definition process directly affects the precision of the created work object.
 
 **NOTE-2:** The robot must be in Manual Mode for this operation.
 
-- You can follow the steps for the Wobj definition process in the images below.
+- You can follow the visual instructions below to see how the Wobj introduction process is performeds is performed.
 
 ![RG830](_media/WobjTanıtım.png)
 
-## Teaching Mold Pick and Place Points
+## <span style="color: #000000; font-weight: bold;">7. Teaching Mold Pickup and Drop-off Points</span>
 
-In the system, mold picking and placing operations are performed on the same coordinate plane. Therefore, the definition made for the pick point will automatically apply to the place operation as well.
+In the system, mold pickup and drop-off operations are performed on the same coordinate plane. For this reason, the definition made for the pickup point will automatically apply to the drop-off operation as well.
 
 - Magazine Layout and Software Structure:
 
-The current system includes Left and Right Magazine layouts, each consisting of 3 levels. These layouts are categorized in the system as F1, F2, and F3, and the cell arrangement of each level is defined in software using Array structures. This array structure enables the robot to navigate automatically and precisely to each sub-compartment within every level.
+In the current system, there are Left and Right Magazine layouts, each consisting of 3 floors. These layouts are categorized as F1, F2, and F3 within the system, and the cell layout of each floor is defined with Array structures in software. This array structure allows the robot to navigate automatically and precisely to the sub-compartments within each floor.
 
-**IMPORTANT NOTE:** All point definition and update operations must be performed while preserving the orientation values used in the robot's standard operating cycle. Point updates must not be made with randomly selected joint angles or orientations; it must be confirmed that the robot is at the correct approach angle for the target point. Records made at random positions may cause trajectory errors and mechanical collisions in automatic mode.
+**IMPORTANT NOTE:** All point definition and update operations must be performed while preserving the orientation values in the robot's standard work cycle. Point updating should not be done with randomly selected joint angles or orientations; it must be verified that the robot is at the correct approach angle to the target point. Records made at random positions can cause trajectory errors and mechanical collisions in automatic mode.
 
-- The following steps must be followed when teaching mold pick points:
+- The following steps must be followed when teaching the mold pickup point:
 
-**Alignment:** The robot must be precisely positioned at the relevant pick point in manual mode.
+**Alignment:** The robot must be precisely positioned at the relevant pickup point in manual mode.
 
-**Mechanical Check:** With the gripper in the open position, confirm that the centering pins are fully aligned with the slots on the mold.
+**Mechanical Check:** While the gripper is in the open position, it must be verified that the centering pins are exactly aligned with the recesses on the mold.
 
-**Lock Test:** Close the gripper to check mechanical fit and gripping security.
+**Lock Test:** The gripper should be closed to check mechanical fit and holding security.
 
-**Recording:** Once the physical placement is verified as correct, complete the recording of the reference point for the relevant Array element by following the visual instructions below.
+**Recording:** After verifying that the physical placement is error-free, the recording process of the reference point for the relevant Array element must be completed by following the visual instructions specified below.
 
 **NOTE:** The robot must be in Manual Mode for this operation.
 
 ![RG830](_media/AlmaBirakmaNokta.png)  ![RG830](_media/AlmaBirakmaNoktaR.png)
 
-## Teaching Accessory Control Points
+## <span style="color: #000000; font-weight: bold;">8. Teaching Accessory Control Points</span>
 
-Each accessory in the system has its own control sensor for presence/absence detection. The following procedure must be followed to correctly define the accessory control point:
+Each accessory in the system has its own control sensor for presence/absence verification. The following procedure must be followed to correctly define the accessory control point:
 
 - Alignment and Positioning:
 
-After the robot picks the mold from the relevant station, it must exit in a linear path without disturbing the gripping plane and orientation. The accessory must be positioned directly in front of the sensor and within the detection range. The robot's position at this control point should be determined and recorded as the position where the sensor most reliably detects the accessory.
+After the robot takes the mold from the relevant station, it should exit without compromising the grip plane and orientation (in a linear trajectory). The accessory should be positioned directly opposite the sensor and within the detection distance. The robot's position at this control point should be determined as the position where the sensor sees the accessory most stably and should be recorded.
 
 - Software Structure:
 
-As with pick-and-place points, accessory control points are defined within Array structures named specifically for each accessory group. This allows separate and independent control coordinates to be created for each accessory type.
+As with pickup and drop-off points, accessory control points are also defined within Array structures specifically named for each accessory group. This allows separate and independent control coordinates to be created for each accessory type.
 
-- Recording:
-
-Once precise positioning is complete, the point recording steps must be performed by following the visual instructions below.
+- Recording Operation:
+After precise positioning is completed, the point recording steps should be performed by following the visual instructions below.
 
 **NOTE:** The robot must be in Manual Mode for this operation.
 
 ![RG830](_media/AksesuarKontrolL.png)  ![RG830](_media/AksesuarKontrolR.png)
 
-## Teaching the Drill Tool Tip Control Point
+## <span style="color: #000000; font-weight: bold;">9. Teaching Drilling Tool Tip Control Point</span>
 
-Before starting a drilling operation, the robot checks the integrity of the drill bit (broken bit detection) via the DrillingToolControlProg routine. It is critical that the reference control point is correctly taught for the system to perform this check reliably.
+Before the robot starts a drilling operation, it checks the integrity of the drill bit (break detection) through the DrillingToolControlProg routine. For the system to perform this check properly, correct teaching of the reference control point is critical.
 
-- Points to Consider:
+- Points to Pay Attention:
 
-Just as with pick and place operations, the control point must also be taught in the same orientation consistent with the robot's own operating cycle. The robot approaching this point at its standard working angle both improves detection accuracy and prevents trajectory errors.
+Just like in pickup and drop-off operations, the control point must be taught in the same orientation suitable for the robot's own operation cycle. The robot approaching this point with standard work angle increases detection precision and prevents trajectory errors.
 
-The definition and recording steps for this point are detailed in the visuals below.
+The definition and recording steps of this point are detailed in the images below
 
 ![RG830](_media/DrillToolKontrol.png)

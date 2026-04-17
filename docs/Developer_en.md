@@ -1,123 +1,122 @@
-## RG830 Robot Software Manual
+## <span style="color: #000000; font-weight: bold;">1. RG830 Robot Software Manual</span>
 
-The RG830 project infrastructure is written based on macro logic. Each accessory has its own macro. Macros are shaped according to the surface or channel where accessories will be placed. When we look at the frame from the front, starting from the upper front surface clockwise:
+The project infrastructure in RG830 is written according to macro logic. Each accessory has its own macro. Macros are shaped according to whether accessories are attached to the surface or channel. When the frame is presented, starting from the top front surface and going clockwise:
 
 1 (Top Front) - 2 (Right Front) - 3 (Bottom Front) - 4 (Left Front)
 
 5 (Top Channel) - 6 (Right Channel) - 7 (Bottom Channel) - 8 (Left Channel)
 
-The macro for the surface to be assembled is created according to the surface number given above.
+The assembly surface macro is performed according to the surface number I provided above.
 
 **Example:**
-- Macro 102 ---> accessory number 1 to surface 2
-- Macro 204 ---> accessory number 2 to surface 4
-- Macro 2805 ---> accessory number 28 to surface 5
+- Macro 102 ---> Accessory 1 to surface 2
+- Macro 204 ---> Accessory 2 to surface 4
+- Macro 2805 ---> Accessory 28 to surface 5
 
-Macros on the robot side are written in the HOME folder and separated according to the profile depth.
+Macros are written in the HOME folder on the Robot side, separated according to the profile depth measurement.
 
 ![RG830](_media/Macro.png)
 
-**A:** Number 1 is a 70mm profile, number 2 is a 76mm profile, number 3 is an 88mm profile.
+**A:** 1 number 70mm profile, 2 number 76mm profile, 3 number 88mm profile
 
-**B:** Shows each accessory’s own macros listed under the profile name.
+**B:** Shows the macros for each accessory listed under the profile name.
 
-## Introducing a New Point and Naming It
+## <span style="color: #000000; font-weight: bold;">2. Introducing New Points and Naming</span>
 
 - METHOD 1
 
 ![RG830](_media/D_NoktaTanıtma.png)
 
-**1:** Touch the line you want to define on the pendant to select that line.
+**1:** Touch the line on the pendant where you want to introduce the point to mark it.
 
-**2:** Opens the command names.
+**2:** Opens command names.
 
-**3:** The commands we want to add are listed here. When you press MoveL from the motion commands, it asks whether to insert above or below the selected point.
+**3:** The commands you want to add are listed here. When you add by pressing MoveL from movement commands, it asks whether to add below or above the marked point.
 
-When the MoveL command is added from the FlexPendant, a '*' appears in the coordinates on that line. At this stage, the robot assigns coordinates based on the currently selected Tool and Wobj data when recording the position. To prevent incorrect definitions, make sure the Tool and Wobj selections are correct before adding the command.
+When the MoveL command is added via FlexPendant, the '*' (asterisk) symbol will appear in the coordinates on the relevant line. When saving the position at this stage, the robot assigns coordinates by referencing the currently selected Tool and Wobj (Work Object) data. To prevent incorrect definitions; before adding the command, make sure that the Tool and Wobj selections to be used are correct.
 
 ![RG830](_media/D_HareketKomutu.png)
 
-**1:** Opens the list.
+**1:** Opens the list
 
-**2:** Opens the robot movement, tool, and wobj options.
+**2:** Opens movement, tool, and wobj options related to the robot
 
-**3:** The section where Tool and Wobj are selected.
+**3:** The section where we make Tool and Wobj selection
 
-After these steps, to use this command elsewhere, we need to name the '*' entry. Therefore, we need to define a variable as a "robtarget" and assign the coordinates in the starred area to that variable by giving it a name. This operation can be done through Robot Studio.
+After these operations, to use this command elsewhere, we need to give a name to the part with '*'. For this reason, we need to define a variable as "robtarget" and assign the coordinate information in the asterisked area by naming this variable. This operation can be performed via the Robot Studio program.
 
 ![RG830](_media/D_HareketKomutIsimVerme.png)
 
-**1:** The line shown on the FlexPendant as it appears in Robot Studio.
+**1:** The line displayed on FlexPendant as it appears on the Robot Studio screen
 
-**2:** The variable definition section where the name assignment is made for the starred part shown on the FlexPendant (for example, EgitimNok).
+**2:** The variable definition section where named assignment (for example EgitimNok) is made to the asterisked part shown on FlexPendant
 
-**3:** The use of the variable name assigned to the starred area on the FlexPendant.
+**3:** Using the defined variable name in the asterisked area shown on FlexPendant.
 
-After naming it as shown in number 3, since it is the same as number 3, we can delete number 1 from the program to avoid confusion.
+After naming as shown in number 3, since it is the same as number 3, we can delete number 1 from the program to avoid confusion.
 
-Now the variable EgitimNok can be called and used by name within the program.
+Now the EgitimNok variable can be called and used as a name in the program.
 
 - METHOD 2
 
 ![RG830](_media/D_HareketKomutu2.png)
 
-**A:** The name assigned to the point to be defined.
+**A:** Name given to the point to be introduced
 
-**B:** Selection of the storage type.
+**B:** Selection of storage type
 
-**C:** Select which module the variable will be saved to.
+**C:** Select which module to save the variable
+ 
+ After clicking OK, it saves the position definition in the selected module according to the previously selected tool and wobj. We can use this variable with the writing style shown in the 3rd red frame in **METHOD 1**.
 
-After pressing OK, it saves the position definition into the chosen module based on the previously selected tool and wobj. This variable can be used in the same format shown in the red frame 3 of METHOD 1.
-
-## Applying Offset, Speed, and Zone to a Point
+## <span style="color: #000000; font-weight: bold;">3. Offsetting, Speed, and Zone Assignment on Points</span>
 
 ![RG830](_media/D_Offsetleme.png)
 
-**A:** The simplest form of the defined point. When modifying a point, this simplest form is used. Offset notation is not allowed.
+**A:** The simplest form of the defined point. When modifying the point, it is done through this simplest form. Offset notation is not allowed.
 
-**B:** A function used to shift the robot by certain distances relative to a base reference point (EgitimNok). Instead of teaching a new point, it generates movement by deviating from an existing point.
+**B:** A function used to offset the robot at specific distances based on a basic reference point (EgitimNok). Instead of teaching a new point, it allows creating movement by deviating from an existing point.
 
-**C:** X, Y, Z offset values in mm.
+**C:** X, Y, Z offset values in mm
 
-**D:** Determines how many millimeters per second the robot's end effector (TCP) moves.
+**D:** Determines the speed at which the robot's end point (TCP) moves in millimeters per second.
 
-**E:** The corner (path) parameter that determines how close the robot will approach the target point or how smoothly it will pass the point.
+**E:** The corner (path) parameter that determines how close the robot will approach the target point or how much to "smooth" through the point:
 
-## Adding a New Path to Magazines
+## <span style="color: #000000; font-weight: bold;">4. Adding New Paths to Magazines</span>
 
-Accessory pickup and dropoff coordinates in the system are stored in an Array architecture structured by floor and accessory number. When a new accessory is added to the system, sequential insertion into these arrays is required to preserve the existing hierarchy.
+The accessory pickup and drop-off coordinates in the system are stored within an Array architecture configured according to floor and accessory numbers. When adding a new accessory to the system, sequential additions must be made to these arrays to maintain the existing hierarchy.
 
-- New Position Addition Procedure:
+- New Position Adding Procedure:
 
-**Variable Definition:** Go to the existing accessory array in the Variables module of the program.
+**Variable Definition:** Navigate to the existing accessory array in the Variables module of the program.
 
-**Array Expansion:** Add the new coordinate data to the array while following the existing floor and accessory order.
+**Array Expansion:** Following the current floor and accessory order, the new coordinate data should be included in the array.
 
-**Teach the Point:** The robot’s physical position for the new index added to the array must be taught and the robtarget data updated.
+**Point Teaching:** The robot's physical position for the new index added to the array should be taught and the robtarget data should be updated.
 
-You can see the arrays in Variables in the image below.
+You can see the arrays within Variables in the image below. 
 
 ![RG830](_media/D_AlmaBirakmaArray.png)
 
-- While teaching the newly added path, follow the order shown in the image below. After selecting the accessory you added, press modify to update the point. During this process, the tool selection should be ToolGrip and the Wobj should be selected according to the magazine being taught.
+- When performing the teaching operation for the newly added path, you can follow the sequence shown in the image below, select the accessory you added, and then click modify to update the point. When performing this operation, the tool selection should be ToolGrip and Wobj should be selected according to the magazine you are introducing.
 
-![RG830](_media/AlmaBirakmaNokta.png)
+![RG830](_media/AlmaBirakmaNokta.png) 
 
-Each accessory in the system has its own control sensor for presence/absence checking. The following procedure should be followed to correctly define the accessory control point:
+Each accessory in the system has its own control sensor for presence/absence verification. The following procedure must be followed to correctly define the accessory control point:
 
 - Alignment and Positioning:
 
-After the robot picks the mold from the relevant station, it should exit in a straight path without disturbing the grip plane and orientation. The accessory should be positioned directly in front of the sensor and within its detection range. The robot position at this control point should be determined and recorded as the position where the sensor sees the accessory most stably.
+After the robot takes the mold from the relevant station, it should exit without compromising the grip plane and orientation (in a linear trajectory). The accessory should be positioned directly opposite the sensor and within the detection distance. The robot's position at this control point should be determined as the position where the sensor sees the accessory most stably and should be recorded.
 
 - Software Structure:
 
-Like pickup and dropoff points, accessory control points are also defined in Array structures named specifically for each accessory group. Sequential addition should be done for the new path. This allows separate and independent control coordinates for each accessory type. Entries should be added to the LMagazineAccessoryControl and RMagazineAccessoryControl sections in the Variables module of the program. Below you can see the Arrays for Accessory Control.
+As with pickup and drop-off points, accessory control points are also defined within Array structures specifically named for each accessory group. Sequential addition should be performed for the new path. This way, separate and independent control coordinates can be created for each accessory type. Additions should be made to the LMagazineAccessoryControl and RMagazineAccessoryControl sections in the Variables module within the program. You can see the Arrays for Accessory Control below.
 
 ![RG830](_media/D_AksesuarKontrolArray.png)
 
-- Recording Process:
-After precise positioning is completed, the point registration steps should be carried out by following the visual instructions below.
+- Recording Operation:
+After precise positioning is completed, the point recording steps should be performed by following the visual instructions below.
 
-![RG830](_media/AksesuarKontrolL.png)  ![RG830](_media/AksesuarKontrolR.png)
-
+![RG830](_media/AksesuarKontrolL.png)  ![RG830](_media/AksesuarKontrolR.png) 
 

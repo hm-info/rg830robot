@@ -1,5 +1,7 @@
 # RG830 Robot Manual
-## Acil Durdurma
+
+## <span style="color: #000000; font-weight: bold;">1. Acil Durdurma</span>
+
 Robot enerjilendiği zaman robot üzerindeki acil butonlar ve harici diğer etkileyen acil durumları kaldırılmalı daha sonrasında Motor On butonuna basılmalıdır.
 
 ![KT803](_media/AcilDurdurma.png)
@@ -8,14 +10,14 @@ Robot enerjilendiği zaman robot üzerindeki acil butonlar ve harici diğer etki
 
 **B:** Motor On Buton
 
-## Çalışma Modları
+## <span style="color: #000000; font-weight: bold;">2. Çalışma Modları</span>
 
 ![RG830](_media/ModSecim.png)
 
 - **A - Otomatik Mod :** Üretim Modu
 - **B - Manuel Mod :** Jog modda hareket ve kontroller yapılabilir.
 
-## Jog Hareket ile Robot Eksen Kontrol 
+## <span style="color: #000000; font-weight: bold;">3. Jog Hareket ile Robot Eksen Kontrol </span>
 
 - Robot manuel moddayken, hareket birimlerini devreye almak için FlexPendant'ın sağ tarafında bulunan 'Motor On' (Motorları Aktif Etme) butonuna basılmalıdır.
 
@@ -48,7 +50,7 @@ Robot enerjilendiği zaman robot üzerindeki acil butonlar ve harici diğer etki
 
 **B:** Orientation Hareketin Gösterim Simgesi
 
-## Robot Eksen Kalibrasyonu
+## <span style="color: #000000; font-weight: bold;">4. Robot Eksen Kalibrasyonu </span>
 
 - Robotun ilk kurulumu esnasında, her eksen için ayrı ayrı kalibrasyon işlemi gerçekleştirilmelidir. Kalibrasyon sırasında, her eksene ait sıfır noktası işaretleri (çentikler) birbirini tam karşılayacak şekilde, yüksek hassasiyetle hizalanmalıdır. Her eksenin kendine ait çentiği bulunmaktadır.
 
@@ -58,7 +60,7 @@ Robot enerjilendiği zaman robot üzerindeki acil butonlar ve harici diğer etki
 
 ![RG830](_media/RobotEksenKalibrasyonu.png)
 
-## TCP (Tool Center Point) Tanıtımı
+## <span style="color: #000000; font-weight: bold;">5. TCP (Tool Center Point) Tanıtımı </span>
 
 TCP (Takım Merkez Noktası) tanımlama işlemi; sabit, ucu sivri bir referans noktasına farklı açılardan yaklaşım yapılarak gerçekleştirilir. Hem merkez noktasının hem de Z ekseni yönünün doğru tanımlanması için aşağıdaki adımlar takip edilmelidir:
 
@@ -90,7 +92,7 @@ Yukarıdaki görsel sıralamasını takip ederek her referans noktasına hassas 
 
 ![RG830](_media/TCP_TanıtmaAdimları.png)
 
-## Wobj (Work Object) Tanıtma
+## <span style="color: #000000; font-weight: bold;">6. Wobj (Work Object) Tanıtma </span>
 
 **Wobj (Work Object) :** robotun çalışma alanındaki parçaları veya düzenekleri tanımlamak için kullanılan, kullanıcı tarafından belirlenmiş bir koordinat sistemidir. ABB robot sistemlerinde Wobj tanımlama işlemi, ilgili yüzey üzerinde 3-Nokta Metodu kullanılarak gerçekleştirilir.
 
@@ -121,7 +123,7 @@ Hassasiyet: X ve Y noktaları arasındaki mesafe ne kadar uzak ve noktalar ne ka
 
 ![RG830](_media/WobjTanıtım.png)
 
-## Kalıp Alma ve Bırakma Noktalarının Öğretilmesi
+## <span style="color: #000000; font-weight: bold;">7. Kalıp Alma ve Bırakma Noktalarının Öğretilmesi </span>
 
 Sistemde kalıp alma ve bırakma işlemleri aynı koordinat düzlemi üzerinde gerçekleştirilmektedir. Bu nedenle, alma noktası için yapılan tanımlama otomatik olarak bırakma işlemi için de geçerli olacaktır.
 
@@ -145,7 +147,7 @@ Mevcut sistemde, her biri 3 kattan oluşan Sol ve Sağ Magazin yerleşimleri bul
 
 ![RG830](_media/AlmaBirakmaNokta.png)  ![RG830](_media/AlmaBirakmaNoktaR.png)
 
-## Aksesuar Kontrol Noktalarının Öğretilmesi
+## <span style="color: #000000; font-weight: bold;">8. Aksesuar Kontrol Noktalarının Öğretilmesi </span>
 
 Sistemde yer alan her bir aksesuarın varlık/yokluk kontrolü için kendine ait bir kontrol sensörü bulunmaktadır. Aksesuar kontrol noktasının doğru tanımlanması için şu prosedür izlenmelidir:
 
@@ -164,7 +166,7 @@ Hassas konumlandırma tamamlandıktan sonra, nokta kayıt adımları aşağıdak
 
 ![RG830](_media/AksesuarKontrolL.png)  ![RG830](_media/AksesuarKontrolR.png)
 
-## Delme Tool Ucunun Kontrol Noktasının Öğretilmesi
+## <span style="color: #000000; font-weight: bold;">9. Delme Tool Ucunun Kontrol Noktasının Öğretilmesi </span>
 
 Robot, delme operasyonuna başlamadan önce matkap ucunun bütünlüğünü (kırık kontrolünü) DrillingToolControlProg rutini aracılığıyla denetler. Sistemin bu denetimi sağlıklı bir şekilde gerçekleştirebilmesi için referans kontrol noktasının doğru öğretilmesi kritik bir öneme sahiptir.
 

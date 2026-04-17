@@ -1,4 +1,4 @@
-# <span style="color: #000000; font-weight: bold;">1. Makine İlk Açılışta Robot Gripper Kalıp Durumu</span>
+## <span style="color: #000000; font-weight: bold;">1. Makine İlk Açılışta Robot Gripper Kalıp Durumu</span>
 
 - Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.
 
@@ -14,7 +14,7 @@
 - Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.
 - Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.
 
-# <span style="color: #000000; font-weight: bold;">2. Robot Bypass ve Hattın Bağımsız Çalışma Modu</span>
+## <span style="color: #000000; font-weight: bold;">2. Robot Bypass ve Hattın Bağımsız Çalışma Modu</span>
 
 Robotun operasyona dahil edilmeyeceği durumlarda, hattın kesintisiz çalışmaya devam edebilmesi için aşağıdaki yapılandırma uygulanmalıdır:
 
@@ -22,7 +22,7 @@ Robotun operasyona dahil edilmeyeceği durumlarda, hattın kesintisiz çalışma
 
 *İş Akışı (Çerçeve Transferi):* işlenen çerçeveler doğrudan hat üzerinden ilerleyerek robot çıkışında bulunan aktarma sehpasına yönlendirilir.
 
-# <span style="color: #000000; font-weight: bold;">3. Kapıların açılma İzin Prosedürü</span>
+## <span style="color: #000000; font-weight: bold;">3. Kapıların açılma İzin Prosedürü</span>
 
 Operatör tarafından **"Kapı Açma İzin Butonu"**na basıldığında; robot, mekanik güvenliği ve parça bütünlüğünü korumak adına aktif işlemini tamamladıktan sonra duruşa geçer.
 
@@ -42,7 +42,7 @@ Sistem aşağıdaki işlemlerden biri yürüyor ise süreci kesmez, işlemin bit
 
 Aktif döngü (cycle) güvenli noktada tamamlandığında, sistem otomatik olarak kapı kilitlerini açar ve operatöre giriş onayı verir.
 
-# <span style="color: #000000; font-weight: bold;">4. Acil Stop - Stop senaryoları</span>
+## <span style="color: #000000; font-weight: bold;">4. Acil Stop - Stop senaryoları</span>
 
 *Acil Stop Durumu:*
 
@@ -72,7 +72,7 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
  - *Sistemi Yeniden Başlatma :* Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
 
-# <span style="color: #000000; font-weight: bold;">5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?</span>
+## <span style="color: #000000; font-weight: bold;">5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?</span>
 
 Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası oluşturma süreci şu kriterlere göre ilerler:
 
@@ -82,11 +82,11 @@ Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası ol
 
 *Hattaki çerçeve ile gelen çerçeve Kontrolü:* (Z) sehpasındaki mevcut çerçeve ile plc yazılımından gelen iş dosyasındaki çerçeve ID leri birbiriyle eşleşmelidir. Eşleşme varsa robot işlemi başlatır, Eşleşme yoksa yanlış iş dosyası alarmı verir
 
-# <span style="color: #000000; font-weight: bold;">6. Çerçeve Sıkıştırmada Alarm Durumları</span>
+## <span style="color: #000000; font-weight: bold;">6. Çerçeve Sıkıştırmada Alarm Durumları</span>
 
 Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi sıkıştırmak için Eksen yaklaştığında yeteri kadar sıkamadığında ölçüm ile ilgili olarak **"Frame Measuring Error, Wrong Frame Sizes !"** hatası verir tekrar sıkması için **(F) Start Buton**'una basıp tekrar sıkıştırma işlemi yapılır.
 
-# <span style="color: #000000; font-weight: bold;">7. Drilling Tool Not Ok Alarm Durumu</span>
+## <span style="color: #000000; font-weight: bold;">7. Drilling Tool Not Ok Alarm Durumu</span>
 
 *Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:*
 
@@ -102,7 +102,7 @@ Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi
 
 - *Sistemi Tekrar Devreye Alma:* Gerekli fiziksel düzeltmeler yapıldıktan ve arıza kaynağı giderildikten sonra, operatör paneli üzerinden **Start Butonuna (F)** basılarak işlem döngüsü kaldığı yerden devam ettirilir.
 
-# <span style="color: #000000; font-weight: bold;">8. Accessory Not Ok Alarm Durumu</span>
+## <span style="color: #000000; font-weight: bold;">8. Accessory Not Ok Alarm Durumu</span>
 
 Aksesuar montaj sürecinin sağlıklı ilerleyebilmesi için parçanın magazinden başarıyla alınması ve kalıp içerisinde hassas şekilde konumlanması kritik önem taşımaktadır. Bu doğrultuda, montaj aşamasına geçilmeden önce parçanın varlığı ve konumu sensörler aracılığıyla denetlenir.
 
@@ -126,7 +126,7 @@ Hattan çıktıktan ve emniyet kilidini devreye aldıktan sonra panel üzerindek
 
 Hata giderildikten sonra panel üzerinden **B (Reset Butonu)***'na basılarak aksesuar alma işlemi yeniden başlatılır.
 
-# <span style="color: #000000; font-weight: bold;">9. Çeneye Vida Çekilememe Durumu</span>
+## <span style="color: #000000; font-weight: bold;">9. Çeneye Vida Çekilememe Durumu</span>
 
 Robot, vidalama işlemi öncesinde sistemden vida besleme talebinde bulunur. Vida beslemesinin başarısız olması durumunda operatör aşağıdaki adımları izlemelidir:
 
@@ -146,7 +146,7 @@ Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlen
 
 Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir. Ardından panel üzerindeki **B (Reset Butonu)**'na basılarak vida çekme işlemi yeniden tetiklenmelidir.
 
-# <span style="color: #000000; font-weight: bold;">10. Aktüel Aksesuar Montajını Geçmek için PassNextAccessory</span>
+## <span style="color: #000000; font-weight: bold;">10. Aktüel Aksesuar Montajını Geçmek için PassNextAccessory</span>
 
 ![RG830](_media/o_PassNextAccessory.png)
 
@@ -157,7 +157,7 @@ Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir soru
 
 *Dikkat:* Bu aşamada B (Reset Butonu)'na basılırsa, tüm işlem durumu (state) sıfırlanır ve süreç en başa döner.
 
-# <span style="color: #000000; font-weight: bold;">11. İşlemin Yeniden Başlatılması ve Seçenekler</span>
+## <span style="color: #000000; font-weight: bold;">11. İşlemin Yeniden Başlatılması ve Seçenekler</span>
 
 - Durdurma işleminden sonra F (Start Butonu)'na basıldığında, ekranda bir karar sayfası açılır. Operatör bu aşamada şu iki seçenekten birini tercih etmelidir:
 
@@ -167,7 +167,7 @@ Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir soru
 
 *Kritik Uyarı:* **H** seçeneği tercih edildiğinde robot kendisini güvenli bir şekilde kurtardıktan sonra Gripper da kalıp varsa bırakma noktasına gidecektir. Bırakma işlemi sırasında kalıpta aksesuar bulunmadığından emin olunmalıdır.
 
-# <span style="color: #000000; font-weight: bold;">12. Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları</span>
+## <span style="color: #000000; font-weight: bold;">12. Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları</span>
 
 Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesajlarıdır.
 
@@ -183,7 +183,7 @@ Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesaj
 - **Sensör Arızası:** ScrewCame sensörü vidayı görmüyor veya fiziksel olarak yerinden oynamış olabilir.
 
 
-# <span style="color: #000000; font-weight: bold;">13. Eksen Hareket halindeyken Sıkışması Durumu</span>
+## <span style="color: #000000; font-weight: bold;">13. Eksen Hareket halindeyken Sıkışması Durumu</span>
 
 Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya matematiksel olarak ulaşamaz veya eklem limitlerine takılır. Bu durumlarda operatörün kurtarması için izleyeceği adımlar şunlardır:
 
@@ -233,7 +233,7 @@ Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam ed
 
 *Hız Kontrolü:* Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki **M-N** kısımlarına tıklayarak **O** hız sayfasını açabilirsiniz.
 
-# <span style="color: #000000; font-weight: bold;">14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi</span>
+## <span style="color: #000000; font-weight: bold;">14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi</span>
 
 ![RG830](_media/o_ParameterScrew.png)
 
@@ -292,4 +292,4 @@ Vida Boşaltma (Unload): Sistemdeki mevcut vidanın tahliyesi sonrası güvenli 
 **Ü:**
 
 
-# <span style="color: #000000; font-weight: bold;">15. Hat ile genel çalışma prensibi</span>
+## <span style="color: #000000; font-weight: bold;">15. Hat ile genel çalışma prensibi</span>
