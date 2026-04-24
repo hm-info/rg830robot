@@ -1,0 +1,1367 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RG830 Robot Manual">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/rg830robot/operationGuide.html">
+      
+      
+        <link rel="prev" href="turkish.html">
+      
+      
+        <link rel="next" href="Developer.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Hata Çözümleri - RG830 Robot Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-makine-ilk-aclsta-robot-gripper-kalp-durumu" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="index.html" title="RG830 Robot Manual" class="md-header__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RG830 Robot Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hata Çözümleri
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa / Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="turkish.html" class="md-tabs__link">
+          
+  
+  
+  🇹🇷 Türkçe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="english.html" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="RG830 Robot Manual" class="md-nav__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RG830 Robot Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇹🇷 Türkçe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="turkish.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kılavuz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hata Çözümleri
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="operationGuide.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hata Çözümleri
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-makine-ilk-aclsta-robot-gripper-kalp-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Makine İlk Açılışta Robot Gripper Kalıp Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-robot-bypass-ve-hattn-bagmsz-calsma-modu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Robot Bypass ve Hattın Bağımsız Çalışma Modu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kaplarn-aclma-izin-proseduru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Kapıların açılma İzin Prosedürü
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-acil-stop-stop-senaryolar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Acil Stop - Stop senaryoları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hat-ile-calsacag-zaman-hattan-cerceve-ne-zaman-gelecek-hattaki-cerceve-ile-gelen-cerceve-ayn-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cerceve-skstrmada-alarm-durumlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Çerçeve Sıkıştırmada Alarm Durumları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-drilling-tool-not-ok-alarm-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Drilling Tool Not Ok Alarm Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-accessory-not-ok-alarm-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Accessory Not Ok Alarm Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ceneye-vida-cekilememe-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Çeneye Vida Çekilememe Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-aktuel-aksesuar-montajn-gecmek-icin-passnextaccessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-islemin-yeniden-baslatlmas-ve-secenekler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. İşlemin Yeniden Başlatılması ve Seçenekler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-aksesuar-montaj-alarm-tanmlar-ve-cozum-admlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-eksen-hareket-halindeyken-sksmas-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Eksen Hareket halindeyken Sıkışması Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-sorunu-teshis-etme-hata-mesaj-okuma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1. Sorunu Teşhis Etme (Hata Mesajı Okuma)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-robotu-manuel-modda-kurtarma-jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. Robotu Manuel Modda Kurtarma (Jogging)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-islemi-atlatma-ve-devam-ettirme-program-pointer-tasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-ekrandaki-parametreler-hakknda-vidalama-eksen-hzlar-hakknda-detayl-bilgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-hat-ile-genel-calsma-prensibi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Hat ile genel çalışma prensibi
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yazılım Notları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="english.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-makine-ilk-aclsta-robot-gripper-kalp-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Makine İlk Açılışta Robot Gripper Kalıp Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-robot-bypass-ve-hattn-bagmsz-calsma-modu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Robot Bypass ve Hattın Bağımsız Çalışma Modu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kaplarn-aclma-izin-proseduru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Kapıların açılma İzin Prosedürü
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-acil-stop-stop-senaryolar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Acil Stop - Stop senaryoları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hat-ile-calsacag-zaman-hattan-cerceve-ne-zaman-gelecek-hattaki-cerceve-ile-gelen-cerceve-ayn-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cerceve-skstrmada-alarm-durumlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Çerçeve Sıkıştırmada Alarm Durumları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-drilling-tool-not-ok-alarm-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Drilling Tool Not Ok Alarm Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-accessory-not-ok-alarm-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Accessory Not Ok Alarm Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ceneye-vida-cekilememe-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Çeneye Vida Çekilememe Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-aktuel-aksesuar-montajn-gecmek-icin-passnextaccessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Aktüel Aksesuar Montajını Geçmek için PassNextAccessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-islemin-yeniden-baslatlmas-ve-secenekler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. İşlemin Yeniden Başlatılması ve Seçenekler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-aksesuar-montaj-alarm-tanmlar-ve-cozum-admlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-eksen-hareket-halindeyken-sksmas-durumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Eksen Hareket halindeyken Sıkışması Durumu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-sorunu-teshis-etme-hata-mesaj-okuma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1. Sorunu Teşhis Etme (Hata Mesajı Okuma)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-robotu-manuel-modda-kurtarma-jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. Robotu Manuel Modda Kurtarma (Jogging)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-islemi-atlatma-ve-devam-ettirme-program-pointer-tasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-ekrandaki-parametreler-hakknda-vidalama-eksen-hzlar-hakknda-detayl-bilgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-hat-ile-genel-calsma-prensibi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Hat ile genel çalışma prensibi
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Hata Çözümleri</h1>
+
+<h2 id="1-makine-ilk-aclsta-robot-gripper-kalp-durumu"><span style="color: #000000; font-weight: bold;">1. Makine İlk Açılışta Robot Gripper Kalıp Durumu</span></h2>
+<ul>
+<li>Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.</li>
+</ul>
+<p><img alt="RG830" src="_media/o_GripperFree.png" /></p>
+<p><em>YES:</em> Elinde olan kalıbı kendi numarasındaki yere bırakarak tekrar home pozisyonuna döner ve iş dosyası ile haberleşmeyi bekler.</p>
+<p><em>NO:</em>  Home pozisyonunda iş dosyası ile haberleşmeyi bekler.</p>
+<p><strong>NOT:</strong> İş dosyası manuel olarak eklenirse aşağıdaki üç maddelik anlatım ile yapılacaktır. Otomatik sistem çalışırken kendisi sistemden çekeceğinden bu işlemleri yapmaya gerek kalmayacak.</p>
+<ul>
+<li>İş dosyasının okunabilmesi için exe dosyası açılmalıdır.</li>
+<li>Hazırlanan iş Dosyası Robot File klasörünün içine konulmalıdır.</li>
+<li>Start butonuna basıldığında Robot File klasöründeki iş dosyası okunarak Plc den robota veri aktarımı gerçekleşir bilgi aktarımı tamamlandıktan sonra Robot iş dosyasını çalışmaya başlar.</li>
+</ul>
+<h2 id="2-robot-bypass-ve-hattn-bagmsz-calsma-modu"><span style="color: #000000; font-weight: bold;">2. Robot Bypass ve Hattın Bağımsız Çalışma Modu</span></h2>
+<p>Robotun operasyona dahil edilmeyeceği durumlarda, hattın kesintisiz çalışmaya devam edebilmesi için aşağıdaki yapılandırma uygulanmalıdır:</p>
+<p><em>Parametre Ayarı:</em> Robot kontrol ekranı üzerinden "RobotActive" parametresi "0" olarak ayarlanmalıdır. Bu ayar yapıldığında robot operasyonu otomatik olarak Bypass edilir. Robot devre dışı kalarak hattın tek başına çalışmasına olanak tanır.</p>
+<p><em>İş Akışı (Çerçeve Transferi):</em> işlenen çerçeveler doğrudan hat üzerinden ilerleyerek robot çıkışında bulunan aktarma sehpasına yönlendirilir.</p>
+<h2 id="3-kaplarn-aclma-izin-proseduru"><span style="color: #000000; font-weight: bold;">3. Kapıların açılma İzin Prosedürü</span></h2>
+<p>Operatör tarafından <strong>"Kapı Açma İzin Butonu"</strong>na basıldığında; robot, mekanik güvenliği ve parça bütünlüğünü korumak adına aktif işlemini tamamladıktan sonra duruşa geçer.</p>
+<p><em>İşlem Tamamlama Senaryoları:</em></p>
+<p>Sistem aşağıdaki işlemlerden biri yürüyor ise süreci kesmez, işlemin bitmesini bekler:</p>
+<ul>
+<li>
+<p>Vidalama: Aktif vidalama işlemi tork değerine ulaşana kadar devam eder.</p>
+</li>
+<li>
+<p>Vida Besleme: Vida çekme veya transfer işlemi tamamlanır.</p>
+</li>
+<li>
+<p>Delme: Delme ucu iş parçasından güvenli şekilde geri çekilir.</p>
+</li>
+<li>
+<p>..........</p>
+</li>
+<li>
+<p>...........</p>
+</li>
+</ul>
+<p>Aktif döngü (cycle) güvenli noktada tamamlandığında, sistem otomatik olarak kapı kilitlerini açar ve operatöre giriş onayı verir.</p>
+<h2 id="4-acil-stop-stop-senaryolar"><span style="color: #000000; font-weight: bold;">4. Acil Stop - Stop senaryoları</span></h2>
+<p><em>Acil Stop Durumu:</em></p>
+<p>Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş çevrimi (cycle) iptal edilir ve sistem güvenli duruş moduna geçer. Bu işlemden sonra sistem verileri sıfırlandığı için iş dosyasının en baştan başlatılması zorunludur.</p>
+<p><em>Sistemi Tekrar Aktif Hale Getirme Adımları:</em></p>
+<p><img alt="RG830" src="_media/o_AlarmRstButon.png" /></p>
+<ul>
+<li>Basılı olan Acil Stop butonu serbest bırakılır.</li>
+<li><em>A:</em> Operatör panelinden Alarmlar (Reset) temizlenir.</li>
+<li><em>B:</em> Reset e basılır . Robot Po to Main yapar arkasından <strong>C</strong> soru paneli açılır</li>
+<li><em>C:</em> Gripper üzerinde kalıp var,yok sorgusu yapılır. Daha sonrasında <strong>D</strong> soru paneli açılır</li>
+<li><em>D:</em> Acilden sonra aynı iş dosyası ile mi yoksa farklı bir iş dosyası ile mi çalışacağına dair soru paneli açılır.</li>
+</ul>
+<p><em>YES:</em> Hafızadaki iş dosyası ile devam eder.</p>
+<p><em>NO:</em>  Farklı iş dosyasının yüklenmesini bekler. Belli bir süre iş dosyasını okuyamazsa, dosya okuyamadığına dair hata mesajı verir.</p>
+<p><em>Stop Durumu:</em></p>
+<p>Sistemde <em>E (Stop Butonu)</em>'na basıldığında, PLC ve robot koordineli bir "bekleme moduna" geçer. Bu sürecin teknik işleyişi şu şekildedir:</p>
+<ul>
+<li>
+<p><em>PLC</em>, stop sinyali alındığında, mevcut çalışma adımını (state) dondurarak sistemi "Stop State" moduna alır.</p>
+</li>
+<li>
+<p><em>Robot</em>, Stop sinyali geldiği anda Robot Vidalama işlemi , Vida besleme işlemi , delme işlemi yapmıyorsa Plc den gelen sinyal ile hızını sıfıra çeker ve hareket edeceği satırda bekler</p>
+</li>
+<li>
+<p><em>Sistemi Yeniden Başlatma :</em> Operatör tarafından <strong>F (Start Butonu)</strong>'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.</p>
+</li>
+</ul>
+<h2 id="5-hat-ile-calsacag-zaman-hattan-cerceve-ne-zaman-gelecek-hattaki-cerceve-ile-gelen-cerceve-ayn-m"><span style="color: #000000; font-weight: bold;">5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?</span></h2>
+<p>Hattın senkronize çalışabilmesi için çerçeve transferi ve iş dosyası oluşturma süreci şu kriterlere göre ilerler:</p>
+<p><em>Çerçeve Geliş Koşulu:</em> Hat sonundaki çıkış sehpasında (Z) hazır bir çerçeve bulunması durumunda robot plc sinden yeni çerçeve isteğini bekler.</p>
+<p><em>İş Dosyası Oluşturma:</em> Robotun işlemine başlayabilmesi için (Z) sehpasındaki çerçevenin iş dosyasının oluşturulmuş ve sisteme tanımlanmış olması gerekir.</p>
+<p><em>Hattaki çerçeve ile gelen çerçeve Kontrolü:</em> (Z) sehpasındaki mevcut çerçeve ile plc yazılımından gelen iş dosyasındaki çerçeve ID leri birbiriyle eşleşmelidir. Eşleşme varsa robot işlemi başlatır, Eşleşme yoksa yanlış iş dosyası alarmı verir</p>
+<h2 id="6-cerceve-skstrmada-alarm-durumlar"><span style="color: #000000; font-weight: bold;">6. Çerçeve Sıkıştırmada Alarm Durumları</span></h2>
+<p>Sistem hazır olduğunda çerçeve çıkış sensörüne geldiğinde çerçeveyi sıkıştırmak için Eksen yaklaştığında yeteri kadar sıkamadığında ölçüm ile ilgili olarak <strong>"Frame Measuring Error, Wrong Frame Sizes !"</strong> hatası verir tekrar sıkması için <strong>(F) Start Buton</strong>'una basıp tekrar sıkıştırma işlemi yapılır.</p>
+<h2 id="7-drilling-tool-not-ok-alarm-durumu"><span style="color: #000000; font-weight: bold;">7. Drilling Tool Not Ok Alarm Durumu</span></h2>
+<p><em>Sistem, operasyon güvenliğini sağlamak adına her iş başlangıcında bir kez olmak üzere otomatik takım kontrolü gerçekleştirir. Sürecin işleyişi ve hata durumunda yapılması gerekenler aşağıda belirtilmiştir:</em></p>
+<ul>
+<li>
+<p>Robot, delme takımının (tool) fiziksel bütünlüğünü doğrulamak amacıyla takım ucunu önceden tanımlanmış bir kontrol siviçine (switch) temas ettirir.</p>
+</li>
+<li>
+<p>Tool ucu sensöre temas edip sinyal aldıktan sonra işlem akışı devam eder.</p>
+</li>
+<li>
+<p>Takım kontrol noktasına ulaştığı halde siviçten doğrulama sinyali alınamazsa, robot otomatik olarak hareketi durdurur. Güvenli bir bekleme pozisyonuna (kontrol noktasının üst kısmı) geçerek operatör panelinde durum alarmını aktif hale getirir.</p>
+</li>
+</ul>
+<p><em>Müdahale ve Arıza Giderme:</em></p>
+<ul>
+<li>
+<p><em>Takım Hasarı:</em> Eğer delme ucu fiziksel olarak zarar görmüş veya kırılmışsa, yeni bir takım ucu ile değiştirilmelidir.</p>
+</li>
+<li>
+<p><em>Sensör Kontrolü:</em> Takım ucunda bir sorun gözlemlenmiyorsa, ilgili kontrol sensörünün (switch) işlevselliği ve kablo bağlantıları kontrol edilmelidir.</p>
+</li>
+<li>
+<p><em>Sistemi Tekrar Devreye Alma:</em> Gerekli fiziksel düzeltmeler yapıldıktan ve arıza kaynağı giderildikten sonra, operatör paneli üzerinden <strong>Start Butonuna (F)</strong> basılarak işlem döngüsü kaldığı yerden devam ettirilir.</p>
+</li>
+</ul>
+<h2 id="8-accessory-not-ok-alarm-durumu"><span style="color: #000000; font-weight: bold;">8. Accessory Not Ok Alarm Durumu</span></h2>
+<p>Aksesuar montaj sürecinin sağlıklı ilerleyebilmesi için parçanın magazinden başarıyla alınması ve kalıp içerisinde hassas şekilde konumlanması kritik önem taşımaktadır. Bu doğrultuda, montaj aşamasına geçilmeden önce parçanın varlığı ve konumu sensörler aracılığıyla denetlenir.</p>
+<p>Robot tarafından kontrol noktasına getirilen aksesuarın sensör tarafından algılanmaması durumunda sistem "AccessoryNotOk" alarmı üretir; robot, operatör müdahalesine imkan tanımak için kontrol noktasından bir miktar yükselerek bekleme moduna geçer. Bu durumda izlenmesi gereken çözüm yolları aşağıda belirtilmiştir:</p>
+<p><em>Manuel Müdahale ile Devam Etme</em></p>
+<ul>
+<li>Eğer aksesuar magazinden çıkmış fakat kalıp tarafından tam alınamadığı için magazin üzerinde kalmışsa:</li>
+</ul>
+<p>Operatör, emniyet kapısını açarak (sistem Acil Stop moduna geçecektir) hattın içerisine girer. Magazindeki aksesuarı alarak, geliş yönüne dikkat ederek el ile manuel olarak kalıba yerleştirir.Hattan çıkıp emniyet kapısını kapattıktan sonra sistemi resetleyip panel üzerinden <strong>F (Start Buton)</strong>'una basarak süreci kaldığı yerden devam ettirir.</p>
+<p><em>Alma İşleminin Tekrarlanması (Aksesuar Magazindeyse)</em></p>
+<ul>
+<li>Eğer aksesuar magazinde kalmışsa ve operatör bu parçanın robot tarafından tekrar alınmasını istiyorsa:</li>
+</ul>
+<p>Hattan çıktıktan ve emniyet kilidini devreye aldıktan sonra panel üzerindeki <strong>B (Reset Butonu)</strong>'na basılır. Bu işlemle birlikte robot, aynı aksesuarı alma döngüsünü en baştan tekrarlayacaktır.</p>
+<p><em>Magazinden Aksesuar Çıkmaması Durumu</em></p>
+<ul>
+<li>Eğer magazinden hiç aksesuar çıkmadığı için robot boş dönmüş ve bekleme noktasına gelmişse:</li>
+</ul>
+<p>Hata giderildikten sonra panel üzerinden <strong>B (Reset Butonu)</strong>*'na basılarak aksesuar alma işlemi yeniden başlatılır.</p>
+<h2 id="9-ceneye-vida-cekilememe-durumu"><span style="color: #000000; font-weight: bold;">9. Çeneye Vida Çekilememe Durumu</span></h2>
+<p>Robot, vidalama işlemi öncesinde sistemden vida besleme talebinde bulunur. Vida beslemesinin başarısız olması durumunda operatör aşağıdaki adımları izlemelidir:</p>
+<p><em>Ön Kontrol:</em></p>
+<ul>
+<li>Operatör, öncelikle vidalama ucunu gözle kontrol ederek vidanın gönderilip gönderilmediğini teyit etmelidir.</li>
+</ul>
+<p><em>Vida Gönderimi Başarılı İse (Görsel Onay):</em></p>
+<ul>
+<li>Eğer vida uca ulaşmışsa ve herhangi bir sorun gözlemlenmiyorsa:</li>
+</ul>
+<p>Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir.Ardından panel üzerindeki <strong>F (Start Butonu)</strong>'na basılarak işlem kaldığı yerden devam ettirilmelidir.</p>
+<p><em>Vida Beslenemedi İse (Hata Onayı):</em></p>
+<ul>
+<li>Eğer görsel kontrolde vidanın uca ulaşmadığı teyit edilirse:</li>
+</ul>
+<p>Hattın içerisine girildiği için öncelikle sistem emniyet devreleri resetlenmelidir. Ardından panel üzerindeki <strong>B (Reset Butonu)</strong>'na basılarak vida çekme işlemi yeniden tetiklenmelidir.</p>
+<h2 id="10-aktuel-aksesuar-montajn-gecmek-icin-passnextaccessory"><span style="color: #000000; font-weight: bold;">10. Aktüel Aksesuar Montajını Geçmek için PassNextAccessory</span></h2>
+<p><img alt="RG830" src="_media/o_PassNextAccessory.png" /></p>
+<p>Robotun delme, vidalama veya diğer operasyonları sırasında herhangi bir sorunla karşılaşılması durumunda, mevcut iş akışını bozmadan sürece müdahale etmek için aşağıdaki adımlar izlenmelidir:</p>
+<p><em>İşlemin Durdurulması:</em>
+- Panel üzerinden E (Stop Butonu)'na basılmalıdır. Bu işlem robotu bekleme moduna alır.</p>
+<p><em>Dikkat:</em> Bu aşamada B (Reset Butonu)'na basılırsa, tüm işlem durumu (state) sıfırlanır ve süreç en başa döner.</p>
+<h2 id="11-islemin-yeniden-baslatlmas-ve-secenekler"><span style="color: #000000; font-weight: bold;">11. İşlemin Yeniden Başlatılması ve Seçenekler</span></h2>
+<ul>
+<li>Durdurma işleminden sonra F (Start Butonu)'na basıldığında, ekranda bir karar sayfası açılır. Operatör bu aşamada şu iki seçenekten birini tercih etmelidir:</li>
+</ul>
+<p><em>G:</em> Robotun, kaldığı yerden işlemlerine devam etmesini sağlar.</p>
+<p><em>H:</em> Robotun, mevcut işlemini iptal ederek bir sonraki aksesuar döngüsüne geçmesini sağlar.</p>
+<p><em>Kritik Uyarı:</em> <strong>H</strong> seçeneği tercih edildiğinde robot kendisini güvenli bir şekilde kurtardıktan sonra Gripper da kalıp varsa bırakma noktasına gidecektir. Bırakma işlemi sırasında kalıpta aksesuar bulunmadığından emin olunmalıdır.</p>
+<h2 id="12-aksesuar-montaj-alarm-tanmlar-ve-cozum-admlar"><span style="color: #000000; font-weight: bold;">12. Aksesuar Montaj Alarm Tanımları ve Çözüm Adımları</span></h2>
+<p>Aşağıda belirtilen alarmlar montaj esnasında meydana gelebilecek alarm mesajlarıdır.</p>
+<p><strong>Screw Drop failed !</strong> 9.madde bu alarm durumunu özetler.
+<strong>Screw did not move to jaw or Screw detector broken !</strong> "Vida Besleme Bekleme Zaman Aşımı" hatasıdır. Sistem vida besleme modundayken belirli bir süre geçmesine rağmen vidanın hedefe ulaştığına dair sinyal Vida kontrol sensöründen alınamadığında tetiklenir. Bu hataya sebep olabilecek hatalar aşağıdaki gibi olabilir: </p>
+<ul>
+<li>
+<p><strong>Besleme Haznesi Boş:</strong> Vida dizici vibratörde veya besleme ünitesinde vida kalmamış olabilir.</p>
+</li>
+<li>
+<p><strong>Mekanik Sıkışma:</strong> Vida, besleme hortumu içinde veya ağız kısmında sıkışmış, sensöre ulaşamamış olabilir.</p>
+</li>
+<li>
+<p><strong>Hava Basıncı Sorunu:</strong> Vidayı itmek için kullanılan hava basıncı yetersizdir.</p>
+</li>
+<li>
+<p><strong>Sensör Arızası:</strong> ScrewCame sensörü vidayı görmüyor veya fiziksel olarak yerinden oynamış olabilir.</p>
+</li>
+</ul>
+<h2 id="13-eksen-hareket-halindeyken-sksmas-durumu"><span style="color: #000000; font-weight: bold;">13. Eksen Hareket halindeyken Sıkışması Durumu</span></h2>
+<p>Robot bazen fiziksel bir engele çarpmadığı halde, gitmek istediği noktaya matematiksel olarak ulaşamaz veya eklem limitlerine takılır. Bu durumlarda operatörün kurtarması için izleyeceği adımlar şunlardır:</p>
+<h2 id="131-sorunu-teshis-etme-hata-mesaj-okuma"><span style="color: #000000; font-weight: bold;">13.1. Sorunu Teşhis Etme (Hata Mesajı Okuma)</span></h2>
+<ul>
+<li>Ekranda aşağıdaki mesajlardan birini görüyorsanız robot "geometrik" bir çıkmaza girmiştir:</li>
+</ul>
+<p><em>"Axis Limit":</em> *Robot bir ekleminin dönebileceği son noktaya gelmiştir.</p>
+<p><em>"Singularity"</em> (Tekillik): Robotun bilek eksenleri (4 ve 6) aynı hizaya gelmiş, robot yönünü şaşırmıştır.</p>
+<p><em>"Out of Reach":</em> Robotun kolu o noktaya yetişemiyor veya o rotayı takip edemiyordur.</p>
+<h2 id="132-robotu-manuel-modda-kurtarma-jogging"><span style="color: #000000; font-weight: bold;">13.2. Robotu Manuel Modda Kurtarma (Jogging)</span></h2>
+<p><img alt="RG830" src="_media/ModSecim.png" /></p>
+<p>Kontrol ünitesinden anahtarı saga çevirerek <strong>B (Manuel Mod)</strong>'a alın</p>
+<p><img alt="RG830" src="_media/1_6EksenSecim.png" /></p>
+<ul>
+<li>Robot bu hataları verdiğinde genellikle "Linear" (Doğrusal) modda hareket etmeyi reddeder. Robotu rahatlatmak için:</li>
+</ul>
+<p><em>Hareket Modunu Değiştirin:</em> FlexPendant üzerinden hareket modunu "Axis" (Eksen) moduna getirin. <strong>A</strong> tuşuna basıldığında <strong>B</strong> kısmının 1-3 ve 4-6 arasında eksen olarak değiştiğini göreceksiniz. </p>
+<p><em>Eksenleri Manuel Döndürün:</em> Limit hatası varsa: Sınıra dayanan ekseni ters yöne doğru joystick ile çevirin.Hangi eksen arasında çalışılacaksa o alanda <strong>B</strong> kalınmalı ve Jogging sayfasındaki joystick yönlerinin nasıl çalıştığını gösteren görsele bakarak hareket ettirilmelidir.</p>
+<p><em>Tekillik (Singularity) varsa:</em> 5. ekseni (bilek bükme) hafifçe yukarı veya aşağı hareket ettirerek eksenlerin aynı hizadan çıkmasını sağlayın.</p>
+<p><em>Güvenli Bir Noktaya Çekin:</em> Robotu, sorun yaşadığı noktadan yaklaşık 5-10 cm uzaklaştırıp boşluğa (güvenli alana) alın.</p>
+<h2 id="133-islemi-atlatma-ve-devam-ettirme-program-pointer-tasma"><span style="color: #000000; font-weight: bold;">13.3. İşlemi "Atlatma" ve Devam Ettirme (Program Pointer Taşıma)</span></h2>
+<p><img alt="RG830" src="_media/o_PointerTa%C5%9F%C4%B1ma.png" /></p>
+<ul>
+<li>Operatörün asıl yapması gereken, robotu o "hatalı noktadan" kurtarıp bir sonraki güvenli işlem adımına manuel olarak yönlendirmektir.şu adımları izleyin:</li>
+</ul>
+<p><em>Program Editor Sayfasını Açın:</em> FlexPendant'ta  kısmına girin <strong>A</strong>'dan menü çubuğuna ve <strong>B</strong>'ye basarak Program Editör sayfasını açın.</p>
+<p><em>Bir Sonraki Adımı Seçin:</em> Kod içerisinde robotun takıldığı satırın bir altındaki veya bir sonraki işlem başlangıcı olan (Örn: MoveL veya MoveJ) satıra dokunarak seçili hale getirin. Görsel <strong>C</strong>. Arada komut satırları varsa komut satırlarını atlamayın. Plc tarafında state lerde takılma yaşamamak için. </p>
+<p><em>İmleci Taşıyın (PP to Cursor):</em> <strong>D</strong> "Debug" menüsünden <strong>E</strong> "PP to Cursor" (Program İmlecini Seçili Satıra Taşı) seçeneğine basın.</p>
+<p>Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam edilebilir olduğu izlemek sağlıklı olacaktır. Manuel olarak adım adım ilerlemek için Flexpendant üzerinden görseldeki <strong>F</strong> Motor On butonunu <strong>basılı tutun</strong> Görsel <strong>H</strong> da olduğu gibi siz basılı tutarken Motor On yazısının olduğunu görün manuel de işlemleri bu şekilde ilerletebilirsiniz. Sonrasında Görsel <strong>G</strong> adım adım her satırı işletmek için kullanılır her basışta kendi içinde bir satır okuyarak ilerler. Görsel <strong>G</strong> de adım adım gitmek istemiyorsanız Görsel <strong>I</strong> ya bastığınız da tüm satırları adım adım taramaya başlar. Robot çalışırken durdurmak istediğiniz zaman Görsel <strong>J</strong> Stop butonu na basabilir yada Görsel <strong>F</strong> Motor On butonundan elinizi çekebilirsiniz. Robotu çalıştırdıktan sonra robot sonraki adıma kendisi gidebildiyse bu aşamadan sonra Robotu Otomatik Moda alarak tekrar çalıştırabilirsiniz.</p>
+<p><em>Otomatik Mod ve Start:</em> Görseldeki <strong>K</strong> yönüne anahtarı çevirin Flexpendant ekranına gelen soruları onaylayın ve Sistemi "Auto" moduna alın, görseldeki <strong>L</strong> kısmına basarak motorları aktif hale getirin ve sistemdeki alarmları kaldırdıktan sonra Start vererek işlemlerinize devam edin</p>
+<p><em>Hız Kontrolü:</em> Robot ilk hareketini yaparken hızı %10-%25 seviyesinde tutarak yörüngesini izleyin. bir sorun gözlemlenmez ise hızı tekrar %100 e alabilirsiniz. Hız ayar sayfası için sırasıyla görseldeki <strong>M-N</strong> kısımlarına tıklayarak <strong>O</strong> hız sayfasını açabilirsiniz.</p>
+<h2 id="14-ekrandaki-parametreler-hakknda-vidalama-eksen-hzlar-hakknda-detayl-bilgi"><span style="color: #000000; font-weight: bold;">14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi</span></h2>
+<p><img alt="RG830" src="_media/o_ParameterScrew.png" /> </p>
+<p><img alt="RG830" src="_media/o_ParameterScrew2.png" /> </p>
+<p><img alt="RG830" src="_media/o_ParameterScrew3.png" /></p>
+<p><strong>A:</strong> Vidalama eksen grubunun Home pozisyonunu <strong>(Parametre Değer:53)</strong> belirler.</p>
+<p>Sistem aşağıdaki durumlarda otomatik olarak ekseni bu pozisyona getirir:</p>
+<p>Çevrim Sonu: Bir vida çakma işlemi başarıyla tamamlandığında, yeni bir vida almak veya parçanın geçişine izin vermek için.</p>
+<p>Reset İşlemi: Makine sıfırlandığında (Reset) veya başlangıç konumuna döndüğünde.</p>
+<p>Vida Boşaltma (Unload): Sistemdeki mevcut vidanın tahliyesi sonrası güvenli bekleme noktasına geçişte.</p>
+<p><strong>B:</strong> Vidalama eksen grubunun işlem bittikten sonra veya Reset durumunda Home a geri dönerken kullandığı hızdır. <strong>(Parametre Değer:50)</strong></p>
+<p><strong>C:</strong> Bu parametre, vidalama ucunun referans alınan fiziksel sıfır noktasını belirler. Tüm çalışma mesafeleri, dalma derinlikleri ve yaklaşma pozisyonları bu "0" noktası referans alınarak hesaplanır. <strong>(Parametre Değer:82)</strong></p>
+<p><strong>D:</strong> Bu parametre, vidalama grubunun çalışma (Set) pozisyonuna giderken kullandığı hızdır. <strong>(Parametre Değer:42)</strong></p>
+<p><strong>E:</strong> Bu parametre, vidalama grubunun geri dönüş (Reset) pozisyonuna giderken kullandığı hızdır. <strong>(Parametre Değer:42)</strong></p>
+<p><strong>F:</strong> Aksesuar kalinligi , vida kafasi kaç mm disarida kalacak yani Vidabaşı ve çerçeve arasındaki mesafenin offseti ne kadar olacağı bilgisidir. <strong>(Parametre Değer:1)</strong></p>
+<p><strong>G:</strong> Vidanın besleme hortumundan gelip çeneler tarafından tutulduğu pozisyondur. Sistem, vida besleme işlemi sırasında ekseni bu noktaya getirir. Vidanın besleme ünitesinden gelip çeneye girdiği, ancak henüz parçaya vidalanmadığı ara durak noktasıdır. <strong>(Parametre Değer:55)</strong></p>
+<p><strong>H:</strong> Robotun Aktif çalışır durumda ise <strong>(Parametre Değer:1)</strong> olmalı Robotta bir sorun var veya byPass (Madde 2 deki durum) etmek istiyorsam <strong>(Parametre Değer:0)</strong> olmalıdır.</p>
+<p><strong>I:</strong> Sağ magazinde kaç aksesuar bulunduğu ile ilgili parametre <strong>(Parametre Değer:29)</strong></p>
+<p><strong>J:</strong> Sol magazinde kaç aksesuar bulunduğu ile ilgili parametre <strong>(Parametre Değer:19)</strong></p>
+<p><strong>K:</strong> Vidalama Tool unun '0' noktasi ile Gripperin '0' noktasi arasindaki yükseklik farki <strong>(Parametre Değer:1.5)</strong></p>
+<p><strong>L:</strong> Robot hattan ayrı olarak denemeler yapılacağı zaman <strong>(Parametre Değer:1)</strong>, hat ile senkron çalışacağı zaman <strong>(Parametre Değer:0)</strong> olmalıdır.</p>
+<p><strong>M:</strong> Robotun X düzlemindeki erişim mesafesine göre robotun aksesuarları sağa yada sola yönelimli olarak işleyebilmesi adına girilen limit değer. <strong>(Parametre Değer:1500)</strong></p>
+<p><strong>N:</strong> Robotun Y düzlemindeki erişim mesafesine göre robotun delme işlemini yönelimli olarak yapabilmesi adına girilen limit değer. <strong>(Parametre Değer:1950)</strong></p>
+<p><strong>Ö:</strong> Bu parametre, çerçeve taşıma ekseninin (AxisFrm) bir çerçeveyi yakalarken veya bir engelle karşılaştığında durmasını sağlayan tork (güç) limitini belirler. Sistem, eksen hareket halindeyken bu limit değerine ulaşıp ulaşmadığını sürekli izler. <strong>(Parametre Değer:....)</strong></p>
+<p><strong>R:</strong> Bu değer daha çok hassas ölçüm (metroloji) aşamasında devreye girer. Çerçeveye çok sert basıp profilin esnemesini veya ezilmesini engellemek için torku düşük bir seviyede tutar. <strong>(Parametre Değer:0.5)</strong></p>
+<p><strong>T:</strong> Parçayı yakalamak veya ölçmek için hareket ederken bu koordinatı ana hedef noktası olarak kullanır. Yazılım, her yeni iş emrinde bu değeri otomatik olarak güncelleyerek eksenin "parçayı nerede bulması gerektiğini" belirler.</p>
+<p><strong>U:</strong> Ölçüm işlemi sırasında temel yakalama pozisyonuna (CatchPos) eklenen düzeltme değeridir. <strong>(Parametre Değer:20)</strong></p>
+<h2 id="15-hat-ile-genel-calsma-prensibi"><span style="color: #000000; font-weight: bold;">15. Hat ile genel çalışma prensibi</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

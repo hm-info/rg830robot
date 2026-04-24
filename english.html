@@ -1,0 +1,1082 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RG830 Robot Manual">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/rg830robot/english.html">
+      
+      
+        <link rel="prev" href="Developer.html">
+      
+      
+        <link rel="next" href="operationGuide_en.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Manual - RG830 Robot Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rg830-robot-manual" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="index.html" title="RG830 Robot Manual" class="md-header__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RG830 Robot Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manual
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa / Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="turkish.html" class="md-tabs__link">
+          
+  
+  
+  🇹🇷 Türkçe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="english.html" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="RG830 Robot Manual" class="md-nav__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RG830 Robot Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇹🇷 Türkçe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="turkish.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kılavuz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hata Çözümleri
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yazılım Notları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="english.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-emergency-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Emergency Stop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-working-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Working Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-robot-axis-control-with-jog-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Robot Axis Control with Jog Movement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-robot-axis-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Robot Axis Calibration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tcp-tool-center-point-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. TCP (Tool Center Point) Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wobj-work-object-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Wobj (Work Object) Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-teaching-mold-pickup-and-drop-off-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Teaching Mold Pickup and Drop-off Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-teaching-accessory-control-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Teaching Accessory Control Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-teaching-drilling-tool-tip-control-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Teaching Drilling Tool Tip Control Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-emergency-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Emergency Stop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-working-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Working Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-robot-axis-control-with-jog-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Robot Axis Control with Jog Movement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-robot-axis-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Robot Axis Calibration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tcp-tool-center-point-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. TCP (Tool Center Point) Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wobj-work-object-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Wobj (Work Object) Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-teaching-mold-pickup-and-drop-off-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Teaching Mold Pickup and Drop-off Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-teaching-accessory-control-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Teaching Accessory Control Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-teaching-drilling-tool-tip-control-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Teaching Drilling Tool Tip Control Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rg830-robot-manual">RG830 Robot Manual</h1>
+<h2 id="1-emergency-stop"><span style="color: #000000; font-weight: bold;">1. Emergency Stop</span></h2>
+<p>When the robot is powered on, the emergency buttons on the robot and other external emergency situations must be cleared, and then the Motor On button should be pressed.</p>
+<p><img alt="KT803" src="_media/AcilDurdurma.png" /></p>
+<p><strong>A:</strong> Emergency Button</p>
+<p><strong>B:</strong> Motor On Buttton</p>
+<h2 id="2-working-modes"><span style="color: #000000; font-weight: bold;">2. Working Modes</span></h2>
+<p><img alt="RG830" src="_media/ModSecim.png" /></p>
+<ul>
+<li><strong>A - Automatic Mode:</strong> Production Mode</li>
+<li><strong>B - Manual Mode:</strong> Movement and controls can be performed in Jog modeog mode.</li>
+</ul>
+<h2 id="3-robot-axis-control-with-jog-movement"><span style="color: #000000; font-weight: bold;">3. Robot Axis Control with Jog Movement</span></h2>
+<ul>
+<li>When the robot is in manual mode, the 'Motor On' button on the right side of the FlexPendant must be pressed to activate the movement units.</li>
+</ul>
+<p><img alt="RG830" src="_media/MotorOnButon.png" /></p>
+<p><strong>A:</strong> Motor On Button</p>
+<ul>
+<li>From the menu bar at the top left, you can enter the Jogging page and see the status of the axes.</li>
+<li>We can move axes 1-6 individually. On the first press, you can see the directions of axis controls between 1-3, and on the second press between 4-6 under the relevant axis number.</li>
+</ul>
+<p><img alt="RG830" src="_media/1_6EksenSecim.png" /></p>
+<p><strong>A:</strong> Axis control selection between 1-6</p>
+<p><strong>B:</strong> Currently selected axis range</p>
+<ul>
+<li>The robot can be moved linearly in X, Y, and Z axes. These movements are performed by referencing the Work Object (Wobj) selected in the interface, and the direction of movement is determined by the orientation of the relevant Wobj.</li>
+</ul>
+<p><img alt="RG830" src="_media/LineerHareketSecim.png" /></p>
+<p><strong>A:</strong> Linear and Orientation Movement Selection Button</p>
+<p><strong>B:</strong> Linear Movement Display Icon</p>
+<ul>
+<li>Orientation movement according to Tool selection.</li>
+</ul>
+<p><img alt="RG830" src="_media/OrientationHareketSecim.png" /></p>
+<p><strong>A:</strong> Linear and Orientation Movement Selection Button</p>
+<p><strong>B:</strong> Orientation Movement Display Icon</p>
+<h2 id="4-robot-axis-calibration"><span style="color: #000000; font-weight: bold;">4. Robot Axis Calibration</span></h2>
+<ul>
+<li>During the initial setup of the robot, a separate calibration process must be performed for each axis. During calibration, the zero reference marks (notches) for each axis should be aligned with high precision so that they match exactly. Each axis has its own notch.</li>
+</ul>
+<p><img alt="RG830" src="_media/EksenCentikleri.png" /></p>
+<ul>
+<li>After all axes on the robot are physically aligned with the calibration notches, you can follow the visual steps below to record the relevant values via FlexPendant. This process should be applied during the robot's initial setup or when a 'Robot calibration lost' warning is received from the system</li>
+</ul>
+<p><img alt="RG830" src="_media/RobotEksenKalibrasyonu.png" /></p>
+<h2 id="5-tcp-tool-center-point-introduction"><span style="color: #000000; font-weight: bold;">5. TCP (Tool Center Point) Introduction</span></h2>
+<p>TCP (Tool Center Point) definition is performed by approaching a fixed, sharp-pointed reference point from different angles. The following steps must be followed to correctly define both the center point and the Z-axis direction:</p>
+<ul>
+<li>TCP &amp; Z Approach Method</li>
+</ul>
+<p>In this operation, a total of 5 approach points must be defined to provide high precision:</p>
+<p>Approach 1, 2, and 3 (TCP Determination): The reference point is touched from three different directions with approximately 120° angles between them.</p>
+<p>Approach 4 (Perpendicular View): The tool is brought into contact when positioned exactly perpendicular (90°) to the reference point. This is the basic reference point for orientation calculation.</p>
+<p>Approach 5 (Z-direction Definition): The tool is introduced by lifting it upward from the reference point in the Z-axis direction. This final point ensures that the robot correctly perceives the positive Z-direction in the tool coordinate system.</p>
+<ul>
+<li>Critical Application Notes</li>
+</ul>
+<p>Precision: All approaches must contact the apex (end point) of the fixed reference point with the same millimetric precision. Deviations in contact points directly reduce the robot's working precision.</p>
+<p>Verification: After the definition is complete, the robot should be moved in manual mode (Orientation) to verify that the tool tip remains fixed at the reference point.</p>
+<ul>
+<li>Approach Visuals</li>
+</ul>
+<p><img alt="RG830" src="_media/TCPyaklasim.png" /></p>
+<ul>
+<li>Tool Introduction Calibration Steps</li>
+</ul>
+<p>Follow the visual sequence above to provide precise approach to each reference point. When access to each point is completed, press the 'Modify Position' button specified in step 5 of the image below to record the relevant coordinate to the system. After all points to be defined are taught in this way, press the 'OK' button to complete the calibration process.</p>
+<p><strong>NOTE:</strong> The robot must be in Manual Mode for this operationoperation.</p>
+<p><img alt="RG830" src="_media/TCP_Tan%C4%B1tmaAdimlar%C4%B1.png" /></p>
+<h2 id="6-wobj-work-object-introduction"><span style="color: #000000; font-weight: bold;">6. Wobj (Work Object) Introduction</span></h2>
+<p><strong>Wobj (Work Object):</strong> A user-defined coordinate system used to define parts or fixtures in the robot's work area. In ABB robot systems, the Wobj definition process is performed using the 3-Point Method on the relevant surface.</p>
+<ul>
+<li>Definition with 3-Point Method
+To create the coordinate system, the operator sequentially teaches these three reference points:</li>
+</ul>
+<p>X1 (Origin Point): The starting (zero) point of the surface to be defined. The center of the coordinate system is considered to be this point.</p>
+<p>X2 (X-axis Direction): The second point that determines the direction of the X-axis. The line between X1 and X2 creates the positive X-direction of the system.</p>
+<p>Y1 (Y-axis Direction): The third point that determines the direction of the Y-axis. This point describes the positive Y-direction perpendicular to the X-axis.</p>
+<p>You can teach the robot to each introduction point (X1, X2, Y1) separately and by clicking Modify Position as shown in figure 5, you can teach the coordinates of that point. After all teaching is complete, you can click Ok as shown in figure 5 to complete the operation.</p>
+<p>Automatic Z-axis and Planarity</p>
+<p>The plane created by these three points is mathematically calculated by the system to automatically determine the Z-axis.</p>
+<p>Movement on Inclined Surfaces: Even if the defined surface is inclined, when the robot moves with the Wobj reference of this surface, it performs a perfect linear movement based on the surface's inclination.</p>
+<p>Precision: The farther apart the X and Y points are and the more precisely they are selected, the higher the accuracy of the created Wobj.</p>
+<p><strong>NOTE-1:</strong> The accuracy of the TCP values of the Tool used during the Wobj definition process directly affects the precision of the created work object.</p>
+<p><strong>NOTE-2:</strong> The robot must be in Manual Mode for this operation.</p>
+<ul>
+<li>You can follow the visual instructions below to see how the Wobj introduction process is performeds is performed.</li>
+</ul>
+<p><img alt="RG830" src="_media/WobjTan%C4%B1t%C4%B1m.png" /></p>
+<h2 id="7-teaching-mold-pickup-and-drop-off-points"><span style="color: #000000; font-weight: bold;">7. Teaching Mold Pickup and Drop-off Points</span></h2>
+<p>In the system, mold pickup and drop-off operations are performed on the same coordinate plane. For this reason, the definition made for the pickup point will automatically apply to the drop-off operation as well.</p>
+<ul>
+<li>Magazine Layout and Software Structure:</li>
+</ul>
+<p>In the current system, there are Left and Right Magazine layouts, each consisting of 3 floors. These layouts are categorized as F1, F2, and F3 within the system, and the cell layout of each floor is defined with Array structures in software. This array structure allows the robot to navigate automatically and precisely to the sub-compartments within each floor.</p>
+<p><strong>IMPORTANT NOTE:</strong> All point definition and update operations must be performed while preserving the orientation values in the robot's standard work cycle. Point updating should not be done with randomly selected joint angles or orientations; it must be verified that the robot is at the correct approach angle to the target point. Records made at random positions can cause trajectory errors and mechanical collisions in automatic mode.</p>
+<ul>
+<li>The following steps must be followed when teaching the mold pickup point:</li>
+</ul>
+<p><strong>Alignment:</strong> The robot must be precisely positioned at the relevant pickup point in manual mode.</p>
+<p><strong>Mechanical Check:</strong> While the gripper is in the open position, it must be verified that the centering pins are exactly aligned with the recesses on the mold.</p>
+<p><strong>Lock Test:</strong> The gripper should be closed to check mechanical fit and holding security.</p>
+<p><strong>Recording:</strong> After verifying that the physical placement is error-free, the recording process of the reference point for the relevant Array element must be completed by following the visual instructions specified below.</p>
+<p><strong>NOTE:</strong> The robot must be in Manual Mode for this operation.</p>
+<p><img alt="RG830" src="_media/AlmaBirakmaNokta.png" />  <img alt="RG830" src="_media/AlmaBirakmaNoktaR.png" /></p>
+<h2 id="8-teaching-accessory-control-points"><span style="color: #000000; font-weight: bold;">8. Teaching Accessory Control Points</span></h2>
+<p>Each accessory in the system has its own control sensor for presence/absence verification. The following procedure must be followed to correctly define the accessory control point:</p>
+<ul>
+<li>Alignment and Positioning:</li>
+</ul>
+<p>After the robot takes the mold from the relevant station, it should exit without compromising the grip plane and orientation (in a linear trajectory). The accessory should be positioned directly opposite the sensor and within the detection distance. The robot's position at this control point should be determined as the position where the sensor sees the accessory most stably and should be recorded.</p>
+<ul>
+<li>Software Structure:</li>
+</ul>
+<p>As with pickup and drop-off points, accessory control points are also defined within Array structures specifically named for each accessory group. This allows separate and independent control coordinates to be created for each accessory type.</p>
+<ul>
+<li>Recording Operation:
+After precise positioning is completed, the point recording steps should be performed by following the visual instructions below.</li>
+</ul>
+<p><strong>NOTE:</strong> The robot must be in Manual Mode for this operation.</p>
+<p><img alt="RG830" src="_media/AksesuarKontrolL.png" />  <img alt="RG830" src="_media/AksesuarKontrolR.png" /></p>
+<h2 id="9-teaching-drilling-tool-tip-control-point"><span style="color: #000000; font-weight: bold;">9. Teaching Drilling Tool Tip Control Point</span></h2>
+<p>Before the robot starts a drilling operation, it checks the integrity of the drill bit (break detection) through the DrillingToolControlProg routine. For the system to perform this check properly, correct teaching of the reference control point is critical.</p>
+<ul>
+<li>Points to Pay Attention:</li>
+</ul>
+<p>Just like in pickup and drop-off operations, the control point must be taught in the same orientation suitable for the robot's own operation cycle. The robot approaching this point with standard work angle increases detection precision and prevents trajectory errors.</p>
+<p>The definition and recording steps of this point are detailed in the images below</p>
+<p><img alt="RG830" src="_media/DrillToolKontrol.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
