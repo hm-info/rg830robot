@@ -237,7 +237,11 @@ Bu işlemlerden sonra önce manuel olarak çalıiştırılarak işlemin devam ed
 
 ## <span style="color: #000000; font-weight: bold;">14. Ekrandaki Parametreler hakkında , vidalama eksen hızları hakkında detaylı bilgi</span>
 
-![RG830](_media/o_ParameterScrew.png)
+![RG830](_media/o_ParameterScrew.png) 
+
+![RG830](_media/o_ParameterScrew2.png) 
+
+![RG830](_media/o_ParameterScrew3.png)
 
 **A:** Vidalama eksen grubunun Home pozisyonunu **(Parametre Değer:53)** belirler.
 
@@ -269,7 +273,7 @@ Vida Boşaltma (Unload): Sistemdeki mevcut vidanın tahliyesi sonrası güvenli 
 
 **K:** Vidalama Tool unun '0' noktasi ile Gripperin '0' noktasi arasindaki yükseklik farki **(Parametre Değer:1.5)**
 
-**L:** Operatörün yeni bir profili (frame) makineye fiziksel olarak beslediğini veya yazılımın yeni bir profilin işlenmeye hazır olduğunu onayladığı andır.Sistem bu sinyali görmeden iş verilerini kopyalamaya başlamaz. **(Parametre Değer:1)**
+**L:** Robot hattan ayrı olarak denemeler yapılacağı zaman **(Parametre Değer:1)**, hat ile senkron çalışacağı zaman **(Parametre Değer:0)** olmalıdır.
 
 **M:** Robotun X düzlemindeki erişim mesafesine göre robotun aksesuarları sağa yada sola yönelimli olarak işleyebilmesi adına girilen limit değer. **(Parametre Değer:1500)**
 
