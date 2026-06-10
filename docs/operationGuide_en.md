@@ -1,323 +1,364 @@
-## <span style="color: #000000; font-weight: bold;">1. Machine Initial Startup Robot Gripper Mold Status</span>
+## IMPORTANT NOTES FOR THE CUSTOMER
 
-- When the system is first turned on, after reset, it asks for confirmation if there is a mold in the gripper.
+1) There should always be accessories in the default molds.
+
+2) When compressed air is lost, accessories may drop; when air returns they may rise again. During this event two accessories can emerge and jam the mold — check accessories that dropped when air is lost.
+
+3) After an emergency stop, press the reset button on the line panel until the reset lamp lights to reinitialize the line.
+
+4) If an emergency stop is pressed while the flip-up tables are moving, they may slip slightly but will stop afterward.
+
+5) Emergency stops cut outputs both on the robot panel and the line panel, putting both systems into an emergency state. Unless it is a real emergency (for example a frame trapped between two tables) you can stop systems individually using their stop buttons.
+
+6) Entering the guarded area resets the system. After exiting and issuing the door-lock command, first press the reset button on the line panel until its lamp lights.
+
+7) If you want to stop the robot while the line is running, or stop the line while the robot is running: press the stop buttons on the relevant panel.
+
+## 1. Robot Gripper Mold State on Initial Machine Power-Up
+
+- On first power-up, after reset the system will request confirmation whether there is a mold in the gripper.
 
 ![RG830](_media/o_GripperFree.png)
 
-*YES:* It places the mold it has in its designated spot, returns to the home position, and waits for communication with the job file.
+*YES:* The robot will place the mold it holds into its numbered slot, return to Home and wait for the job file.
 
-*NO:* It waits for communication with the job file in the home position.
+*NO:* The robot will wait at Home for the job file.
 
-**NOTE:** If the job file is added manually, it will be done with the following three-step explanation. When the automatic system is running, it will pull from the system itself, so there will be no need to perform these operations.
+NOTE: If the job file is added manually, follow the three steps below. During automatic operation the system will fetch the job file itself and manual steps are not required.
 
-- The exe file must be opened to read the job file.
-- The prepared job file should be placed in the Robot File folder.
-- When the Start button is pressed, the job file in the Robot File folder is read, data transfer from PLC to robot occurs, and after the information transfer is complete, the robot starts running the job file.
+- Open the EXE so the job file can be read.
+- Place the prepared job file into the Robot File folder.
+- When Start is pressed, the job file in Robot File is read and PLC-to-robot data transfer occurs; after transfer the robot begins the job.
 
-## <span style="color: #000000; font-weight: bold;">2. Robot Bypass and Line Independent Operation Mode</span>
+## 2. Robot Bypass and Independent Line Operation Mode
 
-When the robot is not to be included in the operation, the following configuration should be applied to allow the line to continue working uninterrupted:
+When the robot should not participate in the operation and the line must continue running, apply this configuration:
 
-*Parameter Setting:* The "RobotActive" parameter on the robot control screen should be set to "0". When this setting is applied, the robot operation is automatically bypassed. The robot is disabled, allowing the line to operate independently.
+*Parameter Setting:* On the robot control screen set `RobotActive` to `0`. This bypasses the robot operation allowing the line to run standalone.
 
-*Work Flow (Frame Transfer):* Processed frames advance directly on the line and are directed to the transfer table located at the robot output.
+*Workflow (Frame Transfer):* Processed frames proceed directly along the line and are directed to the transfer table at the robot output.
 
-## <span style="color: #000000; font-weight: bold;">3. Door Opening Permission Procedure</span>
+## 3. Door Opening Permission Procedure
 
-When the **"Door Opening Permission Button"** is pressed by the operator, the robot completes its active operation to protect mechanical safety and part integrity, then enters standby mode.
+Door Open Permission Scenario:
 
-*Operation Completion Scenarios:*
+- On the door switches:
 
-If the system is running any of the following operations, it does not interrupt the process, but waits for the operation to complete:
+    White button: Door open request
 
-- Screwing: The active screwing operation continues until the torque value is reached.
+    Black button: Door lock command
 
-- Screw Feeding: The screw pulling or transfer operation is completed.
+- The door open request is approved when the three flip-up tables on the line are not moving up or down.
+- Pressing the manual latch behind the door mechanically releases the lock — use only in urgent situations requiring immediate action.
+- After opening the door, close both doors and press the black button to lock. Then confirm on-screen that doors are locked and the area is clear to resume operations.
 
-- Drilling: The drill tip is safely withdrawn from the workpiece.
+When the operator presses the "Door Open Permission Button" the robot will finish its active operation, then stop to preserve mechanical safety and part integrity.
 
-- ..........
+Operation Completion Scenarios:
 
-- ...........
+If any of the following is active the system will not interrupt the process and will wait for completion:
 
-When the active cycle is completed at a safe point, the system automatically opens the door locks and gives entry approval to the operator.
+- Screwing: the active screwing continues until the torque setpoint is reached.
 
-## <span style="color: #000000; font-weight: bold;">4. Emergency Stop - Stop Scenarios</span>
+- Screw feeding: screw pick or transfer completes.
 
-*Emergency Stop Condition:*
+- Drilling: the drill bit retracts safely from the workpiece.
 
-When the Emergency Stop button is pressed, the active work cycle is canceled due to security protocols, and the system enters safe standby mode. After this process, since the system data is reset, restarting the job file from the beginning is mandatory.
+When the active cycle completes at a safe point, the system will automatically unlock the door and permit operator entry.
 
-*Steps to Reactivate the System:*
+## 4. Emergency Stop / Reset and Stop/Start Scenarios
 
-![RG830](_media/o_AlarmRstButon.png)
+### 4.1 Emergency Stop - Reset
 
-- The pressed Emergency Stop button is released.
-- *A:* Alarms (Reset) are cleared from the operator panel.
-- *B:* Reset is pressed. The robot performs "Go to Main", then **C** question panel opens.
-- *C:* Inquiry is made whether there is a mold on the gripper or not. Subsequently, **D** question panel opens.
-- *D:* A question panel opens regarding whether to continue with the same job file or a different job file after the emergency.
+When an emergency stop is pressed the active cycle is cancelled by the safety protocol and the system enters a safe-stop mode. To return the system to its initial running state follow these steps:
 
-  *YES:* Continues with the job file in memory.
-
-  *NO:* Waits for a different job file to be loaded. If it cannot read the job file for a certain period, it gives an error message that it could not read the file.
-
-  *Stop Condition:*
-
-When *E (Stop Button)* is pressed in the system, PLC and robot enter a coordinated "waiting mode". The technical operation of this process is as follows:
-
- - *PLC*, when the stop signal is received, freezes the current work step (state) and puts the system into "Stop State" mode.
-
- - *Robot*, instead of stopping movement immediately when the stop signal comes, continues to work until the next waiting signal step (checkpoint) to maintain process integrity. When the robot reaches that step, it stops and waits for the "status bit" from the PLC.
-
- - *Restarting the System:* When the operator presses **F (Start Button)**, the PLC activates the relevant status bit and directs the system back to the normal work cycle from the step it left off. Bu işlemden sonra sistem verileri sıfırlandığı için iş dosyasının en baştan başlatılması zorunludur.
-
-*Sistemi Tekrar Aktif Hale Getirme Adımları:*
+Steps to Reactivate the System:
 
 ![RG830](_media/o_AlarmRstButon.png)
 
-- Basılı olan Acil Stop butonu serbest bırakılır.
-- *A:* Operatör panelinden Alarmlar (Reset) temizlenir.
-- *B:* Reset e basılır . Robot Po to Main yapar arkasından **C** soru paneli açılır
-- *C:* Gripper üzerinde kalıp var,yok sorgusu yapılır. Daha sonrasında **D** soru paneli açılır
-- *D:* Acilden sonra aynı iş dosyası ile mi yoksa farklı bir iş dosyası ile mi çalışacağına dair soru paneli açılır.
+- A: Clear alarms (Reset) on the operator panel.
+- Press the reset button on the line panel until its lamp lights.
+- B: Press Reset. The robot performs Po to Main and then panel C question appears.
+- C: The system asks whether there is a mold on the gripper; then panel D appears.
+- D: The system asks whether to continue with the same job file or a different job file after the emergency.
 
-  *YES:* Hafızadaki iş dosyası ile devam eder.
+    YES: Continue with the job file in memory.
 
-  *NO:*  Farklı iş dosyasının yüklenmesini bekler. Belli bir süre iş dosyasını okuyamazsa, dosya okuyamadığına dair hata mesajı verir.
+    NO: Wait for a different job file to be loaded. If the file cannot be read within the timeout the system will report a file-read error.
 
-  *Stop Durumu:*
+### 4.2 Stop - Reset
 
-When *E (Stop Button)* is pressed in the system, PLC and robot enter a coordinated "waiting mode". The technical operation of this process is as follows:
+When `E (Stop Button)` is pressed the PLC and robot enter a coordinated wait mode. Technical behavior:
 
- - *PLC*, when the stop signal is received, freezes the current work step (state) and puts the system into "Stop State" mode.
+- PLC freezes the current state and sets the system into "Stop State" mode.
 
- - *Robot*, instead of stopping movement immediately when the stop signal comes, continues to work until the next waiting signal step (checkpoint) to maintain process integrity. When the robot reaches that step, it stops and waits for the "status bit" from the PLC.
+- Robot, if it is not actively screwing, feeding, or drilling, decelerates to zero upon the PLC stop signal and waits at the current program line.
 
- - *Restarting the System:* When the operator presses **F (Start Button)**, the PLC activates the relevant status bit and directs the system back to the normal work cycle from the step it left off.
+- Restarting: If no alarms exist continue from step B; if alarms exist, follow the Emergency Stop - Reset steps.
 
-## <span style="color: #000000; font-weight: bold;">5. When Working with the Line, When Will the Frame Come from the Line, Is the Frame Coming from the Line the Same as the Frame on the Line?</span>
+### 4.3 Emergency Stop - Start
 
-For the line to work synchronously, the frame transfer and job file creation process proceeds according to the following criteria:
+- Pressing emergency stop cuts outputs from both the line and robot panels.
+- To enter the guarded area press the door open permission button (White Button).
+- After entry and exit, close the door and press the black button to lock it.
+- Release emergency stops and press the reset button on the line panel until the reset lamp lights.
 
-*Frame Arrival Condition:* If there is a ready frame at the exit table (Z) at the end of the line, the robot waits for the new frame request from the PLC.
+![RG830](_media/o_Confirm.png)
 
-*Job File Creation:* For the robot to start its operation, the frame at the (Z) table must have its job file created and defined in the system.
+- After confirming on-screen that the area is clear the system resumes from where it stopped.
 
-*Frame on Line vs Incoming Frame Check:* The frame IDs in the current frame at the (Z) table and in the job file coming from the PLC software must match each other. If there is a match, the robot starts the operation; if there is no match, it gives an incorrect job file alarm.
+### 4.4 Stop - Start
 
-## <span style="color: #000000; font-weight: bold;">6. Alarm Conditions During Frame Clamping</span>
+- To stop without entering the guarded area press Stop; press Start to resume.
+- To enter the guarded area press door open permission (White Button); after exit close doors and press black button to lock.
+- Press the reset button on the line panel until the reset lamp lights.
 
-When the system is ready and the frame reaches the exit sensor, when the axis approaches to clamp the frame but cannot clamp it sufficiently, it gives a **"Frame Measuring Error, Wrong Frame Sizes !"** error regarding measurement. To clamp again, press **(F) Start Button** and perform the clamping operation again.
+![RG830](_media/o_Confirm.png)
 
-## <span style="color: #000000; font-weight: bold;">7. Drilling Tool Not Ok Alarm Condition</span>
+- G: After confirming the area is empty the system continues where it left off.
 
-*The system performs automatic tool control once at the beginning of each job to ensure operational safety. The process and what to do in case of error are specified below:*
+## 5. Line Synchronization: When Will a Frame Arrive and Does It Match the Incoming Frame?
 
-- The robot touches the tool tip to a predefined control switch to verify the physical integrity of the drilling tool.
+For line synchronization, frame transfer and job file assignment proceed under these rules:
 
-- If the verification signal is not received from the switch despite reaching the tool control point, the robot automatically stops movement. It moves to a safe waiting position (above the control point) and activates the status alarm on the operator panel.
+*Frame Arrival Condition:* The robot PLC requests a new frame when a ready frame is present on the output table (Z).
 
-*Intervention and Troubleshooting:*
+*Job File Creation:* The frame on the (Z) table must have a created and registered job file for the robot to start processing.
 
-- *Tool Damage:* If the drill bit is physically damaged or broken, it should be replaced with a new tool tip.
+*Frame Match Check:* The frame ID in the job file from PLC must match the ID of the frame on (Z). If matched the robot starts; if not, a wrong-job-file alarm occurs.
 
-- *Sensor Check:* If no problem is observed on the tool tip, the functionality and cable connections of the relevant control sensor (switch) should be checked.
+## 6. Alarms During Frame Clamping
 
-- *Reactivating the System:* After necessary physical corrections are made and the fault source is eliminated, press the **Start Button (F)** on the panel to continue the process from where it left off.
+When the frame arrives at the clamping sensor and the clamping axis cannot clamp sufficiently the system raises **"Frame Measuring Error, Wrong Frame Sizes !"**. Press **F (Start Button)** to retry clamping.
 
-## <span style="color: #000000; font-weight: bold;">8. Accessory Not Ok Alarm Condition</span>
+## 7. Drilling Tool Not Ok Alarm
 
-For the accessory mounting process to proceed healthily, it is critical that the part is successfully taken from the magazine and positioned precisely within the mold. Therefore, the presence and position of the part are checked via sensors before proceeding to the mounting stage.
+The system performs an automatic tool check once at the start of each job for safety. Process and corrective steps:
 
-If the accessory brought to the control point by the robot is not detected by the sensor, the system generates an "AccessoryNotOk" alarm; the robot moves to waiting mode by rising slightly from the control point to allow operator intervention. The solution paths to be followed in this case are specified below:
+- The robot touches the drill tip to a predefined check switch to verify tool integrity.
 
-*Continuing with Manual Intervention*
+- If the tool tip triggers the sensor the operation continues.
 
-- If the accessory has come out of the magazine but remained on the magazine because it was not fully taken by the mold:
+- If no confirmation signal is received the robot stops, moves to a safe waiting position above the check point and raises an alarm on the operator panel.
 
-The operator opens the safety door (the system will go into Emergency Stop mode) and enters the line. Takes the accessory from the magazine and manually places it into the mold, paying attention to the direction of arrival. After exiting the line and closing the safety door, reset the system and press **F (Start Button)** on the panel to continue the process from where it left off.
+Intervention and Troubleshooting:
 
-*Retrying the Picking Operation (If Accessory is in Magazine)*
+- Tool Damage: If the drill tip is damaged replace it.
 
-- If the accessory has remained in the magazine and the operator wants the robot to pick the same accessory again:
+- Sensor Check: If the tool appears fine, verify sensor function and wiring.
 
-After exiting the line and activating the safety lock, press **B (Reset Button)** on the panel. With this operation, the robot will repeat the accessory picking cycle from the beginning.
+- Restart: After repairs press **Start (F)** on the operator panel to continue the cycle.
 
-*Condition Where No Accessory Comes Out of Magazine*
+## 8. Accessory Not Ok Alarm
 
-- If the robot has returned empty because no accessory came out of the magazine and has come to the waiting point:
+Assembly requires the part to be picked from the magazine and precisely placed in the mold. Presence and position are checked by sensors.
 
-After the error is fixed, press **B (Reset Button)** on the panel to restart the accessory picking operation.
+If the accessory at the control point is not detected the system raises an "AccessoryNotOk" alarm; the robot raises slightly and waits for operator intervention. Recommended recovery:
 
-## <span style="color: #000000; font-weight: bold;">9. Condition Where Screw Cannot Be Pulled to Jaw</span>
+Manual Intervention:
 
-The robot requests screw feeding from the system before the screwing operation. If the screw feeding fails, the operator should follow the steps below:
+- If the accessory left the magazine but was not taken by the mold and remains on the magazine:
 
-*Preliminary Check:*
+    Open the safety door (system enters Emergency Stop), enter the line, remove the accessory and manually place it in the mold with correct orientation. Exit, close the door, reset and press **F (Start)** to resume.
 
-- The operator should first visually check the screwing tip to confirm whether the screw has been sent or not.
+Repeat Pick (if accessory remains in magazine):
 
-*If Screw Feeding is Successful (Visual Confirmation):*
+- If the accessory remains in the magazine and you want the robot to pick it again:
 
-- If the screw has reached the tip and no problem is observed:
+    Exit the line, enable safety interlock and press **B (Reset Button)** on the panel. The robot will repeat the pick cycle from the beginning.
 
-Since the line has been entered, the system safety circuits must be reset first. Then press **F (Start Button)** on the panel to continue the process from where it left off.
+No Accessory Released:
 
-*If Screw Feeding Failed (Error Confirmation):*
+- If no accessory was released and the robot returned empty to wait:
 
-- If it is confirmed in the visual check that the screw has not reached the tip:
+    After clearing the fault press **B (Reset Button)** to restart accessory pickup.
 
-Since the line has been entered, the system safety circuits must be reset first. Then press **B (Reset Button)** on the panel to retrigger the screw pulling operation.
+## 9. Unable to Insert Screw into Jaw
 
-## <span style="color: #000000; font-weight: bold;">10. PassNextAccessory to Skip Current Accessory Mounting</span>
+Before screwing the robot requests a screw feed. If screw feeding fails the operator should:
+
+Pre-check:
+
+- Visually inspect the screw tip to confirm delivery.
+
+If Screw Delivery Succeeded (visual):
+
+- Reset safety circuits (because you entered the line) then press **F (Start)** to continue.
+
+If Screw Not Delivered:
+
+- Reset safety circuits then press **B (Reset Button)** to re-trigger screw feed.
+
+## 10. PassNextAccessory to Skip Current Accessory
 
 ![RG830](_media/o_PassNextAccessory.png)
 
-If any problem is encountered during the robot's drilling, screwing, or other operations, the following steps should be followed to intervene in the process without disrupting the current workflow:
+If an issue occurs during drilling, screwing or other operations and you need to intervene without disrupting the flow:
 
-*Stopping the Operation:*
-- Press E (Stop Button) on the panel. This puts the robot into waiting mode.
+Stop the operation:
+- Press **E (Stop Button)** on the panel to put the robot into wait mode.
 
-*Caution:* If B (Reset Button) is pressed at this stage, the entire process state is reset and the process returns to the beginning.
+Caution: Pressing **B (Reset Button)** here will reset the entire process state and return to the start.
 
-## <span style="color: #000000; font-weight: bold;">11. Restarting the Operation and Options</span>
+## 11. Restart Options After a Stop
 
-- After stopping, when F (Start Button) is pressed, a decision page opens on the screen. The operator should choose one of the following two options at this stage:
+- After stopping, when **F (Start Button)** is pressed a decision screen appears. Choose one option:
 
-*G:* Allows the robot to continue its operations from where it left off.
+G: Continue from where the robot stopped.
 
-*H:* Allows the robot to cancel its current operation and proceed to the next accessory cycle.
+H: Cancel current operation and proceed to next accessory cycle.
 
-*Critical Warning:* When option **H** is chosen, after the robot safely rescues itself, if there is a mold in the gripper, it will go to the drop point. Make sure that there is no accessory in the mold during the drop operation.
+Critical: If **H** is chosen, after the robot frees itself it will go to the drop-off point and if a mold is in the gripper it will place it. Ensure the mold is empty during drop-off.
 
-## <span style="color: #000000; font-weight: bold;">12. Accessory Mounting Alarm Definitions and Solution Steps</span>
+## 12. Accessory Assembly Alarm Definitions and Remedies
 
-The alarms listed below are alarm messages that may occur during mounting.
+The following alarms may occur during assembly.
 
-**Screw Drop failed !** Section 9 summarizes this alarm condition.
-**Screw did not move to jaw or Screw detector broken !** This is a "Screw Feeding Waiting Timeout" error. It is triggered when the system is in screw feeding mode and despite a certain period of time passing, the signal indicating that the screw has reached the target is not received from the Screw control sensor. The errors that may cause this error are as follows:
+**Screw Drop failed !** See item 9.
+**Screw did not move to jaw or Screw detector broken !** This is a "Screw Feed Timeout" alarm triggered when no signal from the screw detector is received within expected time. Possible causes:
 
-- **Feeding Hopper Empty:** The screw may not be left in the screw feeder vibrator or feeding unit.
+- Feed hopper empty: no screws left in the vibratory feeder/feed unit.
 
-- **Mechanical Jamming:** The screw may be stuck in the feeding hose or at the mouth, preventing it from reaching the sensor.
+- Mechanical jam: screw stuck in feed hose or mouth and cannot reach sensor.
 
-- **Air Pressure Issue:** The air pressure used to push the screw is insufficient.
+- Air pressure issue: insufficient air pressure to feed the screw.
 
-- **Sensor Malfunction:** The ScrewCame sensor is not seeing the screw or may have physically shifted out of position.
+- Sensor fault: ScrewCame sensor not detecting the screw or displaced.
 
+## 13. Axis Stuck While Moving
 
-## <span style="color: #000000; font-weight: bold;">13. Condition Where Axis Gets Stuck During Movement</span>
+The robot may become mathematically unable to reach a point or hit joint limits even without a physical obstacle. Rescue steps:
 
-Sometimes the robot cannot reach the point it wants to go mathematically or gets stuck in joint limits, even if it does not hit a physical obstacle. In these cases, the steps the operator should follow to rescue are as follows:
+### 13.1 Diagnose (Read Error Message)
 
-## <span style="color: #000000; font-weight: bold;">13.1. Diagnosing the Problem (Reading Error Message)</span>
+- If you see one of these messages, the robot has entered a "geometric" trap:
 
-- If you see one of the following messages on the screen, the robot has entered a "geometric" deadlock:
+"Axis Limit": A joint has reached its rotational limit.
 
-*"Axis Limit":* The robot has reached the last point one of its joints can rotate.
+"Singularity": Wrist axes (4 and 6) are aligned and the robot loses orientation.
 
-*"Singularity"* (Singularity): The robot's wrist axes (4 and 6) have aligned, the robot has lost its direction.
+"Out of Reach": The robot arm cannot reach or follow the trajectory.
 
-*"Out of Reach":* The robot's arm cannot reach that point or follow that path.
-
-## <span style="color: #000000; font-weight: bold;">13.2. Rescuing the Robot in Manual Mode (Jogging)</span>
+### 13.2 Rescue in Manual Mode (Jogging)
 
 ![RG830](_media/ModSecim.png)
 
-Turn the key to the right from the control unit to put it in **B (Manual Mode)**
+Switch the control key to the right to enter **B (Manual Mode)**.
 
 ![RG830](_media/1_6EksenSecim.png)
 
-- When the robot gives these errors, it usually refuses to move in "Linear" (Linear) mode. To relieve the robot:
+- When these errors occur the robot often refuses linear moves. To relieve:
 
-*Change Movement Mode:* Change the movement mode to "Axis" (Axis) mode via FlexPendant. When **A** is pressed, you will see that **B** part changes between axes 1-3 and 4-6.
+*Change Move Mode:* Set movement mode to "Axis" on the FlexPendant. Press **A** to toggle axis ranges 1-3 and 4-6 shown in **B**.
 
-*Manually Rotate Axes:* If there is a limit error: Rotate the axis hitting the limit in the opposite direction with the joystick. The area where the axis to be worked on should be kept in **B**, and moved by looking at the image showing how the joystick directions work on the Jogging page.
+*Manually rotate axes:* If a limit error occurs rotate the limiting axis slightly in the opposite direction with the joystick while in the correct axis range.
 
-*If there is Singularity:* Slightly move the 5th axis (wrist bending) up or down to make the axes come out of alignment.
+*If Singularity:* Move axis 5 slightly up or down to break alignment.
 
-*Pull to a Safe Point:* Move the robot away from the problematic point by about 5-10 cm and take it to empty space (safe area).
+*Move to a Safe Point:* Move the robot 5-10 cm away from the problem point into free space.
 
-## <span style="color: #000000; font-weight: bold;">13.3. "Bypassing" the Operation and Continuing (Moving Program Pointer)</span>
+### 13.3 Skip and Continue (Program Pointer Move)
 
 ![RG830](_media/o_PointerTaşıma.png)
 
-- What the operator should actually do is to rescue the robot from that "faulty point" and manually direct it to the next safe operation step. Follow these steps:
+- Free the robot from the stuck line and manually direct it to the next safe program step:
 
-*Open Program Editor Page:* Enter the section on FlexPendant, press **A** from the menu bar and **B** to open the Program Editor page.
+*Open Program Editor:* On the FlexPendant open the Program Editor via menu **A** then **B**.
 
-*Select the Next Step:* Touch and select the line below the line where the robot got stuck or the next operation start (e.g.: MoveL or MoveJ) in the code. Visual **C**. Do not skip command lines if there are command lines in between. To avoid getting stuck in states on the PLC side.
+*Select Next Step:* Touch the line immediately after the stuck line or the next operation start (MoveL or MoveJ) to select it. Do not skip intermediate command lines to avoid PLC state mismatch.
 
-*Move the Cursor (PP to Cursor):* Press **D** "Debug" menu **E** "PP to Cursor" (Move Program Pointer to Selected Line) option.
+*PP to Cursor:* From the Debug menu choose "PP to Cursor" to move the program pointer to the selected line.
 
-After these operations, it would be healthy to first run manually to observe that the operation can continue. To proceed step by step manually, hold down the **F** Motor On button on the FlexPendant as shown in the visual. As shown in Visual **H**, while you hold it down, you see the Motor On text, you can proceed with operations manually in this way. Then, Visual **G** is used to execute each line step by step, advancing one line at a time with each press. If you do not want to go step by step in Visual **G**, when you press Visual **I**, it starts scanning all lines step by step. When you want to stop while the robot is running, you can press the Visual **J** Stop button or release your hand from the Visual **F** Motor On button. After running the robot, if the robot can go to the next step by itself, after this stage, you can switch the Robot to Automatic Mode and run it again.
+After this, run manually to verify safe continuation. For step execution press and hold Motor On (visual **F**) and use visual **G** to step each line. Pressing **I** will step through automatically. To stop, press the Stop button (visual **J**) or release Motor On **F**. If the robot advances successfully switch to Auto and resume.
 
-*Automatic Mode and Start:* Turn the key to the **K** direction shown in the visual, confirm the questions coming to the FlexPendant screen, put the system in "Auto" mode, activate the motors by pressing the **L** part shown in the visual, and after clearing the alarms in the system, give Start to continue your operations.
+*Auto Mode and Start:* Turn the key toward **K**, confirm prompts, set Auto mode, enable motors via **L**, clear alarms and press Start.
 
-*Speed Control:* Keep the speed at 10%-25% level while the robot makes its first movement and monitor its path. If no problem is observed, you can set the speed back to 100%. For the speed setting page, click on the **M-N** parts shown in the visual in sequence to open the **O** speed page.
+*Speed Control:* Initially run at 10–25% speed and monitor. If ok, raise to 100%. Open speed via visuals **M-N** then **O**.
 
-## <span style="color: #000000; font-weight: bold;">14. Detailed Information About Parameters on Screen and Screwing Axis Speeds</span>
+## 14. Parameter Screen and Screw Axis Speed Details
 
-![RG830](_media/o_ParameterScrew.png) 
+![RG830](_media/o_ParameterScrew.png)
 
-![RG830](_media/o_ParameterScrew2.png) 
+![RG830](_media/o_ParameterScrew2.png)
 
 ![RG830](_media/o_ParameterScrew3.png)
 
-**A:** Determines the Home position of the screwing axis group **(Parameter Value: 53)**.
+**A:** Defines Home position for screw axis group (Parameter Value: 53).
 
-The system automatically brings the axis to this position in the following situations:
+The system moves the axis to this position automatically in these cases: end of cycle, reset, or unload.
 
-End of Cycle: When a screw driving operation is successfully completed, to pick up a new screw or allow the part to pass.
+**B:** Speed used when returning Home after operation or on Reset (Parameter Value: 50).
 
-Reset Operation: When the machine is reset (Reset) or returned to the starting position.
+**C:** Defines the physical zero reference of the screw tip used for all distances and approach positions (Parameter Value: 82).
 
-Screw Unload: During the transition to a safe waiting point after unloading the current screw in the system.
+**D:** Speed used when moving to the Set (working) position (Parameter Value: 42).
 
-**B:** The speed used by the screwing axis group when returning Home after the operation is complete or in Reset condition. **(Parameter Value: 50)**
+**E:** Speed used when returning to Reset position (Parameter Value: 42).
 
-**C:** This parameter determines the physical zero reference point of the screwing tip. All working distances, diving depths, and approach positions are calculated with reference to this "0" point. **(Parameter Value: 82)**
+**F:** Accessory thickness — offset between screw head and frame (Parameter Value: 1).
 
-**D:** This parameter is the speed used by the screwing group when moving to the working (Set) position. **(Parameter Value: 42)**
+**G:** Intermediate position where the screw is held by the jaws after feed (Parameter Value: 55).
 
-**E:** This parameter is the speed used by the screwing group when moving to the return (Reset) position. **(Parameter Value: 42)**
+**H:** Robot active flag: set to 1 if robot is active, 0 to bypass (see item 2).
 
-**F:** Accessory thickness, how many mm the screw head will remain outside, that is, information about the offset distance between the screw head and frame. **(Parameter Value: 1)**
+**I:** Number of accessories in the right magazine (Parameter Value: 29).
 
-**G:** The position where the screw comes from the feeding hose and is held by the jaws. The system brings the axis to this point during the screw feeding operation. It is the intermediate stop point where the screw comes from the feeding unit and enters the jaws, but is not yet screwed into the part. **(Parameter Value: 55)**
+**J:** Number of accessories in the left magazine (Parameter Value: 19).
 
-**H:** If the robot is in active working condition, it should be **(Parameter Value: 1)**. If there is a problem with the robot or I want to bypass it (condition in Item 2), it should be **(Parameter Value: 0)**.
+**K:** Height difference between the screw tool zero and the gripper zero (Parameter Value: 1.5).
 
-**I:** Parameter related to how many accessories are in the right magazine **(Parameter Value: 29)**
+**L:** Set to 1 for standalone robot tests, 0 for synchronized line operation.
 
-**J:** Parameter related to how many accessories are in the left magazine **(Parameter Value: 19)**
+**M:** X-range access limit for accessory handling (Parameter Value: 1500).
 
-**K:** The height difference between the '0' point of the Screwing Tool and the '0' point of the Gripper **(Parameter Value: 1.5)**
+**N:** Y-range access limit for drilling orientation (Parameter Value: 1950).
 
-**L:** The parameter value must be **(Parameter Value: 1)** for standalone trials (independent of the line) and **(Parameter Value: 0)** for synchronous operation with the line.
+**Ö:** Torque limit for frame transfer axis to stop when encountering an obstruction (Parameter Value: ...).
 
-**M:** The limit value entered for the robot to be able to process accessories directionally to the right or left according to the robot's reach distance in the X plane. **(Parameter Value: 1500)**
+**R:** Low torque used during metrology to avoid deforming the profile (Parameter Value: 0.5).
 
-**N:** The limit value entered for the robot to perform the drilling operation directionally according to the robot's reach distance in the Y plane. **(Parameter Value: 1950)**
+**T:** Main target coordinate used for pick or measure movements; updated automatically per job.
 
-**O:** 
-
-**Ö:** This parameter determines the torque (force) limit that allows the frame transfer axis (AxisFrm) to stop when it grasps a frame or encounters an obstacle. The system continuously monitors whether this limit value is reached while the axis is moving. **(Parameter Value: ....)**
-
-**P:** 
-
-**R:** This value comes into play mostly during the precision measurement (metrology) stage. It keeps the torque at a low level to prevent the profile from stretching or being crushed by pressing too hard on the frame. **(Parameter Value: 0.5)**
-
-**S:**
-
-**Ş:**
-
-**T:** When moving to grasp or measure a part, it uses this coordinate as the main target point. The software automatically updates this value with each new work order to determine where the axis "should find the part".
-
-**U:** The correction value added to the basic grasping position (CatchPos) during the measurement operation. **(Parameter Value: 20)**
-
-**Ü:**
+**U:** Correction added to the catch position during measurement (Parameter Value: 20).
 
 
-## <span style="color: #000000; font-weight: bold;">15. General Working Principle with the Line</span>
+## <span style="color: #000000; font-weight: bold;">15. Alarmlar</span>
+
+[ALM:....] : Bütün ileri gidemedi ya da geri gidemedi alarmları aslında pistonun sıkışmış olması anlamına gelmektedir.
+             Manuel sayfadan ters yönde hareket ettirerek sıkışmayı giderdikten sonra Reset Alarms butonuna basınız.
+
+[ALM:5010] : Vida düşürme hatası. Hava hortumunu kontrol edin.
+	     Eğer vida hortum içinde ise Start butonuna basarak kaldığı yerden devam edin. Aksi takdirde Reset butonuna basarak tekrar vida çekmeyi deneyin.
+
+[ALM:3022] : Aksesuar alma başarısız oldu. Kalıbı kontrol edin, gerçekten alamadıysa;
+             Tekrar denemek isterseniz kalıbı ve aksesuar çıkış noktasını boşaltıp Reset butonuna basınız,
+             Ya da aksesuarı manuel olarak kalıba yerleştirip Start butonuna basarak, prosesi hızlandırabilirsiniz.
+
+[ALM:3029] : Delme tool algılanamadı. Eğer kırıldı ise değiştirin,
+             Eğer bir sorun yoksa Start butonuna basarak devam edebilirsiniz.
+
+[ALM:3120] : Vidalama grup eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+
+[ALM:3100] : Vidalama eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+
+[ALM:3794] : Sağ magazin 3.kat 1.aksesuar(20) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3795] : Sağ magazin 3.kat 2.aksesuar(21) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3796] : Sağ magazin 3.kat 3.aksesuar(22) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3797] : Sağ magazin 3.kat 4.aksesuar(23) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3798] : Sağ magazin 3.kat 5.aksesuar(24) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3799] : Sağ magazin 3.kat 6.aksesuar(25) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3800] : Sağ magazin 3.kat 7.aksesuar(26) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3801] : Sağ magazin 3.kat 8.aksesuar(27) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3802] : Sağ magazin 3.kat 9.aksesuar(28) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3803] : Sağ magazin 3.kat 10.aksesuar(29) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:5235] : Çerçeve sabitleme işlemi başarısız oldu. Çerçeve ölçülerini kontrol ediniz eğer doğru ise Reset alarms butonuna basarak tekrar deneyin
