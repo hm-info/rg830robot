@@ -324,41 +324,36 @@ The system moves the axis to this position automatically in these cases: end of 
 
 ## <span style="color: #000000; font-weight: bold;">15. Alarms</span>
 
-[ALM:....] : Bütün ileri gidemedi ya da geri gidemedi alarmları aslında pistonun sıkışmış olması anlamına gelmektedir.
-             Manuel sayfadan ters yönde hareket ettirerek sıkışmayı giderdikten sonra Reset Alarms butonuna basınız.
+[ALM:....] : All "failed to move forward" or "failed to move backward" alarms actually mean that the piston is jammed. After clearing the jam by moving it in the opposite direction from the manual page, press the Reset Alarms button.
 
-[ALM:5010] : Vida düşürme hatası. Hava hortumunu kontrol edin.
-	     Eğer vida hortum içinde ise Start butonuna basarak kaldığı yerden devam edin. Aksi takdirde Reset butonuna basarak tekrar vida çekmeyi deneyin.
+[ALM:5010] : Screw dropping error. Check the air hose. If the screw is inside the hose, press the Start button to resume from where it left off. Otherwise, press the Reset button to try picking up a screw again.
 
-[ALM:3022] : Aksesuar alma başarısız oldu. Kalıbı kontrol edin, gerçekten alamadıysa;
-             Tekrar denemek isterseniz kalıbı ve aksesuar çıkış noktasını boşaltıp Reset butonuna basınız,
-             Ya da aksesuarı manuel olarak kalıba yerleştirip Start butonuna basarak, prosesi hızlandırabilirsiniz.
+[ALM:3022] : Accessory pickup failed. Check the mold; if it really failed to pick it up: If you want to try again, empty the mold and the accessory exit point, then press the Reset button. Or, you can speed up the process by manually placing the accessory into the mold and pressing the Start button.
 
-[ALM:3029] : Delme tool algılanamadı. Eğer kırıldı ise değiştirin,
-             Eğer bir sorun yoksa Start butonuna basarak devam edebilirsiniz.
+[ALM:3029] : Drilling tool not detected. If it is broken, replace it; if there is no problem, you can press the Start button to continue.
 
-[ALM:3120] : Vidalama grup eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+[ALM:3120] : Screwdriving group axis error. Try resetting the alarm by pressing the Reset Alarms button; otherwise, check the system.
 
-[ALM:3100] : Vidalama eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+[ALM:3100] : Screwdriving axis error. Try resetting the alarm by pressing the Reset Alarms button; otherwise, check the system.
 
-[ALM:3794] : Sağ magazin 3.kat 1.aksesuar(20) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3794] : Right magazine 3rd level 1st accessory (20) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3795] : Sağ magazin 3.kat 2.aksesuar(21) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3795] : Right magazine 3rd level 2nd accessory (21) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3796] : Sağ magazin 3.kat 3.aksesuar(22) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3796] : Right magazine 3rd level 3rd accessory (22) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3797] : Sağ magazin 3.kat 4.aksesuar(23) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3797] : Right magazine 3rd level 4th accessory (23) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3798] : Sağ magazin 3.kat 5.aksesuar(24) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3798] : Right magazine 3rd level 5th accessory (24) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3799] : Sağ magazin 3.kat 6.aksesuar(25) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3799] : Right magazine 3rd level 6th accessory (25) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3800] : Sağ magazin 3.kat 7.aksesuar(26) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3800] : Right magazine 3rd level 7th accessory (26) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3801] : Sağ magazin 3.kat 8.aksesuar(27) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3801] : Right magazine 3rd level 8th accessory (27) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3802] : Sağ magazin 3.kat 9.aksesuar(28) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3802] : Right magazine 3rd level 9th accessory (28) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:3803] : Sağ magazin 3.kat 10.aksesuar(29) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+[ALM:3803] : Right magazine 3rd level 10th accessory (29) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.
 
-[ALM:5235] : Çerçeve sabitleme işlemi başarısız oldu. Çerçeve ölçülerini kontrol ediniz eğer doğru ise Reset alarms butonuna basarak tekrar deneyin
+[ALM:5235] : Frame clamping operation failed. Check the frame dimensions; if they are correct, press the Reset Alarms button and try again.
