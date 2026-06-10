@@ -1,3 +1,22 @@
+**MÜŞTERİYE ÖNEMLİ NOTLAR:**
+
+1-) Her zaman default kalıplarda aksesuar olacak !!!!!
+
+2-) Hava gittiğinde aksesuarlar aşağıya inebiliyor, tekrar gelince yukarı çıkıypor. Bu esnada iki adet aksesuar çıkıp kalıbı zorlayabilir,
+    Hava gittiğinde aşağı inen aksesuarları kontrol etmeliler !!!!!
+
+3-) Acil stoptan sonra sistemi ayaklandırmak için reset ışığı yanana kadar hat panosundaki reset butonuna basacaklar.
+
+4-) Yatar kalkar sehpalar yukarı ya da aşağı hareket ederken acil stopa basılırsa biraz kayma yapsa dahi sonrasında durur.
+
+5-) Acil stoplar hem robot panosunun çıkışlarını keser hem hat panosunun çıkışlarını keser ve iki sistemi de acil stop senaryosuna sokar.
+    Gerçekten acil bir durum olmadıkça(Çerçevenin iki sehpa arasında kalması gibi vs.) stop düğmeleri ile sistemler ayrı ayrı durdurulabilir.
+
+6-) Çit içine girildikten sonra sistem resetten düşer. 
+    Dışarı çıkıp kapıyı kilitleme komutu ile kapı kilitledikten sonra ilk olarak hat panosundaki reset butonuna ışık yanana kadar basınız.
+    
+7-) Hat çalışırken robotu durdurmak isterseniz ya da robot çalışırken hattı durdurmak isterseniz: Kendi panosundaki stop butonlarına basınız.
+
 ## <span style="color: #000000; font-weight: bold;">1. Makine İlk Açılışta Robot Gripper Kalıp Durumu</span>
 
 - Sistem ilk açıldığında resetleme sonrası gripperda kalıp olup olmadığının teyitini ister.
@@ -24,6 +43,18 @@ Robotun operasyona dahil edilmeyeceği durumlarda, hattın kesintisiz çalışma
 
 ## <span style="color: #000000; font-weight: bold;">3. Kapıların açılma İzin Prosedürü</span>
 
+ *Kapı Açma İzin Senaryosu:*
+
+ - Kapı siviçleri üzerindeki :
+
+    Beyaz buton: Kapı açma isteği
+
+    Siyah buton: Kapı kilitleme komutu
+    
+- Hatta bulunan 3 adet yatar kalkar sehpa yukarı ya da aşağı hareket etmediği zaman kapı açma isteği onaylanır.
+- Eğer kapı arkasındaki mandala basarsanız mekanik olarak kapı kilidi açılır. Bunu sadece ve sadece çok acil ve hızlı aksiyon alınması    gereken durumlarda kullanınız.
+- Kapı açıldıktan sonra tekrar kilitlemek için kapıların ikisini de kapatıp siyah butona basınız.Ardından ekrandan "kapıların kilitli olduğu ve alanda kimsenin olmadığı" sorgusunu onaylayarak sistemleri kaldığı yerden devam ettirebilirsiniz.
+
 Operatör tarafından **"Kapı Açma İzin Butonu"**na basıldığında; robot, mekanik güvenliği ve parça bütünlüğünü korumak adına aktif işlemini tamamladıktan sonra duruşa geçer.
 
 *İşlem Tamamlama Senaryoları:*
@@ -36,24 +67,20 @@ Sistem aşağıdaki işlemlerden biri yürüyor ise süreci kesmez, işlemin bit
 
 - Delme: Delme ucu iş parçasından güvenli şekilde geri çekilir.
 
-- ..........
-
-- ...........
-
 Aktif döngü (cycle) güvenli noktada tamamlandığında, sistem otomatik olarak kapı kilitlerini açar ve operatöre giriş onayı verir.
 
-## <span style="color: #000000; font-weight: bold;">4. Acil Stop - Stop senaryoları</span>
+## <span style="color: #000000; font-weight: bold;">4. Acil Stop-Reset / Stop-Reset senaryoları / Acil Stop-Start / Stop-Start Senaryoları </span>
 
-*Acil Stop Durumu:*
+*4.1 Acil Stop-Reset Senaryosu:*
 
-Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş çevrimi (cycle) iptal edilir ve sistem güvenli duruş moduna geçer. Bu işlemden sonra sistem verileri sıfırlandığı için iş dosyasının en baştan başlatılması zorunludur.
+Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş çevrimi (cycle) iptal edilir ve sistem güvenli duruş moduna geçer. Bu işlemden sonra sistemi ilk açıldığı haline döndürmek için aşağıdaki adımları takip edebilirsiniz.
 
 *Sistemi Tekrar Aktif Hale Getirme Adımları:*
 
 ![RG830](_media/o_AlarmRstButon.png)
 
-- Basılı olan Acil Stop butonu serbest bırakılır.
 - *A:* Operatör panelinden Alarmlar (Reset) temizlenir.
+- *Hat tarafı panosundan reset ışığı yanana kadar reset butonuna basınız.*
 - *B:* Reset e basılır . Robot Po to Main yapar arkasından **C** soru paneli açılır
 - *C:* Gripper üzerinde kalıp var,yok sorgusu yapılır. Daha sonrasında **D** soru paneli açılır
 - *D:* Acilden sonra aynı iş dosyası ile mi yoksa farklı bir iş dosyası ile mi çalışacağına dair soru paneli açılır.
@@ -62,7 +89,7 @@ Acil Stop butonuna basılması durumunda güvenlik protokolü gereği aktif iş 
 
   *NO:*  Farklı iş dosyasının yüklenmesini bekler. Belli bir süre iş dosyasını okuyamazsa, dosya okuyamadığına dair hata mesajı verir.
 
-  *Stop Durumu:*
+*4.2 Stop-Reset Senaryosu:*
 
 Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bekleme moduna" geçer. Bu sürecin teknik işleyişi şu şekildedir:
 
@@ -70,7 +97,30 @@ Sistemde *E (Stop Butonu)*'na basıldığında, PLC ve robot koordineli bir "bek
 
  - *Robot*, Stop sinyali geldiği anda Robot Vidalama işlemi , Vida besleme işlemi , delme işlemi yapmıyorsa Plc den gelen sinyal ile hızını sıfıra çeker ve hareket edeceği satırda bekler
 
- - *Sistemi Yeniden Başlatma :* Operatör tarafından **F (Start Butonu)**'na basıldığında, PLC ilgili durum bitini aktif ederek sistemi kaldığı adım üzerinden tekrar normal çalışma döngüsüne yönlendirir.
+ - *Sistemi Yeniden Başlatma :* Sistemde bir alarm durumu yoksa yukarıdaki *B* adımından,alarm durumu varsada *Acil Stop - Reset* senaryosundaki adımları uygulayarak devam ettirebilirsiniz. 
+
+ *4.3 Acil Stop - Start Senaryosu*
+
+- Acil stopa basılırsa hem hat panosu hem robot panosu bütün çıkışlarını keser.
+- Çit içine girilecekse kapı açma izin butonuna (Beyaz Buton) basılır.
+- İçeri girdikten sonra, tekrar dışarı çıkınca kapıyı kapatıp siyah butona basarak kapıyı kilitleme komutu veriniz.
+- Acil stopları kaldırıp hat panosundan reset ışığı yanana kadar reset butonuna basınız.
+
+![RG830](_media/o_Confirm.png)
+
+- Ekrandan içeride kimsenin olmadığını onayladıktan sonra sistem kaldığı yerden devam eder.
+
+*4.4 Stop - Start Senaryosu*
+
+- Çit içine girmeden sistemi durdurmak isterseniz stop butonuna basınız ve devam etmek istediğiniz zaman start butonuna basınız.
+- Çit içine girilecekse kapı açma izin butonuna (Beyaz Buton) basılır; 
+- Çit içine girdikten sonra, tekrar dışarı çıkınca kapıyı kapatıp siyah butona basarak kapıyı kilitleme komutu veriniz.
+- Hat panosundan reset ışığı yanana kadar reset butonuna basınız.
+
+![RG830](_media/o_Confirm.png)
+
+- *G:* Ekrandan içeride kimsenin olmadığını onayladıktan sonra sistem kaldığı yerden devam eder.
+
 
 ## <span style="color: #000000; font-weight: bold;">5. Hat ile Çalışacağı Zaman, Hattan Çerçeve Ne Zaman Gelecek, Hattaki Çerçeve ile Gelen Çerçeve Aynı mı?</span>
 
@@ -290,4 +340,43 @@ Vida Boşaltma (Unload): Sistemdeki mevcut vidanın tahliyesi sonrası güvenli 
 **U:** Ölçüm işlemi sırasında temel yakalama pozisyonuna (CatchPos) eklenen düzeltme değeridir. **(Parametre Değer:20)**
 
 
-## <span style="color: #000000; font-weight: bold;">15. Hat ile genel çalışma prensibi</span>
+## <span style="color: #000000; font-weight: bold;">15. Alarmlar</span>
+
+[ALM:....] : Bütün ileri gidemedi ya da geri gidemedi alarmları aslında pistonun sıkışmış olması anlamına gelmektedir.
+             Manuel sayfadan ters yönde hareket ettirerek sıkışmayı giderdikten sonra Reset Alarms butonuna basınız.
+
+[ALM:5010] : Vida düşürme hatası. Hava hortumunu kontrol edin.
+	     Eğer vida hortum içinde ise Start butonuna basarak kaldığı yerden devam edin. Aksi takdirde Reset butonuna basarak tekrar vida çekmeyi deneyin.
+
+[ALM:3022] : Aksesuar alma başarısız oldu. Kalıbı kontrol edin, gerçekten alamadıysa;
+             Tekrar denemek isterseniz kalıbı ve aksesuar çıkış noktasını boşaltıp Reset butonuna basınız,
+             Ya da aksesuarı manuel olarak kalıba yerleştirip Start butonuna basarak, prosesi hızlandırabilirsiniz.
+
+[ALM:3029] : Delme tool algılanamadı. Eğer kırıldı ise değiştirin,
+             Eğer bir sorun yoksa Start butonuna basarak devam edebilirsiniz.
+
+[ALM:3120] : Vidalama grup eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+
+[ALM:3100] : Vidalama eksen hatası, Reset alarms butonuna basarak alarmı resetlemeyi deneyin, aksi takdirde sistemi kontrol edin
+
+[ALM:3794] : Sağ magazin 3.kat 1.aksesuar(20) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3795] : Sağ magazin 3.kat 2.aksesuar(21) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3796] : Sağ magazin 3.kat 3.aksesuar(22) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3797] : Sağ magazin 3.kat 4.aksesuar(23) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3798] : Sağ magazin 3.kat 5.aksesuar(24) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3799] : Sağ magazin 3.kat 6.aksesuar(25) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3800] : Sağ magazin 3.kat 7.aksesuar(26) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3801] : Sağ magazin 3.kat 8.aksesuar(27) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3802] : Sağ magazin 3.kat 9.aksesuar(28) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:3803] : Sağ magazin 3.kat 10.aksesuar(29) algılanmadı. Ya alma noktasına aksesuar yerleştirin ve Reset Alarms butonuna basınız. Ya da Reset Alarms butonuna basarak tekrar aksesuar hazırlamayı dene.
+
+[ALM:5235] : Çerçeve sabitleme işlemi başarısız oldu. Çerçeve ölçülerini kontrol ediniz eğer doğru ise Reset alarms butonuna basarak tekrar deneyin

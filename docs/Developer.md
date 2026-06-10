@@ -83,7 +83,7 @@ Artık program içinde EgitimNok değişkeni isim olarak çağırılıp kullanı
 
 **E:** Robotun hedef noktaya ne kadar yaklaşacağını veya noktayı ne kadar "yumuşatarak" geçeceğini belirleyen köşe (path) parametresidir:
 
-## <span style="color: #000000; font-weight: bold;">4. Magazinlere Yeni Yol Eklenmesi Durumu </span>
+## <span style="color: #000000; font-weight: bold;">4. Magazinlere Yeni Yol Eklenmesi ve Kontrol Sensörünün Tanıtılması Durumu </span>
 
 Sistemdeki aksesuar alma ve bırakma koordinatları, kat ve aksesuar numaralarına göre yapılandırılmış bir Array  mimarisi içerisinde saklanmaktadır.Sisteme yeni bir aksesuar eklenmesi durumunda, mevcut hiyerarşinin korunması için bu dizilere sıralı ekleme yapılması gerekmektedir.
 
@@ -116,7 +116,20 @@ Alma-bırakma noktalarında olduğu gibi, aksesuar kontrol noktaları da her aks
 ![RG830](_media/D_AksesuarKontrolArray.png)
 
 - Kayıt İşlemi:
-Hassas konumlandırma tamamlandıktan sonra, nokta kayıt adımları aşağıdaki görsel yönergeler takip edilerek gerçekleştirilmelidir.
+Hassas konumlandırma tamamlandıktan sonra, nokta kayıt adımları aşağıdaki görsel yönergeler takip edilerek gerçekleştirilmelidir. Aşağıdaki görsellerde sol ve sağ magazinin ayrı ayrı 3 katı için(F1,F2,F3) örnek gösterim vardır.
 
 ![RG830](_media/AksesuarKontrolL.png)  ![RG830](_media/AksesuarKontrolR.png) 
 
+## <span style="color: #000000; font-weight: bold;">5. Kanallara Aksesuar Atarken Açılı Yaklaşmada Noktaya Offset Verme Durumu </span>
+
+Robot makrolarında kanala montajı yapılan aksesuarların pimlerini pozisyona tam oturmadan önce ilk olarak belirli bir offset değeri ile açılı yaklaştırıp daha sonrasında gerçek pozisyona gitmesini sağlıyoruz. Bu açılı yaklaşmanın ismi atılacak yüzeye göre;
+
+![RG830](_media/ChannelAngle.png) 
+
+- TopChannelAngle,rightChannelAngle,BottomChannelAngle,LeftChannelAngle  olarak tanımlanmıştır. Bu işlem ilgili makronun ilk vidalama "*canScrew;*" işleminden öncesinde bulunmaktadır.
+
+*A:* Açılı yaklaşılan yüzeyin ismi
+*B:* Açılı yaklaşmanın pozisyonlaması için verilen X offseti. Bu kısım yüzey yönüne bağlı olarak değişir. 
+*C:* Açılı yaklaşmanın pozisyonlaması için verilen Z offseti. Bu kısım yüzey yönüne bağlı olarak değişir. 
+
+!!! Bu offsetler yönelimin yüzeyine göre x,y,z koordinatlarında değişiklik gösterir. 5. ve 7. yüzeylerde "+,-" y değerine offset verilirken 6. ve 8. yüzeylerde "+,-" x değerine offset verilir z değeri hepsinde aynı yön yaklaşım denemeler ile ayarlanır.

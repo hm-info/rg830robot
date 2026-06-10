@@ -295,7 +295,7 @@ Screw Unload: During the transition to a safe waiting point after unloading the 
 
 **K:** The height difference between the '0' point of the Screwing Tool and the '0' point of the Gripper **(Parameter Value: 1.5)**
 
-**L:** The moment when the operator physically feeds a new profile (frame) to the machine or the software confirms that a new profile is ready to be processed. The system does not start copying job data without seeing this signal. **(Parameter Value: 1)**
+**L:** The parameter value must be **(Parameter Value: 1)** for standalone trials (independent of the line) and **(Parameter Value: 0)** for synchronous operation with the line.
 
 **M:** The limit value entered for the robot to be able to process accessories directionally to the right or left according to the robot's reach distance in the X plane. **(Parameter Value: 1500)**
 
