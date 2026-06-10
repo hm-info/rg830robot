@@ -322,7 +322,7 @@ The system moves the axis to this position automatically in these cases: end of 
 **U:** Correction added to the catch position during measurement (Parameter Value: 20).
 
 
-## <span style="color: #000000; font-weight: bold;">15. Alarmlar</span>
+## <span style="color: #000000; font-weight: bold;">15. Alarms</span>
 
 [ALM:....] : Bütün ileri gidemedi ya da geri gidemedi alarmları aslında pistonun sıkışmış olması anlamına gelmektedir.
              Manuel sayfadan ters yönde hareket ettirerek sıkışmayı giderdikten sonra Reset Alarms butonuna basınız.
