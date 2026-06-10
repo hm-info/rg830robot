@@ -1,0 +1,1557 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RG830 Robot Manual">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/rg830robot/operationGuide_en.html">
+      
+      
+        <link rel="prev" href="english.html">
+      
+      
+        <link rel="next" href="Developer_en.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshooting - RG830 Robot Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#important-notes-for-the-customer" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="index.html" title="RG830 Robot Manual" class="md-header__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RG830 Robot Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa / Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="turkish.html" class="md-tabs__link">
+          
+  
+  
+  🇹🇷 Türkçe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="english.html" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="RG830 Robot Manual" class="md-nav__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RG830 Robot Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇹🇷 Türkçe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="turkish.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kılavuz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hata Çözümleri
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yazılım Notları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="english.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="operationGuide_en.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes-for-the-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMPORTANT NOTES FOR THE CUSTOMER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-robot-gripper-mold-state-on-initial-machine-power-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Robot Gripper Mold State on Initial Machine Power-Up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-robot-bypass-and-independent-line-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Robot Bypass and Independent Line Operation Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-door-opening-permission-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Door Opening Permission Procedure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-emergency-stop-reset-and-stopstart-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Emergency Stop / Reset and Stop/Start Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Emergency Stop / Reset and Stop/Start Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-emergency-stop-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Emergency Stop - Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-stop-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Stop - Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-emergency-stop-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Emergency Stop - Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-stop-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Stop - Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-line-synchronization-when-will-a-frame-arrive-and-does-it-match-the-incoming-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Line Synchronization: When Will a Frame Arrive and Does It Match the Incoming Frame?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-alarms-during-frame-clamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Alarms During Frame Clamping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-drilling-tool-not-ok-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Drilling Tool Not Ok Alarm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-accessory-not-ok-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Accessory Not Ok Alarm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-unable-to-insert-screw-into-jaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Unable to Insert Screw into Jaw
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-passnextaccessory-to-skip-current-accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. PassNextAccessory to Skip Current Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-restart-options-after-a-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Restart Options After a Stop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-accessory-assembly-alarm-definitions-and-remedies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Accessory Assembly Alarm Definitions and Remedies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-axis-stuck-while-moving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Axis Stuck While Moving
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Axis Stuck While Moving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-diagnose-read-error-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Diagnose (Read Error Message)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-rescue-in-manual-mode-jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Rescue in Manual Mode (Jogging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-skip-and-continue-program-pointer-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Skip and Continue (Program Pointer Move)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-parameter-screen-and-screw-axis-speed-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Parameter Screen and Screw Axis Speed Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-alarms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Alarms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes-for-the-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMPORTANT NOTES FOR THE CUSTOMER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-robot-gripper-mold-state-on-initial-machine-power-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Robot Gripper Mold State on Initial Machine Power-Up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-robot-bypass-and-independent-line-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Robot Bypass and Independent Line Operation Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-door-opening-permission-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Door Opening Permission Procedure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-emergency-stop-reset-and-stopstart-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Emergency Stop / Reset and Stop/Start Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Emergency Stop / Reset and Stop/Start Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-emergency-stop-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Emergency Stop - Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-stop-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Stop - Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-emergency-stop-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Emergency Stop - Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-stop-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Stop - Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-line-synchronization-when-will-a-frame-arrive-and-does-it-match-the-incoming-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Line Synchronization: When Will a Frame Arrive and Does It Match the Incoming Frame?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-alarms-during-frame-clamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Alarms During Frame Clamping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-drilling-tool-not-ok-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Drilling Tool Not Ok Alarm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-accessory-not-ok-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Accessory Not Ok Alarm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-unable-to-insert-screw-into-jaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Unable to Insert Screw into Jaw
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-passnextaccessory-to-skip-current-accessory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. PassNextAccessory to Skip Current Accessory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-restart-options-after-a-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Restart Options After a Stop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-accessory-assembly-alarm-definitions-and-remedies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Accessory Assembly Alarm Definitions and Remedies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-axis-stuck-while-moving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Axis Stuck While Moving
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Axis Stuck While Moving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-diagnose-read-error-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Diagnose (Read Error Message)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-rescue-in-manual-mode-jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Rescue in Manual Mode (Jogging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-skip-and-continue-program-pointer-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Skip and Continue (Program Pointer Move)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-parameter-screen-and-screw-axis-speed-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Parameter Screen and Screw Axis Speed Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-alarms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Alarms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Troubleshooting</h1>
+
+<h2 id="important-notes-for-the-customer">IMPORTANT NOTES FOR THE CUSTOMER</h2>
+<p>1) There should always be accessories in the default molds.</p>
+<p>2) When compressed air is lost, accessories may drop; when air returns they may rise again. During this event two accessories can emerge and jam the mold — check accessories that dropped when air is lost.</p>
+<p>3) After an emergency stop, press the reset button on the line panel until the reset lamp lights to reinitialize the line.</p>
+<p>4) If an emergency stop is pressed while the flip-up tables are moving, they may slip slightly but will stop afterward.</p>
+<p>5) Emergency stops cut outputs both on the robot panel and the line panel, putting both systems into an emergency state. Unless it is a real emergency (for example a frame trapped between two tables) you can stop systems individually using their stop buttons.</p>
+<p>6) Entering the guarded area resets the system. After exiting and issuing the door-lock command, first press the reset button on the line panel until its lamp lights.</p>
+<p>7) If you want to stop the robot while the line is running, or stop the line while the robot is running: press the stop buttons on the relevant panel.</p>
+<h2 id="1-robot-gripper-mold-state-on-initial-machine-power-up">1. Robot Gripper Mold State on Initial Machine Power-Up</h2>
+<ul>
+<li>On first power-up, after reset the system will request confirmation whether there is a mold in the gripper.</li>
+</ul>
+<p><img alt="RG830" src="_media/o_GripperFree.png" /></p>
+<p><em>YES:</em> The robot will place the mold it holds into its numbered slot, return to Home and wait for the job file.</p>
+<p><em>NO:</em> The robot will wait at Home for the job file.</p>
+<p>NOTE: If the job file is added manually, follow the three steps below. During automatic operation the system will fetch the job file itself and manual steps are not required.</p>
+<ul>
+<li>Open the EXE so the job file can be read.</li>
+<li>Place the prepared job file into the Robot File folder.</li>
+<li>When Start is pressed, the job file in Robot File is read and PLC-to-robot data transfer occurs; after transfer the robot begins the job.</li>
+</ul>
+<h2 id="2-robot-bypass-and-independent-line-operation-mode">2. Robot Bypass and Independent Line Operation Mode</h2>
+<p>When the robot should not participate in the operation and the line must continue running, apply this configuration:</p>
+<p><em>Parameter Setting:</em> On the robot control screen set <code>RobotActive</code> to <code>0</code>. This bypasses the robot operation allowing the line to run standalone.</p>
+<p><em>Workflow (Frame Transfer):</em> Processed frames proceed directly along the line and are directed to the transfer table at the robot output.</p>
+<h2 id="3-door-opening-permission-procedure">3. Door Opening Permission Procedure</h2>
+<p>Door Open Permission Scenario:</p>
+<ul>
+<li>
+<p>On the door switches:</p>
+<p>White button: Door open request</p>
+<p>Black button: Door lock command</p>
+</li>
+<li>
+<p>The door open request is approved when the three flip-up tables on the line are not moving up or down.</p>
+</li>
+<li>Pressing the manual latch behind the door mechanically releases the lock — use only in urgent situations requiring immediate action.</li>
+<li>After opening the door, close both doors and press the black button to lock. Then confirm on-screen that doors are locked and the area is clear to resume operations.</li>
+</ul>
+<p>When the operator presses the "Door Open Permission Button" the robot will finish its active operation, then stop to preserve mechanical safety and part integrity.</p>
+<p>Operation Completion Scenarios:</p>
+<p>If any of the following is active the system will not interrupt the process and will wait for completion:</p>
+<ul>
+<li>
+<p>Screwing: the active screwing continues until the torque setpoint is reached.</p>
+</li>
+<li>
+<p>Screw feeding: screw pick or transfer completes.</p>
+</li>
+<li>
+<p>Drilling: the drill bit retracts safely from the workpiece.</p>
+</li>
+</ul>
+<p>When the active cycle completes at a safe point, the system will automatically unlock the door and permit operator entry.</p>
+<h2 id="4-emergency-stop-reset-and-stopstart-scenarios">4. Emergency Stop / Reset and Stop/Start Scenarios</h2>
+<h3 id="41-emergency-stop-reset">4.1 Emergency Stop - Reset</h3>
+<p>When an emergency stop is pressed the active cycle is cancelled by the safety protocol and the system enters a safe-stop mode. To return the system to its initial running state follow these steps:</p>
+<p>Steps to Reactivate the System:</p>
+<p><img alt="RG830" src="_media/o_AlarmRstButon.png" /></p>
+<ul>
+<li>A: Clear alarms (Reset) on the operator panel.</li>
+<li>Press the reset button on the line panel until its lamp lights.</li>
+<li>B: Press Reset. The robot performs Po to Main and then panel C question appears.</li>
+<li>C: The system asks whether there is a mold on the gripper; then panel D appears.</li>
+<li>
+<p>D: The system asks whether to continue with the same job file or a different job file after the emergency.</p>
+<p>YES: Continue with the job file in memory.</p>
+<p>NO: Wait for a different job file to be loaded. If the file cannot be read within the timeout the system will report a file-read error.</p>
+</li>
+</ul>
+<h3 id="42-stop-reset">4.2 Stop - Reset</h3>
+<p>When <code>E (Stop Button)</code> is pressed the PLC and robot enter a coordinated wait mode. Technical behavior:</p>
+<ul>
+<li>
+<p>PLC freezes the current state and sets the system into "Stop State" mode.</p>
+</li>
+<li>
+<p>Robot, if it is not actively screwing, feeding, or drilling, decelerates to zero upon the PLC stop signal and waits at the current program line.</p>
+</li>
+<li>
+<p>Restarting: If no alarms exist continue from step B; if alarms exist, follow the Emergency Stop - Reset steps.</p>
+</li>
+</ul>
+<h3 id="43-emergency-stop-start">4.3 Emergency Stop - Start</h3>
+<ul>
+<li>Pressing emergency stop cuts outputs from both the line and robot panels.</li>
+<li>To enter the guarded area press the door open permission button (White Button).</li>
+<li>After entry and exit, close the door and press the black button to lock it.</li>
+<li>Release emergency stops and press the reset button on the line panel until the reset lamp lights.</li>
+</ul>
+<p><img alt="RG830" src="_media/o_Confirm.png" /></p>
+<ul>
+<li>After confirming on-screen that the area is clear the system resumes from where it stopped.</li>
+</ul>
+<h3 id="44-stop-start">4.4 Stop - Start</h3>
+<ul>
+<li>To stop without entering the guarded area press Stop; press Start to resume.</li>
+<li>To enter the guarded area press door open permission (White Button); after exit close doors and press black button to lock.</li>
+<li>Press the reset button on the line panel until the reset lamp lights.</li>
+</ul>
+<p><img alt="RG830" src="_media/o_Confirm.png" /></p>
+<ul>
+<li>G: After confirming the area is empty the system continues where it left off.</li>
+</ul>
+<h2 id="5-line-synchronization-when-will-a-frame-arrive-and-does-it-match-the-incoming-frame">5. Line Synchronization: When Will a Frame Arrive and Does It Match the Incoming Frame?</h2>
+<p>For line synchronization, frame transfer and job file assignment proceed under these rules:</p>
+<p><em>Frame Arrival Condition:</em> The robot PLC requests a new frame when a ready frame is present on the output table (Z).</p>
+<p><em>Job File Creation:</em> The frame on the (Z) table must have a created and registered job file for the robot to start processing.</p>
+<p><em>Frame Match Check:</em> The frame ID in the job file from PLC must match the ID of the frame on (Z). If matched the robot starts; if not, a wrong-job-file alarm occurs.</p>
+<h2 id="6-alarms-during-frame-clamping">6. Alarms During Frame Clamping</h2>
+<p>When the frame arrives at the clamping sensor and the clamping axis cannot clamp sufficiently the system raises <strong>"Frame Measuring Error, Wrong Frame Sizes !"</strong>. Press <strong>F (Start Button)</strong> to retry clamping.</p>
+<h2 id="7-drilling-tool-not-ok-alarm">7. Drilling Tool Not Ok Alarm</h2>
+<p>The system performs an automatic tool check once at the start of each job for safety. Process and corrective steps:</p>
+<ul>
+<li>
+<p>The robot touches the drill tip to a predefined check switch to verify tool integrity.</p>
+</li>
+<li>
+<p>If the tool tip triggers the sensor the operation continues.</p>
+</li>
+<li>
+<p>If no confirmation signal is received the robot stops, moves to a safe waiting position above the check point and raises an alarm on the operator panel.</p>
+</li>
+</ul>
+<p>Intervention and Troubleshooting:</p>
+<ul>
+<li>
+<p>Tool Damage: If the drill tip is damaged replace it.</p>
+</li>
+<li>
+<p>Sensor Check: If the tool appears fine, verify sensor function and wiring.</p>
+</li>
+<li>
+<p>Restart: After repairs press <strong>Start (F)</strong> on the operator panel to continue the cycle.</p>
+</li>
+</ul>
+<h2 id="8-accessory-not-ok-alarm">8. Accessory Not Ok Alarm</h2>
+<p>Assembly requires the part to be picked from the magazine and precisely placed in the mold. Presence and position are checked by sensors.</p>
+<p>If the accessory at the control point is not detected the system raises an "AccessoryNotOk" alarm; the robot raises slightly and waits for operator intervention. Recommended recovery:</p>
+<p>Manual Intervention:</p>
+<ul>
+<li>
+<p>If the accessory left the magazine but was not taken by the mold and remains on the magazine:</p>
+<p>Open the safety door (system enters Emergency Stop), enter the line, remove the accessory and manually place it in the mold with correct orientation. Exit, close the door, reset and press <strong>F (Start)</strong> to resume.</p>
+</li>
+</ul>
+<p>Repeat Pick (if accessory remains in magazine):</p>
+<ul>
+<li>
+<p>If the accessory remains in the magazine and you want the robot to pick it again:</p>
+<p>Exit the line, enable safety interlock and press <strong>B (Reset Button)</strong> on the panel. The robot will repeat the pick cycle from the beginning.</p>
+</li>
+</ul>
+<p>No Accessory Released:</p>
+<ul>
+<li>
+<p>If no accessory was released and the robot returned empty to wait:</p>
+<p>After clearing the fault press <strong>B (Reset Button)</strong> to restart accessory pickup.</p>
+</li>
+</ul>
+<h2 id="9-unable-to-insert-screw-into-jaw">9. Unable to Insert Screw into Jaw</h2>
+<p>Before screwing the robot requests a screw feed. If screw feeding fails the operator should:</p>
+<p>Pre-check:</p>
+<ul>
+<li>Visually inspect the screw tip to confirm delivery.</li>
+</ul>
+<p>If Screw Delivery Succeeded (visual):</p>
+<ul>
+<li>Reset safety circuits (because you entered the line) then press <strong>F (Start)</strong> to continue.</li>
+</ul>
+<p>If Screw Not Delivered:</p>
+<ul>
+<li>Reset safety circuits then press <strong>B (Reset Button)</strong> to re-trigger screw feed.</li>
+</ul>
+<h2 id="10-passnextaccessory-to-skip-current-accessory">10. PassNextAccessory to Skip Current Accessory</h2>
+<p><img alt="RG830" src="_media/o_PassNextAccessory.png" /></p>
+<p>If an issue occurs during drilling, screwing or other operations and you need to intervene without disrupting the flow:</p>
+<p>Stop the operation:
+- Press <strong>E (Stop Button)</strong> on the panel to put the robot into wait mode.</p>
+<p>Caution: Pressing <strong>B (Reset Button)</strong> here will reset the entire process state and return to the start.</p>
+<h2 id="11-restart-options-after-a-stop">11. Restart Options After a Stop</h2>
+<ul>
+<li>After stopping, when <strong>F (Start Button)</strong> is pressed a decision screen appears. Choose one option:</li>
+</ul>
+<p>G: Continue from where the robot stopped.</p>
+<p>H: Cancel current operation and proceed to next accessory cycle.</p>
+<p>Critical: If <strong>H</strong> is chosen, after the robot frees itself it will go to the drop-off point and if a mold is in the gripper it will place it. Ensure the mold is empty during drop-off.</p>
+<h2 id="12-accessory-assembly-alarm-definitions-and-remedies">12. Accessory Assembly Alarm Definitions and Remedies</h2>
+<p>The following alarms may occur during assembly.</p>
+<p><strong>Screw Drop failed !</strong> See item 9.
+<strong>Screw did not move to jaw or Screw detector broken !</strong> This is a "Screw Feed Timeout" alarm triggered when no signal from the screw detector is received within expected time. Possible causes:</p>
+<ul>
+<li>
+<p>Feed hopper empty: no screws left in the vibratory feeder/feed unit.</p>
+</li>
+<li>
+<p>Mechanical jam: screw stuck in feed hose or mouth and cannot reach sensor.</p>
+</li>
+<li>
+<p>Air pressure issue: insufficient air pressure to feed the screw.</p>
+</li>
+<li>
+<p>Sensor fault: ScrewCame sensor not detecting the screw or displaced.</p>
+</li>
+</ul>
+<h2 id="13-axis-stuck-while-moving">13. Axis Stuck While Moving</h2>
+<p>The robot may become mathematically unable to reach a point or hit joint limits even without a physical obstacle. Rescue steps:</p>
+<h3 id="131-diagnose-read-error-message">13.1 Diagnose (Read Error Message)</h3>
+<ul>
+<li>If you see one of these messages, the robot has entered a "geometric" trap:</li>
+</ul>
+<p>"Axis Limit": A joint has reached its rotational limit.</p>
+<p>"Singularity": Wrist axes (4 and 6) are aligned and the robot loses orientation.</p>
+<p>"Out of Reach": The robot arm cannot reach or follow the trajectory.</p>
+<h3 id="132-rescue-in-manual-mode-jogging">13.2 Rescue in Manual Mode (Jogging)</h3>
+<p><img alt="RG830" src="_media/ModSecim.png" /></p>
+<p>Switch the control key to the right to enter <strong>B (Manual Mode)</strong>.</p>
+<p><img alt="RG830" src="_media/1_6EksenSecim.png" /></p>
+<ul>
+<li>When these errors occur the robot often refuses linear moves. To relieve:</li>
+</ul>
+<p><em>Change Move Mode:</em> Set movement mode to "Axis" on the FlexPendant. Press <strong>A</strong> to toggle axis ranges 1-3 and 4-6 shown in <strong>B</strong>.</p>
+<p><em>Manually rotate axes:</em> If a limit error occurs rotate the limiting axis slightly in the opposite direction with the joystick while in the correct axis range.</p>
+<p><em>If Singularity:</em> Move axis 5 slightly up or down to break alignment.</p>
+<p><em>Move to a Safe Point:</em> Move the robot 5-10 cm away from the problem point into free space.</p>
+<h3 id="133-skip-and-continue-program-pointer-move">13.3 Skip and Continue (Program Pointer Move)</h3>
+<p><img alt="RG830" src="_media/o_PointerTa%C5%9F%C4%B1ma.png" /></p>
+<ul>
+<li>Free the robot from the stuck line and manually direct it to the next safe program step:</li>
+</ul>
+<p><em>Open Program Editor:</em> On the FlexPendant open the Program Editor via menu <strong>A</strong> then <strong>B</strong>.</p>
+<p><em>Select Next Step:</em> Touch the line immediately after the stuck line or the next operation start (MoveL or MoveJ) to select it. Do not skip intermediate command lines to avoid PLC state mismatch.</p>
+<p><em>PP to Cursor:</em> From the Debug menu choose "PP to Cursor" to move the program pointer to the selected line.</p>
+<p>After this, run manually to verify safe continuation. For step execution press and hold Motor On (visual <strong>F</strong>) and use visual <strong>G</strong> to step each line. Pressing <strong>I</strong> will step through automatically. To stop, press the Stop button (visual <strong>J</strong>) or release Motor On <strong>F</strong>. If the robot advances successfully switch to Auto and resume.</p>
+<p><em>Auto Mode and Start:</em> Turn the key toward <strong>K</strong>, confirm prompts, set Auto mode, enable motors via <strong>L</strong>, clear alarms and press Start.</p>
+<p><em>Speed Control:</em> Initially run at 10–25% speed and monitor. If ok, raise to 100%. Open speed via visuals <strong>M-N</strong> then <strong>O</strong>.</p>
+<h2 id="14-parameter-screen-and-screw-axis-speed-details">14. Parameter Screen and Screw Axis Speed Details</h2>
+<p><img alt="RG830" src="_media/o_ParameterScrew.png" /></p>
+<p><img alt="RG830" src="_media/o_ParameterScrew2.png" /></p>
+<p><img alt="RG830" src="_media/o_ParameterScrew3.png" /></p>
+<p><strong>A:</strong> Defines Home position for screw axis group (Parameter Value: 53).</p>
+<p>The system moves the axis to this position automatically in these cases: end of cycle, reset, or unload.</p>
+<p><strong>B:</strong> Speed used when returning Home after operation or on Reset (Parameter Value: 50).</p>
+<p><strong>C:</strong> Defines the physical zero reference of the screw tip used for all distances and approach positions (Parameter Value: 82).</p>
+<p><strong>D:</strong> Speed used when moving to the Set (working) position (Parameter Value: 42).</p>
+<p><strong>E:</strong> Speed used when returning to Reset position (Parameter Value: 42).</p>
+<p><strong>F:</strong> Accessory thickness — offset between screw head and frame (Parameter Value: 1).</p>
+<p><strong>G:</strong> Intermediate position where the screw is held by the jaws after feed (Parameter Value: 55).</p>
+<p><strong>H:</strong> Robot active flag: set to 1 if robot is active, 0 to bypass (see item 2).</p>
+<p><strong>I:</strong> Number of accessories in the right magazine (Parameter Value: 29).</p>
+<p><strong>J:</strong> Number of accessories in the left magazine (Parameter Value: 19).</p>
+<p><strong>K:</strong> Height difference between the screw tool zero and the gripper zero (Parameter Value: 1.5).</p>
+<p><strong>L:</strong> Set to 1 for standalone robot tests, 0 for synchronized line operation.</p>
+<p><strong>M:</strong> X-range access limit for accessory handling (Parameter Value: 1500).</p>
+<p><strong>N:</strong> Y-range access limit for drilling orientation (Parameter Value: 1950).</p>
+<p><strong>Ö:</strong> Torque limit for frame transfer axis to stop when encountering an obstruction (Parameter Value: ...).</p>
+<p><strong>R:</strong> Low torque used during metrology to avoid deforming the profile (Parameter Value: 0.5).</p>
+<p><strong>T:</strong> Main target coordinate used for pick or measure movements; updated automatically per job.</p>
+<p><strong>U:</strong> Correction added to the catch position during measurement (Parameter Value: 20).</p>
+<h2 id="15-alarms"><span style="color: #000000; font-weight: bold;">15. Alarms</span></h2>
+<p>[ALM:....] : All "failed to move forward" or "failed to move backward" alarms actually mean that the piston is jammed. After clearing the jam by moving it in the opposite direction from the manual page, press the Reset Alarms button.</p>
+<p>[ALM:5010] : Screw dropping error. Check the air hose. If the screw is inside the hose, press the Start button to resume from where it left off. Otherwise, press the Reset button to try picking up a screw again.</p>
+<p>[ALM:3022] : Accessory pickup failed. Check the mold; if it really failed to pick it up: If you want to try again, empty the mold and the accessory exit point, then press the Reset button. Or, you can speed up the process by manually placing the accessory into the mold and pressing the Start button.</p>
+<p>[ALM:3029] : Drilling tool not detected. If it is broken, replace it; if there is no problem, you can press the Start button to continue.</p>
+<p>[ALM:3120] : Screwdriving group axis error. Try resetting the alarm by pressing the Reset Alarms button; otherwise, check the system.</p>
+<p>[ALM:3100] : Screwdriving axis error. Try resetting the alarm by pressing the Reset Alarms button; otherwise, check the system.</p>
+<p>[ALM:3794] : Right magazine 3rd level 1st accessory (20) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3795] : Right magazine 3rd level 2nd accessory (21) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3796] : Right magazine 3rd level 3rd accessory (22) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3797] : Right magazine 3rd level 4th accessory (23) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3798] : Right magazine 3rd level 5th accessory (24) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3799] : Right magazine 3rd level 6th accessory (25) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3800] : Right magazine 3rd level 7th accessory (26) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3801] : Right magazine 3rd level 8th accessory (27) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3802] : Right magazine 3rd level 9th accessory (28) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:3803] : Right magazine 3rd level 10th accessory (29) not detected. Either place an accessory at the pickup point and press the Reset Alarms button, or press the Reset Alarms button to try preparing the accessory again.</p>
+<p>[ALM:5235] : Frame clamping operation failed. Check the frame dimensions; if they are correct, press the Reset Alarms button and try again.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

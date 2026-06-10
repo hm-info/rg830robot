@@ -1,0 +1,945 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RG830 Robot Manual">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/rg830robot/Developer_en.html">
+      
+      
+        <link rel="prev" href="operationGuide_en.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Software Notes - RG830 Robot Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-rg830-robot-software-manual" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="index.html" title="RG830 Robot Manual" class="md-header__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RG830 Robot Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa / Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="turkish.html" class="md-tabs__link">
+          
+  
+  
+  🇹🇷 Türkçe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="english.html" class="md-tabs__link">
+          
+  
+  
+  🇬🇧 English
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="RG830 Robot Manual" class="md-nav__button md-logo" aria-label="RG830 Robot Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RG830 Robot Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇹🇷 Türkçe
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="turkish.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kılavuz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hata Çözümleri
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yazılım Notları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🇬🇧 English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="english.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operationGuide_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Notes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Developer_en.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rg830-robot-software-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. RG830 Robot Software Manual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-teaching-a-new-point-and-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Teaching a New Point and Naming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-offsetting-speed-and-zone-settings-from-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Offsetting, Speed and Zone Settings from a Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adding-new-paths-to-magazines-and-introducing-the-control-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Adding New Paths to Magazines and Introducing the Control Sensor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-providing-an-offset-for-angular-approach-when-placing-accessories-into-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Providing an Offset for Angular Approach When Placing Accessories into Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rg830-robot-software-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. RG830 Robot Software Manual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-teaching-a-new-point-and-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Teaching a New Point and Naming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-offsetting-speed-and-zone-settings-from-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Offsetting, Speed and Zone Settings from a Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adding-new-paths-to-magazines-and-introducing-the-control-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Adding New Paths to Magazines and Introducing the Control Sensor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-providing-an-offset-for-angular-approach-when-placing-accessories-into-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Providing an Offset for Angular Approach When Placing Accessories into Channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Software Notes</h1>
+
+<h2 id="1-rg830-robot-software-manual"><span style="color: #000000; font-weight: bold;">1. RG830 Robot Software Manual</span></h2>
+<p>The RG830 project framework is implemented using a macro-based structure. Each accessory has its own macros. Macros are shaped depending on whether accessories mount to a surface or into a channel. When viewing the frame from the front top surface clockwise, the surfaces are named as follows:</p>
+<p>1 (Top Front) - 2 (Right Front) - 3 (Bottom Front) - 4 (Left Front)</p>
+<p>5 (Top Channel) - 6 (Right Channel) - 7 (Bottom Channel) - 8 (Left Channel)</p>
+<p>The macro for the surface to be assembled is created according to the surface number given above.</p>
+<p><strong>Example:</strong>
+- Macro 102 ---&gt; accessory number 1 to surface 2
+- Macro 204 ---&gt; accessory number 2 to surface 4
+- Macro 2805 ---&gt; accessory number 28 to surface 5</p>
+<p>Macros on the robot side are written and organized in the HOME folder according to the profile depth.</p>
+<p><img alt="RG830" src="_media/Macro.png" /></p>
+<p><strong>A:</strong> Number 1 is a 70 mm profile, number 2 is a 76 mm profile, number 3 is an 88 mm profile</p>
+<p><strong>B:</strong> Under the profile name, it shows each accessory's respective macros.</p>
+<h2 id="2-teaching-a-new-point-and-naming"><span style="color: #000000; font-weight: bold;">2. Teaching a New Point and Naming</span></h2>
+<ul>
+<li>METHOD 1</li>
+</ul>
+<p><img alt="RG830" src="_media/D_NoktaTan%C4%B1tma.png" /></p>
+<p><strong>1:</strong> Touch the line on the pendant that you want to teach to mark that line.</p>
+<p><strong>2:</strong> Opens the command names.</p>
+<p><strong>3:</strong> Commands you want to add are listed here. When adding a motion command and pressing MoveL, it will ask whether to insert above or below the marked point.</p>
+<p>When a MoveL command is added from the FlexPendant, a '*' (star) symbol will appear at the coordinates on that line. At this stage, when recording the position, the robot assigns coordinates by referencing the currently selected Tool and Wobj (work object). To prevent incorrect definitions, make sure the Tool and Wobj selections to be used are correct before adding the command.</p>
+<p><img alt="RG830" src="_media/D_HareketKomutu.png" /></p>
+<p><strong>1:</strong> Opens the list</p>
+<p><strong>2:</strong> Opens movement, tool, and wobj options related to the robot</p>
+<p><strong>3:</strong> The section where we select Tool and Wobj</p>
+<p>After these operations, to use this command elsewhere, the '*' entry must be given a name. Therefore, define a variable as a <code>robtarget</code> and assign the coordinate information in the starred area to that variable by naming it. This operation can be performed in RobotStudio.</p>
+<p><img alt="RG830" src="_media/D_HareketKomutIsimVerme.png" /></p>
+<p><strong>1:</strong> How the line seen on the FlexPendant appears on the RobotStudio screen</p>
+<p><strong>2:</strong> The variable-definition area where the named assignment to the starred part on the FlexPendant (for example <code>EgitimNok</code>) is made</p>
+<p><strong>3:</strong> Using the variable name assigned to the starred area shown on the FlexPendant</p>
+<p>After naming as in item 3, if it duplicates an existing entry shown in item 1, you can remove the redundant item from the program to avoid confusion.</p>
+<p>Now the variable <code>EgitimNok</code> can be called and used by name inside the program.</p>
+<ul>
+<li>METHOD 2</li>
+</ul>
+<p><img alt="RG830" src="_media/D_HareketKomutu2.png" /></p>
+<p><strong>A:</strong> Name given to the point to be taught</p>
+<p><strong>B:</strong> Selection of storage type</p>
+<p><strong>C:</strong> Choose which module to save the variable into</p>
+<p>After pressing OK, the chosen module will store the position definition according to the previously selected Tool and Wobj. This variable can be used in the same way as shown in the red-framed example in METHOD 1.</p>
+<h2 id="3-offsetting-speed-and-zone-settings-from-a-point"><span style="color: #000000; font-weight: bold;">3. Offsetting, Speed and Zone Settings from a Point</span></h2>
+<p><img alt="RG830" src="_media/D_Offsetleme.png" /></p>
+<p><strong>A:</strong> The simplest form of the defined point. When modifying a point, this minimal form is used. Offset-style entries are not allowed during Modify.</p>
+<p><strong>B:</strong> A function used to offset the robot by certain distances relative to a base reference point (e.g., <code>EgitimNok</code>). Instead of teaching a new point, it produces motion by deviating from an existing point.</p>
+<p><strong>C:</strong> X, Y, Z offset values in millimeters</p>
+<p><strong>D:</strong> Determines how many millimeters per second the robot's end-effector (TCP) will move.</p>
+<p><strong>E:</strong> The corner (path) parameter that defines how close the robot will approach the target point or how "softly" it will pass the point.</p>
+<h2 id="4-adding-new-paths-to-magazines-and-introducing-the-control-sensor"><span style="color: #000000; font-weight: bold;">4. Adding New Paths to Magazines and Introducing the Control Sensor</span></h2>
+<p>The pick-and-place coordinates for accessories in the system are stored in array structures organized by floor and accessory numbers. When a new accessory is added to the system, it is necessary to add entries to these arrays sequentially to preserve the existing hierarchy.</p>
+<ul>
+<li>New Position Addition Procedure:</li>
+</ul>
+<p><strong>Variable Definition:</strong> Navigate to the existing accessory array in the program's Variables module.</p>
+<p><strong>Array Expansion:</strong> Include the new coordinate data into the array following the existing floor and accessory order.</p>
+<p><strong>Teach Point:</strong> Teach the robot's physical position for the newly added index and update the <code>robtarget</code> data.</p>
+<p>You can see the arrays in Variables in the image below.</p>
+<p><img alt="RG830" src="_media/D_AlmaBirakmaArray.png" /></p>
+<ul>
+<li>When teaching the newly added path, follow the order shown in the figure below. After selecting the accessory you added, press Modify to update the point. During this operation, ensure the Tool selection is <code>ToolGrip</code> and the Wobj is selected according to the magazine being taught.</li>
+</ul>
+<p><img alt="RG830" src="_media/AlmaBirakmaNokta.png" /></p>
+<p>Each accessory in the system has its own presence/absence control sensor. To correctly define the accessory control point, follow this procedure:</p>
+<ul>
+<li>Alignment and Positioning:</li>
+</ul>
+<p>After the robot picks the part from the relevant station, it should exit along a linear path without disturbing the gripping plane and orientation. The accessory must be positioned directly in front of the sensor and within detection range. The robot position at this control point should be determined and recorded as the position where the sensor detects the accessory most stably.</p>
+<ul>
+<li>Software Structure:</li>
+</ul>
+<p>Like pick-and-place points, accessory control points are defined inside array structures named specifically for each accessory group. Additions must be made sequentially for the new path. This creates separate and independent control coordinates for each accessory type. Add entries to the <code>LMagazineAccessoryControl</code> and <code>RMagazineAccessoryControl</code> sections in the Variables module of the program. Below you can see arrays for Accessory Control.</p>
+<p><img alt="RG830" src="_media/D_AksesuarKontrolArray.png" /></p>
+<ul>
+<li>Registration Process:
+After precise positioning, perform the point registration steps by following the visual instructions. The images below show example representations for each of the three levels of the left and right magazines (F1, F2, F3).</li>
+</ul>
+<p><img alt="RG830" src="_media/AksesuarKontrolL.png" />  <img alt="RG830" src="_media/AksesuarKontrolR.png" /></p>
+<h2 id="5-providing-an-offset-for-angular-approach-when-placing-accessories-into-channels"><span style="color: #000000; font-weight: bold;">5. Providing an Offset for Angular Approach When Placing Accessories into Channels</span></h2>
+<p>In robot macros, before the pins of accessories mounted into channels fully seat into their positions, we first approach at an angle with a certain offset value and then move to the actual position. The name of this angular approach depends on the target surface:</p>
+<p><img alt="RG830" src="_media/ChannelAngle.png" /></p>
+<ul>
+<li>It is defined as <code>TopChannelAngle</code>, <code>RightChannelAngle</code>, <code>BottomChannelAngle</code>, <code>LeftChannelAngle</code>. This operation is placed before the macro's first screwing operation <code>*canScrew;*</code>.</li>
+</ul>
+<p><em>A:</em> Name of the surface being approached at an angle
+<em>B:</em> X offset given for positioning the angled approach. This varies depending on the surface orientation.
+<em>C:</em> Z offset given for positioning the angled approach. This varies depending on the surface orientation.</p>
+<p>!!! These offsets vary in x, y, z coordinates depending on the surface orientation. On surfaces 5 and 7, the y value receives "+/-" offsets; on surfaces 6 and 8, the x value receives "+/-" offsets. The z value is the same for all, and the approach direction is adjusted through testing.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
